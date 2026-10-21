@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- CONFIGURACIÓN GENERAL -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Conoce la historia, misión, visión y equipo del Parque Cultural de Valparaíso.">
+
+    <title>Nosotros | Parque Cultural de Valparaíso</title>
+
+    <!-- CSS COMPARTIDO -->
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <!-- JAVASCRIPT COMPARTIDO -->
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+
+    <!-- =====================================
+         1. HEADER Y PORTADA
+         ===================================== -->
+
+    <div class="portada">
+
+        <header class="header">
+
+            <div class="header-contenido">
+
+                <!-- LOGOTIPO -->
+                <a href="index.html"
+                   class="logo"
+                   aria-label="Ir al inicio del Parque Cultural">
+
+                    <img
+                        src="assets/imagenes/logo-parque-cultural.png"
+                        alt="Parque Cultural de Valparaíso"
+                        width="145"
+                        height="61"
+                    >
+                </a>
+
+                <!-- BUSCADOR -->
+                <form class="buscador" role="search">
+
+                    <label for="buscar" class="visualmente-oculto">
+                        Buscar en el sitio
+                    </label>
+
+                    <input
+                        type="search"
+                        id="buscar"
+                        name="q"
+                        placeholder="Buscar..."
+                    >
+
+                    <button type="submit" aria-label="Buscar">
+                        <svg
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            aria-hidden="true"
+                        >
+                            <circle cx="11" cy="11" r="7"></circle>
+                            <path d="m20 20-4-4"></path>
+                        </svg>
+                    </button>
+
+                </form>
+
+                <!-- BOTÓN MENÚ MÓVIL -->
+                <button
+                    class="menu-toggle"
+                    type="button"
+                    aria-label="Abrir menú"
+                    aria-expanded="false"
+                    aria-controls="menu-principal"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- NAVEGACIÓN PRINCIPAL -->
+                <nav
+                    class="navegacion"
+                    id="menu-principal"
+                    aria-label="Navegación principal"
+                >
+
+                    <ul class="menu">
+
+                        <li>
+                            <a href="cartelera.html">
+                                Programación
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="comunidad.html">
+                                Comunidad
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="nosotros.html"
+                               aria-current="page">
+                                Nosotros
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="visita.html">
+                                Visítanos
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="contacto.html">
+                                Contacto
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+
+        </header>
+
+        <!-- FOTOGRAFÍA DE PORTADA -->
+        <section class="hero"
+                 aria-labelledby="titulo-nosotros">
+
+            <img
+                src="assets/imagenes/portada-nosotros.jpg"
+                alt="Historia y equipo del Parque Cultural de Valparaíso"
+                class="hero-imagen"
+                width="1600"
+                height="900"
+            >
+
+            <div class="hero-contenido">
+
+                <h1 id="titulo-nosotros">
+                    Nosotros
+                </h1>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+   <!-- =====================================
+         2. CONTENIDO PRINCIPAL (NOSOTROS)
+         ===================================== -->
+
+    <main class="pagina-nosotros">
+
+        <!-- NAVEGACIÓN SECUNDARIA / SUBMENÚ -->
+        <nav class="submenu-paginas" aria-label="Secciones de Nosotros">
+            <a href="#quienes-somos">Quiénes somos</a>
+            <a href="#transparencia">Transparencia</a>
+        </nav>
+
+        <div class="contenedor">
+
+            <!-- SECCIÓN 1: QUIÉNES SOMOS -->
+            <section id="quienes-somos" class="page-section">
+                
+                <!-- Historia y Foto -->
+                <div class="history-grid">
+                    <div class="history-text">
+                        <h2>Historia</h2>
+                        <p>El Parque Cultural de Valparaíso – Ex Cárcel es una de las infraestructuras culturales más importantes de la Región de Valparaíso, inaugurado oficialmente en 2011, en 2019 fue declarado Sitio de Memoria por el Estado de Chile.</p>
+                        <p>Este espacio público cuenta con áreas verdes y un mirador con una vista privileged hacia los cerros y la bahía. Alberga dos monumentos nacionales y dispone de un equipamiento de primer nivel para el fomento de diversas disciplinas artísticas. Es, además, un punto de encuentro ciudadano y de participación cultural que promueve la convivencia.</p>
+                        <p>El Parque Cultural es más que un lugar para observar, presentar y vivir las artes; su uso experiencia que sitúa al público y a las comunidades en un Sitio de Memoria de alto valor histórico, tanto por su patrimonio material como por la memoria del recinto.</p>
+                        <p>Su propósito es conectar con las nuevas ciudadanías para responder a las transformaciones que demanda la sociedad actual a través de profundos desafíos culturales. La transformación en parte de su propia identidad lo que hoy es el principal recinto cultural de la región, en el pasado fue una cárcel. Hoy, a más de diez años de su apertura, se consolida como sitio de memoria, centro cultural y espacio público de vocación regional, vinculándose con la comunidad desde tres ejes interrelacionados: espacio patrimonial, el artístico y el territorial.</p>
+                    </div>
+                    <div class="history-image">
+                        <img src="assets/imagenes/quienes-somos-foto.jpg" alt="Parque Cultural de Valparaíso" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Misión y Visión -->
+                <div class="mission-vision-grid">
+                    <div class="mv-block">
+                        <h2>Misión</h2>
+                        <p>Somos un sitio de memoria, centro cultural y espacio público, con vocación regional, que promueve la participación cultural y los derechos humanos, para la construcción y formación de ciudadanías críticas.</p>
+                    </div>
+                    <div class="mv-block">
+                        <h2>Visión</h2>
+                        <p>En el año 2026 seremos un referente de la participación cultural y del fomento de las culturas, las artes, el patrimonio y los derechos humanos.</p>
+                    </div>
+                </div>
+
+                <!-- Nuestros Valores -->
+                <div class="values-section">
+                    <h2>Nuestros valores</h2>
+                    <div class="values-grid">
+                        <ul>
+                            <li>Diálogo y promoción de derechos humanos para con las diversas comunidades e instituciones artísticas, culturales y sociales con las que convivimos.</li>
+                            <li>Promoción de una gestión sostenible del conjunto urbano-histórico y sitio de memoria, integrada a la vocación artística y territorial.</li>
+                            <li>Construcción de una cultura democrática, inspirada en principles de solidaridad y educación, transversales al quehacer del espacio.</li>
+                            <li>Compromiso con la igualdad de género y la inclusión de personas de diferentes géneros, nacionalidades, generaciones, culturas, diversidades funcionales, habilidades y conocimientos, religiones, entre otros.</li>
+                        </ul>
+                        <ul>
+                            <li>Trabajo colaborativo, para fortalecer los procesos de participación y desarrollo cultural, local y regional.</li>
+                            <li>Respeto sobre los principios de diversidad cultural y social y promoción de las diferentes identidades culturales regionales.</li>
+                            <li>Impulso a una convivencia ecosocial sostenible, que proyecte los entornos que habitamos.</li>
+                            <li>Transparencia y probidad, que permitan construir confianza y nuevas alianzas para la sostenibilidad.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Acordeones / Desplegables -->
+                <div class="accordion-group">
+                    <details class="accordion-item">
+                        <summary class="accordion-header">Gobernanza y directorio</summary>
+                        <div class="accordion-content">
+                            <p>Contenido explicativo e información detallada sobre la Gobernanza y el Directorio.</p>
+                        </div>
+                    </details>
+
+                    <details class="accordion-item">
+                        <summary class="accordion-header">Equipo humano y organigrama</summary>
+                        <div class="accordion-content">
+                            <p>Información del equipo, nómina y representación del organigrama institucional.</p>
+                        </div>
+                    </details>
+
+                    <details class="accordion-item">
+                        <summary class="accordion-header">Línea editorial</summary>
+                        <div class="accordion-content">
+                            <p>Detalles sobre la línea editorial, enfoques curatoriales y marcos normativos de programación.</p>
+                        </div>
+                    </details>
+                </div>
+
+            </section>
+
+            <!-- SECCIÓN 2: TRANSPARENCIA -->
+            <section id="transparencia" class="page-section">
+                
+                <div class="transparency-header">
+                    <h2>Transparencia activa</h2>
+                    <p>Repositorio de documentos y actos administrativos de la Asociación Parque Cultural de Valparaíso.</p>
+                </div>
+
+                <div class="accordion-group">
+                    <details class="accordion-item" open>
+                        <summary class="accordion-header">Planilla de Remuneraciones</summary>
+                        <div class="accordion-content">
+                            <div class="downloads-grid">
+                                <a href="#" class="download-card">
+                                    <span class="icon">⤓</span>
+                                    <span class="label">CONVENIO 2025</span>
+                                </a>
+                                <a href="#" class="download-card">
+                                    <span class="icon">⤓</span>
+                                    <span class="label">CONVENIO 2024</span>
+                                </a>
+                                <a href="#" class="download-card">
+                                    <span class="icon">⤓</span>
+                                    <span class="label">CONVENIO 2023</span>
+                                </a>
+                                <a href="#" class="download-card">
+                                    <span class="icon">⤓</span>
+                                    <span class="label">CONVENIO 2022</span>
+                                </a>
+                                <a href="#" class="download-card">
+                                    <span class="icon">⤓</span>
+                                    <span class="label">CONVENIO 2021</span>
+                                </a>
+                                <a href="#" class="download-card">
+                                    <span class="icon">⤓</span>
+                                    <span class="label">CONVENIO 2020</span>
+                                </a>
+                                <a href="#" class="download-card">
+                                    <span class="icon">⤓</span>
+                                    <span class="label">CONVENIO 2019</span>
+                                </a>
+                                <a href="#" class="download-card">
+                                    <span class="icon">⤓</span>
+                                    <span class="label">CONVENIO 2018</span>
+                                </a>
+                                <a href="#" class="download-card">
+                                    <span class="icon">⤓</span>
+                                    <span class="label">CONVENIOS 2017</span>
+                                </a>
+                            </div>
+                        </div>
+                    </details>
+
+                    <details class="accordion-item">
+                        <summary class="accordion-header">CONVENIOS MINCAP</summary>
+                        <div class="accordion-content">
+                            <p>Documentos de convenios suscritos con el Ministerio de las Culturas, las Artes y el Patrimonio.</p>
+                        </div>
+                    </details>
+
+                    <details class="accordion-item">
+                        <summary class="accordion-header">Otros aportes financieros</summary>
+                        <div class="accordion-content">
+                            <p>Registro de otros aportes financieros recibidos por la institución.</p>
+                        </div>
+                    </details>
+
+                    <details class="accordion-item">
+                        <summary class="accordion-header">Estados Financieros</summary>
+                        <div class="accordion-content">
+                            <p>Auditorías y balances de los estados financieros.</p>
+                        </div>
+                    </details>
+
+                    <details class="accordion-item">
+                        <summary class="accordion-header">Memoria anual</summary>
+                        <div class="accordion-content">
+                            <p>Memorias de gestión anual disponibles para consulta.</p>
+                        </div>
+                    </details>
+
+                    <details class="accordion-item">
+                        <summary class="accordion-header">Licitaciones</summary>
+                        <div class="accordion-content">
+                            <p>Procesos de licitación pública y contrataciones realizadas.</p>
+                        </div>
+                    </details>
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- =====================================
+         3. FOOTER INSTITUCIONAL
+         ===================================== -->
+
+    <footer class="footer">
+
+        <!-- FRANJA DECORATIVA -->
+        <div class="footer-franja"
+             aria-hidden="true"></div>
+
+        <div class="footer-contenedor">
+
+            <div class="footer-principal">
+
+                <!-- LOGOTIPO PRINCIPAL -->
+                <div class="footer-marca">
+
+                    <a href="index.html"
+                       aria-label="Volver al inicio">
+
+                        <img
+                            src="assets/imagenes/logo-parque-cultural.png"
+                            alt="Parque Cultural de Valparaíso"
+                            width="190"
+                            height="80"
+                        >
+
+                    </a>
+
+                </div>
+
+                <!-- DATOS DE CONTACTO -->
+                <div class="footer-informacion">
+
+                    <!-- HORARIO -->
+                    <div class="footer-dato">
+
+                        <img
+                            src="assets/imagenes/icono-horario.png"
+                            alt=""
+                            class="footer-icono-img"
+                            width="18"
+                            height="18"
+                        >
+
+                        <span>
+                            Martes a domingo de 10:00 a 20:00 hrs
+                        </span>
+
+                    </div>
+
+                    <!-- CORREO -->
+                    <div class="footer-dato">
+
+                        <img
+                            src="assets/imagenes/icono-correo.png"
+                            alt=""
+                            class="footer-icono-img"
+                            width="18"
+                            height="18"
+                        >
+
+                        <a href="mailto:contacto@pcdv.cl">
+                            contacto@pcdv.cl
+                        </a>
+
+                    </div>
+
+                    <!-- UBICACIÓN -->
+                    <div class="footer-dato">
+
+                        <img
+                            src="assets/imagenes/icono-ubicacion.webp"
+                            alt=""
+                            class="footer-icono-img"
+                            width="18"
+                            height="18"
+                        >
+
+                        <span>
+                            Calle Cumming 580, ex Cárcel, Valparaíso
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <!-- LOGOTIPOS INSTITUCIONALES -->
+                <div class="footer-instituciones">
+
+                    <img
+                        src="assets/imagenes/logo-ministerio.png"
+                        alt="Ministerio de las Culturas, las Artes y el Patrimonio"
+                        class="logo-ministerio"
+                    >
+
+                    <img
+                        src="assets/imagenes/logo-chile.png"
+                        alt="Chile"
+                        class="logo-chile"
+                    >
+
+                </div>
+
+            </div>
+
+            <!-- LÍNEA DIVISORIA -->
+            <hr class="footer-separador">
+
+            <!-- REDES SOCIALES -->
+            <nav class="footer-redes"
+                 aria-label="Redes sociales">
+
+                <a href="https://www.instagram.com/"
+                   aria-label="Instagram del Parque Cultural">
+
+                    <img
+                        src="assets/imagenes/icono-instagram.webp"
+                        alt=""
+                        class="footer-red-icono"
+                    >
+
+                </a>
+
+                <a href="https://www.facebook.com/"
+                   aria-label="Facebook del Parque Cultural">
+
+                    <img
+                        src="assets/imagenes/icono-facebook.png"
+                        alt=""
+                        class="footer-red-icono"
+                    >
+
+                </a>
+
+                <a href="https://x.com/"
+                   aria-label="X del Parque Cultural">
+
+                    <img
+                        src="assets/imagenes/icono-x.png"
+                        alt=""
+                        class="footer-red-icono"
+                    >
+
+                </a>
+
+                <a href="https://www.youtube.com/"
+                   aria-label="YouTube del Parque Cultural">
+
+                    <img
+                        src="assets/imagenes/icono-youtube.png"
+                        alt=""
+                        class="footer-red-icono"
+                    >
+
+                </a>
+
+            </nav>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
