@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- CONFIGURACIÓN GENERAL -->
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Conoce las iniciativas comunitarias del Parque Cultural de Valparaíso: salud comunitaria, territorio, arte y creación colectiva.">
+
+    <title>Comunidad | Parque Cultural de Valparaíso</title>
+
+    <!-- HOJA DE ESTILOS COMPARTIDA -->
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <!-- JAVASCRIPT COMPARTIDO -->
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+
+    <!-- =====================================
+         1. HEADER Y PORTADA
+         ===================================== -->
+
+    <div class="portada">
+
+        <header class="header">
+
+            <div class="header-contenido">
+
+                <!-- LOGOTIPO -->
+                <a href="index.html"
+                   class="logo"
+                   aria-label="Ir al inicio del Parque Cultural">
+
+                    <img
+                        src="assets/imagenes/logo-parque-cultural.png"
+                        alt="Parque Cultural de Valparaíso"
+                        width="145"
+                        height="61"
+                    >
+                </a>
+
+                <!-- BUSCADOR -->
+                <form class="buscador" role="search">
+
+                    <label for="buscar" class="visualmente-oculto">
+                        Buscar en el sitio
+                    </label>
+
+                    <input
+                        type="search"
+                        id="buscar"
+                        name="q"
+                        placeholder="Buscar..."
+                    >
+
+                    <button type="submit" aria-label="Buscar">
+                        <svg
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            aria-hidden="true"
+                        >
+                            <circle cx="11" cy="11" r="7"></circle>
+                            <path d="m20 20-4-4"></path>
+                        </svg>
+                    </button>
+
+                </form>
+
+                <!-- BOTÓN MENÚ MÓVIL -->
+                <button
+                    class="menu-toggle"
+                    type="button"
+                    aria-label="Abrir menú"
+                    aria-expanded="false"
+                    aria-controls="menu-principal"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- NAVEGACIÓN PRINCIPAL -->
+                <nav
+                    class="navegacion"
+                    id="menu-principal"
+                    aria-label="Navegación principal"
+                >
+
+                    <ul class="menu">
+
+                        <li>
+                            <a href="cartelera.html">
+                                Programación
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="comunidad.html"
+                               aria-current="page">
+                                Comunidad
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="nosotros.html">
+                                Nosotros
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="visita.html">
+                                Visítanos
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="contacto.html">
+                                Contacto
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+
+        </header>
+
+        <!-- FOTOGRAFÍA DE PORTADA -->
+        <section class="hero"
+                 aria-labelledby="titulo-comunidad">
+
+            <img
+                src="assets/imagenes/portada-comunidad.jpg"
+                alt="Vista del Parque Cultural de Valparaíso"
+                class="hero-imagen"
+                width="1600"
+                height="900"
+            >
+
+            <div class="hero-contenido">
+
+                <h1 id="titulo-comunidad">
+                    Comunidad
+                </h1>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- =====================================
+         2. CONTENIDO PRINCIPAL
+         ===================================== -->
+
+    <main class="pagina-comunidad">
+
+        <div class="contenedor">
+
+            <!-- INTRODUCCIÓN -->
+            <section class="comunidad-introduccion">
+
+                <p class="ruta-pagina">
+                    Comunidad / Nuestro hacer
+                </p>
+
+                <h2>Nuestro hacer</h2>
+
+                <p>
+                    Conoce las iniciativas y actividades vinculadas con la comunidad <del></del> Parque Cultural de Valparaíso.
+                </p>
+
+            </section>
+
+
+            <!-- =================================
+                 PROYECTO 1: SALUD COMUNITARIA
+                 ================================= -->
+
+            <article class="comunidad-proyecto">
+
+                <div class="comunidad-proyecto-texto">
+
+                    <h3>Salud comunitaria</h3>
+
+                    <p>
+                        Te invitamos a disfrutar de cuatro sesiones audiovisuales que te harán descubrir cómo nuestro mundo emocional está ligado a nuestro bienestar físico, mental y espiritual. Ven a nutrir tu espíritu y tu cuerpo en un viaje hacia lo sensorial.
+
+                    </p>
+                    <p>  
+Organizan: Parque Cultural de Valparaíso, Círculo Social de Terapeutas de Valparaíso, Colectivo TranSalud Comunitaria y CESFAM Marcelo Mena.
+                    </p>
+
+                    <details class="proyecto-detalle">
+
+                        <summary>Conoce más</summary>
+
+                        <p>
+                            Explora otras alternativas para
+                            el bienestar a través de las
+                            actividades de salud comunitaria.
+                        </p>
+
+                    </details>
+
+                </div>
+
+                <div class="comunidad-proyecto-imagen">
+
+                    <img
+                        src="assets/imagenes/salud-comunitaria.jpg"
+                        alt="Afiche ilustrado de Salud Comunitaria"
+                        width="500"
+                        height="480"
+                        loading="lazy"
+                    >
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================
+                 PROYECTO 2: TERRITORIO ACTUAL
+                 ================================= -->
+
+            <article class="comunidad-proyecto">
+
+                <div class="comunidad-proyecto-texto">
+
+                    <h3>Territorio actual</h3>
+
+                    <p>
+                       Actividad de mapeo colectivo junto a la comunidad cercana al 
+                       Parque Cultural de Valparaíso, donde, 
+                       mediante recorridos por el barrio, se exploraron memorias, 
+                       experiencias y problemáticas del territorio. 
+                    </p>
+
+                    <details class="proyecto-detalle">
+
+                        <summary>Conoce más</summary>
+
+                        <p>
+                            La iniciativa invita a pensar
+                            el parque como un lugar de
+                            encuentro y pertenencia.
+                        </p>
+
+                    </details>
+
+                </div>
+
+                <div class="comunidad-proyecto-imagen">
+
+                    <img
+                        src="assets/imagenes/territorio-actual.jpg"
+                        alt="Gráfica con el mensaje Este parque te pertenece"
+                        width="358"
+                        height="347"
+                        loading="lazy"
+                    >
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================
+                 PROYECTO 3: VUELO DE PÁJARXS
+                 ================================= -->
+
+            <article class="comunidad-proyecto">
+
+                <div class="comunidad-proyecto-texto">
+
+                    <h3>Vuelo de pájarxs</h3>
+
+                    <p>
+                       Programa piloto desarrollado junto a la colectiva Pajarx Entre Púas,
+                       que busca fortalecer los vínculos comunitarios de mujeres y 
+                       disidencias privadas de libertad, excarceladas y sus niñas y niños, 
+                       mediante actividades artísticas y culturales que conectan los espacios 
+                       penitenciarios con los centros culturales. 
+                    </p>
+                    <p>
+                       Organizan: Colectiva Pajarx Entre Púas y 
+                       Parque Cultural de Valparaíso Ex Cárcel.
+                    </p>
+
+                    <details class="proyecto-detalle">
+
+                        <summary>Conoce más</summary>
+
+                        <p>
+                            Conoce la gráfica y el trabajo
+                            creativo asociado a esta
+                            iniciativa colectiva.
+                        </p>
+
+                    </details>
+
+                </div>
+
+                <div class="comunidad-proyecto-imagen">
+
+                    <img
+                        src="assets/imagenes/vuelo-pajarxs.jpg"
+                        alt="Gráfica Arte colectivo Pájare entre Púas"
+                        width="362"
+                        height="347"
+                        loading="lazy"
+                    >
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================
+                 PROYECTO 4: RECICLAJE CREATIVO
+                 ================================= -->
+
+            <article class="comunidad-proyecto">
+
+                <div class="comunidad-proyecto-texto">
+
+                    <h3>Reciclaje creativo</h3>
+
+                    <p>
+                       Actividad familiar que invita a explorar la creatividad y 
+                       el cuidado del medioambiente mediante técnicas de reciclaje textil,
+                       promoviendo la reutilización de prendas en desuso para darles una nueva vida.
+                    </p>
+                    <p>
+                       Organizan: Parque Cultural de Valparaíso y 
+                       Huila Creatividad Colaborativa.
+                    </p>
+
+                    <details class="proyecto-detalle">
+
+                        <summary>Conoce más</summary>
+
+                        <p>
+                            Huila propone explorar
+                            procesos creativos mediante
+                            el trabajo colaborativo.
+                        </p>
+
+                    </details>
+
+                </div>
+
+                <div class="comunidad-proyecto-imagen">
+
+                    <img
+                        src="assets/imagenes/huila-taller.jpg"
+                        alt="Gráfica Huila, creatividad colaborativa"
+                        width="358"
+                        height="347"
+                        loading="lazy"
+                    >
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================
+                 PROYECTO 5: REVUELTA EN LA HUERTA
+                 ================================= -->
+
+            <article class="comunidad-proyecto">
+
+                <div class="comunidad-proyecto-texto">
+
+                    <h3>Revuelta en la huerta</h3>
+
+                    <p>
+                       Ciclo de videos educativos que invita a aprender sobre
+                       la creación de huertas urbanas y el cultivo de 
+                       alimentos orgánicos, promoviendo la agricultura sustentable 
+                       y el cuidado del medioambiente.
+                    </p>
+                    <p>
+                       Organiza: Mesa Huerta Los Pimientos del
+                       Parque Cultural de Valparaíso Ex Cárcel.
+                    </p>
+
+                    <details class="proyecto-detalle">
+
+                        <summary>Conoce más</summary>
+
+                        <p>
+                            La iniciativa se vincula
+                            con el encuentro comunitario
+                            y las prácticas de huerta.
+                        </p>
+
+                    </details>
+
+                </div>
+
+                <div class="comunidad-proyecto-imagen">
+
+                    <img
+                        src="assets/imagenes/revuelta-huerta.jpg"
+                        alt="Gráfica Mesa Huerta Los Pimientos"
+                        width="358"
+                        height="344"
+                        loading="lazy"
+                    >
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================
+         3. FOOTER INSTITUCIONAL
+         ===================================== -->
+
+    <footer class="footer">
+
+        <!-- FRANJA DECORATIVA -->
+        <div class="footer-franja"
+             aria-hidden="true"></div>
+
+        <div class="footer-contenedor">
+
+            <div class="footer-principal">
+
+                <!-- LOGOTIPO -->
+                <div class="footer-marca">
+
+                    <a href="index.html"
+                       aria-label="Volver al inicio">
+
+                        <img
+                            src="assets/imagenes/logo-parque-cultural.png"
+                            alt="Parque Cultural de Valparaíso"
+                            width="190"
+                            height="80"
+                        >
+
+                    </a>
+
+                </div>
+
+                <!-- DATOS DE CONTACTO -->
+                <div class="footer-informacion">
+
+                    <!-- HORARIO -->
+                    <div class="footer-dato">
+
+                        <img
+                            src="assets/imagenes/icono-horario.png"
+                            alt=""
+                            class="footer-icono-img"
+                            width="18"
+                            height="18"
+                        >
+
+                        <span>
+                            Martes a domingo de 10:00 a 20:00 hrs
+                        </span>
+
+                    </div>
+
+                    <!-- CORREO -->
+                    <div class="footer-dato">
+
+                        <img
+                            src="assets/imagenes/icono-correo.png"
+                            alt=""
+                            class="footer-icono-img"
+                            width="18"
+                            height="18"
+                        >
+
+                        <a href="mailto:contacto@pcdv.cl">
+                            contacto@pcdv.cl
+                        </a>
+
+                    </div>
+
+                    <!-- UBICACIÓN -->
+                    <div class="footer-dato">
+
+                        <img
+                            src="assets/imagenes/icono-ubicacion.webp"
+                            alt=""
+                            class="footer-icono-img"
+                            width="18"
+                            height="18"
+                        >
+
+                        <span>
+                            Calle Cumming 580, ex Cárcel, Valparaíso
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <!-- LOGOS INSTITUCIONALES -->
+                <div class="footer-instituciones">
+
+                    <img
+                        src="assets/imagenes/logo-ministerio.png"
+                        alt="Ministerio de las Culturas, las Artes y el Patrimonio"
+                        class="logo-ministerio"
+                    >
+
+                    <img
+                        src="assets/imagenes/logo-chile.png"
+                        alt="Chile"
+                        class="logo-chile"
+                    >
+
+                </div>
+
+            </div>
+
+            <!-- SEPARADOR -->
+            <hr class="footer-separador">
+
+            <!-- REDES SOCIALES -->
+            <nav class="footer-redes"
+                 aria-label="Redes sociales">
+
+                <a href="https://www.instagram.com/"
+                   aria-label="Instagram del Parque Cultural">
+
+                    <img
+                        src="assets/imagenes/icono-instagram.webp"
+                        alt=""
+                        class="footer-red-icono"
+                    >
+
+                </a>
+
+                <a href="https://www.facebook.com/"
+                   aria-label="Facebook del Parque Cultural">
+
+                    <img
+                        src="assets/imagenes/icono-facebook.png"
+                        alt=""
+                        class="footer-red-icono"
+                    >
+
+                </a>
+
+                <a href="https://x.com/"
+                   aria-label="X del Parque Cultural">
+
+                    <img
+                        src="assets/imagenes/icono-x.png"
+                        alt=""
+                        class="footer-red-icono"
+                    >
+
+                </a>
+
+                <a href="https://www.youtube.com/"
+                   aria-label="YouTube del Parque Cultural">
+
+                    <img
+                        src="assets/imagenes/icono-youtube.png"
+                        alt=""
+                        class="footer-red-icono"
+                    >
+
+                </a>
+
+            </nav>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
