@@ -2723,8 +2723,9 @@ a {
 
 .evento-imagen {
   width: 100%;
-  height: 200px;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
+  object-position: center;
   border-radius: 4px;
 }
 
