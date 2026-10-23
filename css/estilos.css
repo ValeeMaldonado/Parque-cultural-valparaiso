@@ -4938,3 +4938,34 @@ a {
 .titulo-noticias {
   margin-bottom: 20px !important;
 }
+/* ==========================================================================
+   COMPACTAR ESPACIOS AL MÁXIMO ENTRE SECCIONES
+   ========================================================================== */
+
+/* Quitar márgenes generales de las secciones principales */
+.home-cartelera-destacada,
+.home-galeria-seccion,
+.home-noticias {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+/* Quitar el margen inferior del enlace de programación */
+.cartelera-pie {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Ajustar márgenes de los títulos */
+.titulo-galeria-home,
+.titulo-noticias {
+  margin-top: 5px !important;
+  margin-bottom: 10px !important;
+}
+
+/* Reducir espacio entre el banner de galería y el título de noticias */
+.galeria-banner-link {
+  margin-bottom: 10px !important;
+}
