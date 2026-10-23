@@ -347,7 +347,7 @@
                             href="https://docs.google.com/forms/d/e/1FAIpQLSckbN3tgv7VBdzY6OorFCTSGdptn5BcYa2u8EZwLsnwP2wteg/viewform?pli=1"
                             class="visita-boton visita-boton-claro">
 
-                            Formulario
+                            Completar Formulario
 
                         </a>
 
@@ -367,52 +367,6 @@
         </div>
 
     </main>
-
-
-    <!-- =====================================
-         6. VENTANA EMERGENTE DEL MAPA
-         ===================================== -->
-
-    <dialog
-        class="visita-mapa-modal"
-        id="modal-mapa"
-        aria-labelledby="modal-mapa-titulo">
-
-        <!-- CABECERA -->
-        <div class="visita-modal-cabecera">
-
-            <h2 id="modal-mapa-titulo">
-                Mapa interno
-            </h2>
-
-            <!-- BOTÓN PARA CERRAR -->
-            <button
-                type="button"
-                class="visita-modal-cerrar"
-                id="cerrar-mapa"
-                aria-label="Cerrar mapa">
-                &times;
-            </button>
-
-        </div>
-
-        <!-- MAPA AMPLIADO -->
-        <div class="visita-modal-contenido">
-
-            <img
-                src="assets/imagenes/mapa-interno.png"
-                alt="Mapa interno ampliado del Parque Cultural de Valparaíso"
-                class="visita-modal-imagen">
-
-        </div>
-
-        <p class="visita-modal-ayuda">
-            Desplázate por la imagen para consultar
-            los detalles del plano.
-        </p>
-
-    </dialog>
-
 
     <!-- =====================================
          7. FOOTER INSTITUCIONAL
@@ -577,62 +531,5 @@
         </div>
 
     </footer>
-
-
-    <!-- =====================================
-         8. JAVASCRIPT DEL MAPA INTERNO
-         Solo funciona en esta página
-         ===================================== -->
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-
-            const abrirMapa = document.getElementById("abrir-mapa");
-            const cerrarMapa = document.getElementById("cerrar-mapa");
-            const modalMapa = document.getElementById("modal-mapa");
-
-            if (!abrirMapa || !cerrarMapa || !modalMapa) {
-                return;
-            }
-
-            // Abrir el mapa dentro de la misma página
-            abrirMapa.addEventListener("click", function () {
-                if (!modalMapa.open) {
-                    modalMapa.showModal();
-                }
-            });
-
-            // Cerrar con la X
-            cerrarMapa.addEventListener("click", function () {
-                modalMapa.close();
-            });
-
-            // Cerrar al hacer clic fuera de la ventana
-            modalMapa.addEventListener("click", function (event) {
-
-                if (event.target !== modalMapa) {
-                    return;
-                }
-
-                const rect = modalMapa.getBoundingClientRect();
-
-                const fuera =
-                    event.clientX < rect.left ||
-                    event.clientX > rect.right ||
-                    event.clientY < rect.top ||
-                    event.clientY > rect.bottom;
-
-                if (fuera) {
-                    modalMapa.close();
-                }
-
-            });
-
-            // La tecla Esc funciona automáticamente
-            // gracias al elemento HTML <dialog>.
-
-        });
-    </script>
-
 </body>
 </html>
