@@ -2294,16 +2294,36 @@ a {
 
 }
 
-.pagina-nosotros .history-image img {
+/* Ajuste de grilla para el bloque de Historia */
+.pagina-nosotros .history-grid {
+  display: grid;
+  grid-template-columns: 1fr 450px; /* Le asigna 450px de ancho fijo a la columna de la foto */
+  gap: 40px;
+  align-items: start;
+}
 
+.pagina-nosotros .history-image {
   width: 100%;
+}
 
-  height: auto;
+.pagina-nosotros .history-image img {
+  width: 100% !important;
+  height: 320px !important; /* Altura más grande y proporcionada */
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
 
-  object-fit: cover;
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 900px) {
+  .pagina-nosotros .history-grid {
+    grid-template-columns: 1fr;
+  }
 
-  border-radius: 4px;
-
+  .pagina-nosotros .history-image img {
+    height: 250px !important;
+  }
 }
 
 /* 2. MISIÓN Y VISIÓN */
