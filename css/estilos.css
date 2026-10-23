@@ -2251,391 +2251,240 @@ a {
 }
 
 /* ==========================================================================
-
    PÁGINA: NOSOTROS (HISTORIA, MISIÓN, VALORES Y TRANSPARENCIA)
-
    ========================================================================== */
 
-/* 1. SECCIÓN: QUIÉNES SOMOS */
+/* 1. SECCIÓN: HISTORIA / QUIÉNES SOMOS */
 
 .pagina-nosotros .history-grid {
-
   display: grid;
-
-  grid-template-columns: 1fr 340px;
-
+  grid-template-columns: 1fr 480px; /* Columna amplia para la fotografía */
   gap: 40px;
-
+  align-items: stretch; /* Estira la foto para alinearse con la altura del texto */
   margin-bottom: 50px;
-
 }
 
 .pagina-nosotros .history-text h2 {
-
-  font-size: clamp(24px, 2.5vw, 32px);
-
+  font-size: clamp(26px, 2.5vw, 34px);
   font-weight: 800;
-
-  margin-bottom: 16px;
-
-  color: #222222;
-
+  margin-bottom: 18px;
+  color: #111111;
 }
 
 .pagina-nosotros .history-text p {
-
   font-size: 0.95rem;
-
-  margin-bottom: 14px;
-
+  margin-bottom: 16px;
   line-height: 1.6;
-
   color: #222222;
-
-}
-
-/* Ajuste de grilla para el bloque de Historia */
-.pagina-nosotros .history-grid {
-  display: grid;
-  grid-template-columns: 1fr 450px; /* Le asigna 450px de ancho fijo a la columna de la foto */
-  gap: 40px;
-  align-items: start;
 }
 
 .pagina-nosotros .history-image {
   width: 100%;
+  height: 100%;
 }
 
 .pagina-nosotros .history-image img {
   width: 100% !important;
-  height: 320px !important; /* Altura más grande y proporcionada */
+  height: 100% !important; /* Llena verticalmente todo el bloque junto al texto */
+  min-height: 400px; /* Garantiza buen tamaño visual */
   object-fit: cover !important;
   object-position: center !important;
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-/* Responsividad para pantallas pequeñas */
-@media (max-width: 900px) {
-  .pagina-nosotros .history-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .pagina-nosotros .history-image img {
-    height: 250px !important;
-  }
+  border-radius: 4px;
 }
 
 /* 2. MISIÓN Y VISIÓN */
 
 .pagina-nosotros .mission-vision-grid {
-
   display: grid;
-
   grid-template-columns: 1fr 1fr;
-
   gap: 40px;
-
   margin-bottom: 50px;
-
 }
 
 .pagina-nosotros .mv-block h2 {
-
   font-size: 1.6rem;
-
   font-weight: 800;
-
   padding-bottom: 8px;
-
-  border-bottom: 3px solid #8c78e8; /* Color corporativo */
-
+  border-bottom: 3px solid #8c78e8;
   margin-bottom: 16px;
-
   color: #222222;
-
 }
 
 .pagina-nosotros .mv-block p {
-
   font-size: 0.95rem;
-
   line-height: 1.6;
-
+  color: #333333;
 }
 
 /* 3. NUESTROS VALORES */
 
 .pagina-nosotros .values-section {
-
   margin-bottom: 50px;
-
 }
 
 .pagina-nosotros .values-section h2 {
-
   font-size: 1.6rem;
-
   font-weight: 800;
-
   margin-bottom: 20px;
-
   color: #222222;
-
 }
 
 .pagina-nosotros .values-grid {
-
   display: grid;
-
   grid-template-columns: 1fr 1fr;
-
   gap: 30px;
-
 }
 
 .pagina-nosotros .values-grid ul {
-
   list-style-type: disc;
-
   padding-left: 20px;
-
 }
 
 .pagina-nosotros .values-grid li {
-
   font-size: 0.9rem;
-
   margin-bottom: 12px;
-
   line-height: 1.5;
-
 }
 
 /* 4. COMPONENTE: DESPLEGABLES / ACORDEONES */
 
 .pagina-nosotros .accordion-group {
-
   display: flex;
-
   flex-direction: column;
-
   gap: 15px;
-
   margin-top: 20px;
-
   margin-bottom: 50px;
-
 }
 
 .pagina-nosotros .accordion-item {
-
   background-color: #f3f3f3;
-
   border-radius: 8px;
-
   overflow: hidden;
-
   border: 1px solid #e0e0e0;
-
 }
 
 .pagina-nosotros .accordion-header {
-
   padding: 16px 20px;
-
   font-weight: 700;
-
   font-size: 1rem;
-
   cursor: pointer;
-
   list-style: none;
-
   display: flex;
-
   align-items: center;
-
   user-select: none;
-
   background-color: #f8f8f8;
-
   color: #222222;
-
   transition: background-color 0.2s ease;
-
 }
 
 .pagina-nosotros .accordion-header:hover {
-
   background-color: #ececec;
-
 }
 
 .pagina-nosotros .accordion-header::-webkit-details-marker {
-
   display: none;
-
 }
 
 .pagina-nosotros .accordion-header::before {
-
   content: "▼";
-
   font-size: 0.8rem;
-
   margin-right: 15px;
-
   color: #8c78e8;
-
   transition: transform 0.2s ease;
-
 }
 
 .pagina-nosotros .accordion-item[open] .accordion-header::before {
-
   transform: rotate(180deg);
-
 }
 
 .pagina-nosotros .accordion-content {
-
   padding: 20px;
-
   background-color: #ffffff;
-
   border-top: 1px solid #e0e0e0;
-
 }
 
 /* 5. SECCIÓN: TRANSPARENCIA Y TARJETAS DE DESCARGA */
 
 .pagina-nosotros .transparency-header {
-
   margin-bottom: 30px;
-
 }
 
 .pagina-nosotros .transparency-header h2 {
-
   font-size: 1.8rem;
-
   font-weight: 800;
-
   margin-bottom: 6px;
-
   color: #222222;
-
 }
 
 .pagina-nosotros .transparency-header p {
-
   font-size: 0.95rem;
-
   color: #555555;
-
 }
 
-/* Grid de Botones/Tarjetas de Descarga (Púrpura Corporativo) */
-
 .pagina-nosotros .downloads-grid {
-
   display: grid;
-
   grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-
   gap: 15px;
-
   padding: 10px 0;
-
 }
 
 .pagina-nosotros .download-card {
-
   background-color: #8c78e8;
-
   color: #ffffff;
-
   text-decoration: none;
-
   aspect-ratio: 1 / 1;
-
   border-radius: 10px;
-
   display: flex;
-
   flex-direction: column;
-
   align-items: center;
-
   justify-content: center;
-
   padding: 10px;
-
   text-align: center;
-
   transition: background-color 0.2s ease, transform 0.1s ease;
-
 }
 
 .pagina-nosotros .download-card:hover {
-
   background-color: #7261cc;
-
   transform: translateY(-3px);
-
 }
 
 .pagina-nosotros .download-card .icon {
-
   font-size: 1.8rem;
-
   font-weight: bold;
-
   margin-bottom: 4px;
-
 }
 
 .pagina-nosotros .download-card .label {
-
   font-size: 0.72rem;
-
   font-weight: 700;
-
   letter-spacing: 0.5px;
-
 }
 
 /* 6. RESPONSIVIDAD PARA MÓVILES Y TABLETS */
 
 @media (max-width: 900px) {
-
   .pagina-nosotros .history-grid {
-
     grid-template-columns: 1fr;
-
   }
 
   .pagina-nosotros .history-image {
+    order: -1;
+    height: auto;
+  }
 
-    order: -1; /* Muestra la foto primero en teléfonos */
-
+  .pagina-nosotros .history-image img {
+    height: 280px !important;
+    min-height: auto;
   }
 
   .pagina-nosotros .mission-vision-grid,
-
   .pagina-nosotros .values-grid {
-
     grid-template-columns: 1fr;
-
   }
 
   .pagina-nosotros .downloads-grid {
-
     grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
-
   }
-
 }
 
 /* ==========================================================================
