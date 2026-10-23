@@ -3,13 +3,17 @@
 <html lang="es">
 
 <head>
-    <!-- CONFIGURACIÓN GENERAL -->
+    <!-- =====================================
+         CONFIGURACIÓN GENERAL
+         ===================================== -->
+
     <meta charset="UTF-8">
+
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Redes sociales y contacto conParque Cultural de Valparaíso">
+          content="Conoce las redes sociales y los canales de contacto del Parque Cultural de Valparaíso.">
 
     <title>Contacto | Parque Cultural de Valparaíso</title>
 
@@ -60,6 +64,7 @@
                     >
 
                     <button type="submit" aria-label="Buscar">
+
                         <svg
                             width="18"
                             height="18"
@@ -73,11 +78,12 @@
                             <circle cx="11" cy="11" r="7"></circle>
                             <path d="m20 20-4-4"></path>
                         </svg>
+
                     </button>
 
                 </form>
 
-                <!-- BOTÓN MENÚ MÓVIL -->
+                <!-- BOTÓN DEL MENÚ MÓVIL -->
                 <button
                     class="menu-toggle"
                     type="button"
@@ -106,8 +112,7 @@
                         </li>
 
                         <li>
-                            <a href="comunidad.html"
-                               aria-current="page">
+                            <a href="comunidad.html">
                                 Comunidad
                             </a>
                         </li>
@@ -125,7 +130,8 @@
                         </li>
 
                         <li>
-                            <a href="contacto.html">
+                            <a href="contacto.html"
+                               aria-current="page">
                                 Contacto
                             </a>
                         </li>
@@ -138,13 +144,16 @@
 
         </header>
 
+
         <!-- FOTOGRAFÍA DE PORTADA -->
-        <section class="hero"
-                 aria-labelledby="titulo-contacto">
+        <section
+            class="hero"
+            aria-labelledby="titulo-contacto"
+        >
 
             <img
                 src="assets/imagenes/portada-comunidad.jpg"
-                alt="Actividades comunitarias del Parque Cultural de Valparaíso"
+                alt="Espacios y actividades del Parque Cultural de Valparaíso"
                 class="hero-imagen"
                 width="1600"
                 height="900"
@@ -152,7 +161,7 @@
 
             <div class="hero-contenido">
 
-                <h1 id="titulo-comunidad">
+                <h1 id="titulo-contacto">
                     Contacto
                 </h1>
 
@@ -162,130 +171,261 @@
 
     </div>
 
-    
-<!-- PÁGINA DE CONTACTO -->
 
-<main class="pagina-contacto">
+    <!-- =====================================
+         2. CONTENIDO PRINCIPAL
+         ===================================== -->
 
-    <!-- Navegación interna -->
-    <nav class="submenu-paginas" aria-label="Secciones de contacto">
-        <a href="#redes-sociales" aria-current="location">
-            Redes sociales
-        </a>
-        <a href="#contactanos">
-            Contáctanos
-        </a>
-    </nav>
+    <main class="pagina-contacto">
 
-    <div class="contenedor">
+        <!-- NAVEGACIÓN SECUNDARIA -->
+        <nav
+            class="submenu-paginas"
+            aria-label="Secciones de Contacto"
+        >
 
-        <!-- REDES SOCIALES -->
-        <section id="redes-sociales" class="contacto-seccion">
-
-            <h2>Redes sociales</h2>
-            <p>Síguenos en nuestras redes y disfruta del contenido.</p>
-
-            <div class="contacto-redes-grid">
-
-                <article class="contacto-red-card">
-                    <img src="assets/imagenes/icono-facebook.png"
-                         alt="" class="contacto-red-icono">
-                    <h3>Facebook</h3>
-                    <a href="https://www.facebook.com/"
-                       target="_blank" rel="noopener noreferrer">
-                        Ver perfil
-                    </a>
-                </article>
-
-                <article class="contacto-red-card">
-                    <img src="assets/imagenes/icono-instagram.webp"
-                         alt="" class="contacto-red-icono">
-                    <h3>Instagram</h3>
-                    <a href="https://www.instagram.com/"
-                       target="_blank" rel="noopener noreferrer">
-                        Ver perfil
-                    </a>
-                </article>
-
-                <article class="contacto-red-card">
-                    <img src="assets/imagenes/icono-youtube.png"
-                         alt="" class="contacto-red-icono">
-                    <h3>YouTube</h3>
-                    <a href="https://www.youtube.com/"
-                       target="_blank" rel="noopener noreferrer">
-                        Ver perfil
-                    </a>
-                </article>
-
-                <article class="contacto-red-card">
-                    <img src="assets/imagenes/icono-x.png"
-                         alt="" class="contacto-red-icono">
-                    <h3>X</h3>
-                    <a href="https://x.com/"
-                       target="_blank" rel="noopener noreferrer">
-                        Ver perfil
-                    </a>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- FORMULARIO -->
-        <section id="contactanos" class="contacto-seccion">
-
-            <h2>Contáctanos</h2>
-
-            <a class="contacto-correo" href="mailto:contacto@pcdv.cl">
-                contacto@pcdv.cl
+            <a href="#redes-sociales">
+                Redes sociales
             </a>
 
-            <p>Rellena el siguiente formulario con tus datos actualizados.</p>
+            <a href="#contactanos">
+                Contáctanos
+            </a>
 
-            <form class="contacto-formulario" id="formulario-contacto">
+        </nav>
 
-                <div class="contacto-campo">
-                    <label for="nombre">Nombre</label>
-                    <input
-                        type="text"
-                        id="nombre"
-                        name="nombre"
-                        placeholder="Nombre"
-                        autocomplete="name"
-                        required>
-                </div>
 
-                <div class="contacto-campo">
-                    <label for="correo">E-mail</label>
-                    <input
-                        type="email"
-                        id="correo"
-                        name="correo"
-                        placeholder="E-mail"
-                        autocomplete="email"
-                        required>
-                </div>
+        <div class="contenedor">
 
-                <div class="contacto-campo">
-                    <label for="mensaje">Mensaje</label>
-                    <textarea
-                        id="mensaje"
-                        name="mensaje"
-                        rows="7"
-                        placeholder="Escribe tu mensaje..."
-                        required></textarea>
-                </div>
+            <!-- =================================
+                 SECCIÓN 1: REDES SOCIALES
+                 ================================= -->
 
-                <button type="submit" class="contacto-enviar">
-                    Enviar mensaje
-                </button>
+            <section
+                id="redes-sociales"
+                class="contacto-seccion"
+            >
 
-            </form>
+                <h2>Redes sociales</h2>
 
-        </section>
+                <p>
+                    Síguenos en nuestras redes y disfruta
+                    del contenido.
+                </p>
 
-    </div>
+                
+<!-- TARJETAS DE REDES SOCIALES -->
 
-</main>
+<div class="contacto-redes-grid">
+
+    <!-- FACEBOOK -->
+    <article class="contacto-red-card">
+
+        <img
+            src="assets/imagenes/icono-facebook.png"
+            alt=""
+            class="contacto-red-icono"
+            width="30"
+            height="30"
+        >
+
+        <h3>Facebook</h3>
+
+        <a
+            href="https://www.facebook.com/parqueculturaldevalparaiso/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ver Facebook del Parque Cultural de Valparaíso"
+        >
+            Ver perfil
+        </a>
+
+    </article>
+
+
+    <!-- INSTAGRAM -->
+    <article class="contacto-red-card">
+
+        <img
+            src="assets/imagenes/icono-instagram.webp"
+            alt=""
+            class="contacto-red-icono"
+            width="30"
+            height="30"
+        >
+
+        <h3>Instagram</h3>
+
+        <a
+            href="https://www.instagram.com/parqueculturaldevalparaiso/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ver Instagram del Parque Cultural de Valparaíso"
+        >
+            Ver perfil
+        </a>
+
+    </article>
+
+
+    <!-- YOUTUBE -->
+    <article class="contacto-red-card">
+
+        <img
+            src="assets/imagenes/icono-youtube.png"
+            alt=""
+            class="contacto-red-icono"
+            width="30"
+            height="30"
+        >
+
+        <h3>YouTube</h3>
+
+        <a
+            href="https://www.youtube.com/user/comunicacionesPCdV"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ver canal de YouTube del Parque Cultural de Valparaíso"
+        >
+            Ver canal
+        </a>
+
+    </article>
+
+
+    <!-- X -->
+    <article class="contacto-red-card">
+
+        <img
+            src="assets/imagenes/icono-x.png"
+            alt=""
+            class="contacto-red-icono"
+            width="30"
+            height="30"
+        >
+
+        <h3>X</h3>
+
+        <a
+            href="https://x.com/parquecultural"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ver perfil de X del Parque Cultural de Valparaíso"
+        >
+            Ver perfil
+        </a>
+
+    </article>
+
+</div>
+
+
+            </section>
+
+
+            <!-- =================================
+                 SECCIÓN 2: CONTÁCTANOS
+                 ================================= -->
+
+            <section
+                id="contactanos"
+                class="contacto-seccion"
+            >
+
+                <h2>Contáctanos</h2>
+
+                <!-- CORREO ELECTRÓNICO -->
+                <a
+                    class="contacto-correo"
+                    href="mailto:contacto@pcdv.cl"
+                >
+                    contacto@pcdv.cl
+                </a>
+
+                <p>
+                    Rellena el siguiente formulario
+                    con tus datos actualizados.
+                </p>
+
+
+                <!-- FORMULARIO DE CONTACTO -->
+                <form
+                    class="contacto-formulario"
+                    id="formulario-contacto"
+                >
+
+                    <!-- CAMPO: NOMBRE -->
+                    <div class="contacto-campo">
+
+                        <label for="nombre">
+                            Nombre
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            placeholder="Nombre"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- CAMPO: CORREO -->
+                    <div class="contacto-campo">
+
+                        <label for="correo">
+                            E-mail
+                        </label>
+
+                        <input
+                            type="email"
+                            id="correo"
+                            name="correo"
+                            placeholder="E-mail"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- CAMPO: MENSAJE -->
+                    <div class="contacto-campo">
+
+                        <label for="mensaje">
+                            Mensaje
+                        </label>
+
+                        <textarea
+                            id="mensaje"
+                            name="mensaje"
+                            rows="7"
+                            placeholder="Escribe tu mensaje..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- BOTÓN ENVIAR -->
+                    <button
+                        type="submit"
+                        class="contacto-enviar"
+                    >
+                        Enviar mensaje
+                    </button>
+
+                </form>
+
+            </section>
+
+        </div>
+
+    </main>
+
 
     <!-- =====================================
          3. FOOTER INSTITUCIONAL
@@ -293,19 +433,23 @@
 
     <footer class="footer">
 
-        <!-- FRANJA DECORATIVA -->
-        <div class="footer-franja"
-             aria-hidden="true"></div>
+        <!-- FRANJA DECORATIVA SUPERIOR -->
+        <div
+            class="footer-franja"
+            aria-hidden="true"
+        ></div>
 
         <div class="footer-contenedor">
 
             <div class="footer-principal">
 
-                <!-- LOGOTIPO PRINCIPAL -->
+                <!-- LOGOTIPO DEL PARQUE -->
                 <div class="footer-marca">
 
-                    <a href="index.html"
-                       aria-label="Volver al inicio">
+                    <a
+                        href="index.html"
+                        aria-label="Volver al inicio"
+                    >
 
                         <img
                             src="assets/imagenes/logo-parque-cultural.png"
@@ -318,7 +462,8 @@
 
                 </div>
 
-                <!-- DATOS DE CONTACTO -->
+
+                <!-- INFORMACIÓN DE CONTACTO -->
                 <div class="footer-informacion">
 
                     <!-- HORARIO -->
@@ -333,10 +478,12 @@
                         >
 
                         <span>
-                            Martes a domingo de 10:00 a 20:00 hrs
+                            Martes a domingo de
+                            10:00 a 20:00 hrs
                         </span>
 
                     </div>
+
 
                     <!-- CORREO -->
                     <div class="footer-dato">
@@ -355,6 +502,7 @@
 
                     </div>
 
+
                     <!-- UBICACIÓN -->
                     <div class="footer-dato">
 
@@ -367,12 +515,14 @@
                         >
 
                         <span>
-                            Calle Cumming 580, ex Cárcel, Valparaíso
+                            Calle Cumming 580,
+                            ex Cárcel, Valparaíso
                         </span>
 
                     </div>
 
                 </div>
+
 
                 <!-- LOGOTIPOS INSTITUCIONALES -->
                 <div class="footer-instituciones">
@@ -393,15 +543,21 @@
 
             </div>
 
+
             <!-- LÍNEA DIVISORIA -->
             <hr class="footer-separador">
 
-            <!-- REDES SOCIALES -->
-            <nav class="footer-redes"
-                 aria-label="Redes sociales">
 
-                <a href="https://www.instagram.com/"
-                   aria-label="Instagram del Parque Cultural">
+            <!-- REDES SOCIALES -->
+            <nav
+                class="footer-redes"
+                aria-label="Redes sociales"
+            >
+
+                <a
+                    href="https://www.instagram.com/parqueculturaldevalparaiso/"
+                    aria-label="Instagram del Parque Cultural"
+                >
 
                     <img
                         src="assets/imagenes/icono-instagram.webp"
@@ -411,8 +567,11 @@
 
                 </a>
 
-                <a href="https://www.facebook.com/"
-                   aria-label="Facebook del Parque Cultural">
+
+                <a
+                    href="https://www.facebook.com/parqueculturaldevalparaiso/"
+                    aria-label="Facebook del Parque Cultural"
+                >
 
                     <img
                         src="assets/imagenes/icono-facebook.png"
@@ -422,8 +581,11 @@
 
                 </a>
 
-                <a href="https://x.com/"
-                   aria-label="X del Parque Cultural">
+
+                <a
+                    href="https://x.com/parquecultural"
+                    aria-label="X del Parque Cultural"
+                >
 
                     <img
                         src="assets/imagenes/icono-x.png"
@@ -433,8 +595,11 @@
 
                 </a>
 
-                <a href="https://www.youtube.com/"
-                   aria-label="YouTube del Parque Cultural">
+
+                <a
+                    href="https://www.youtube.com/user/comunicacionesPCdV"
+                    aria-label="YouTube del Parque Cultural"
+                >
 
                     <img
                         src="assets/imagenes/icono-youtube.png"
@@ -445,7 +610,7 @@
                 </a>
 
             </nav>
- 
+
         </div>
 
     </footer>

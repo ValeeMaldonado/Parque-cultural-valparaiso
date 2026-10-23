@@ -2791,21 +2791,25 @@ a {
 }
 
 .contacto-seccion {
-    margin-bottom: 80px;
+    margin-bottom: 75px;
     scroll-margin-top: 25px;
 }
 
 .contacto-seccion h2 {
-    margin: 0 0 20px;
+    margin: 0 0 15px;
     font-size: clamp(24px, 3vw, 32px);
 }
 
 .contacto-seccion > p {
+    margin: 0 0 30px;
     font-size: 14px;
-    margin-bottom: 30px;
+    line-height: 1.6;
 }
 
-/* REDES SOCIALES */
+
+/* =========================================
+   1. TARJETAS DE REDES SOCIALES
+   ========================================= */
 
 .contacto-redes-grid {
     display: grid;
@@ -2817,62 +2821,95 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 14px;
 
-    padding: 25px 15px;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
+    min-width: 0;
+    padding: 22px 15px;
+
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
 }
 
 .contacto-red-icono {
-    width: 30px;
-    height: 30px;
+    display: block;
+    width: 28px;
+    height: 28px;
+
     object-fit: contain;
-    /* Íconos blancos sobre tarjeta clara */
     filter: brightness(0);
 }
 
 .contacto-red-card h3 {
     margin: 0;
     font-size: 14px;
+    font-weight: 600;
 }
 
 .contacto-red-card a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     width: 100%;
-    padding: 10px 12px;
+    min-height: 38px;
+    margin-top: auto;
+    padding: 9px 12px;
 
     color: #ffffff;
     background-color: #8c78e8;
 
     border-radius: 4px;
+
+    font-size: 13px;
+    font-weight: 500;
     text-align: center;
     text-decoration: none;
-    font-size: 13px;
 }
 
 .contacto-red-card a:hover {
     background-color: #705bc7;
 }
 
-/* FORMULARIO */
+.contacto-red-card a:focus-visible {
+    outline: 3px solid #222222;
+    outline-offset: 3px;
+}
+
+
+/* =========================================
+   2. INFORMACIÓN DE CONTACTO
+   ========================================= */
 
 .contacto-correo {
     display: inline-block;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
+
+    font-size: 15px;
     font-weight: 600;
-    font-size: 14px;
+    color: #222222;
 }
 
+
+/* =========================================
+   3. FORMULARIO
+   ========================================= */
+
 .contacto-formulario {
+    display: flex;
+    flex-direction: column;
+
     width: 100%;
     max-width: 650px;
-    margin-top: 35px;
+    margin-top: 30px;
 }
 
 .contacto-campo {
     display: flex;
     flex-direction: column;
-    gap: 7px;
+    gap: 8px;
+
+    width: 100%;
     margin-bottom: 20px;
 }
 
@@ -2883,18 +2920,22 @@ a {
 
 .contacto-campo input,
 .contacto-campo textarea {
+    display: block;
+
     width: 100%;
     padding: 13px 15px;
 
-    background-color: #f1f1f1;
     color: #222222;
+    background-color: #f1f1f1;
 
-    border: 1px solid #dedede;
+    border: 1px solid #dddddd;
     border-radius: 4px;
+
+    font-size: 14px;
 }
 
 .contacto-campo textarea {
-    min-height: 150px;
+    min-height: 160px;
     resize: vertical;
 }
 
@@ -2904,10 +2945,16 @@ a {
     outline-offset: 2px;
 }
 
-/* BOTÓN ENVIAR */
+
+/* =========================================
+   4. BOTÓN ENVIAR
+   ========================================= */
 
 .contacto-enviar {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     width: 100%;
     min-height: 46px;
     padding: 12px 25px;
@@ -2932,15 +2979,24 @@ a {
     outline-offset: 3px;
 }
 
-/* RESPONSIVIDAD */
+
+/* =========================================
+   5. RESPONSIVIDAD
+   ========================================= */
+
+/* Tablet */
 
 @media (max-width: 900px) {
+
     .contacto-redes-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
+/* Móvil */
+
 @media (max-width: 600px) {
+
     .contacto-seccion {
         margin-bottom: 55px;
     }
@@ -2950,11 +3006,20 @@ a {
     }
 
     .contacto-red-card {
-        padding: 20px 10px;
+        padding: 18px 10px;
+    }
+
+    .contacto-red-icono {
+        width: 25px;
+        height: 25px;
     }
 
     .contacto-formulario {
         max-width: 100%;
     }
-}
 
+    .contacto-campo input,
+    .contacto-campo textarea {
+        font-size: 16px;
+    }
+}
