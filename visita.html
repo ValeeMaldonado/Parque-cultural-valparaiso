@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -31,17 +30,15 @@
             <div class="header-contenido">
 
                 <!-- LOGOTIPO -->
-                <a
-                    href="index.html"
-                    class="logo"
-                    aria-label="Ir al inicio del Parque Cultural"
-                >
+                <a href="index.html"
+                   class="logo"
+                   aria-label="Ir al inicio del Parque Cultural">
+
                     <img
                         src="assets/imagenes/logo-parque-cultural.png"
                         alt="Parque Cultural de Valparaíso"
                         width="145"
-                        height="61"
-                    >
+                        height="61">
                 </a>
 
                 <!-- BUSCADOR -->
@@ -55,23 +52,22 @@
                         type="search"
                         id="buscar"
                         name="q"
-                        placeholder="Buscar..."
-                    >
+                        placeholder="Buscar...">
 
                     <button type="submit" aria-label="Buscar">
-                        <svg
-                            width="18"
-                            height="18"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            aria-hidden="true"
-                        >
+
+                        <svg width="18"
+                             height="18"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             stroke-linecap="round"
+                             aria-hidden="true">
                             <circle cx="11" cy="11" r="7"></circle>
                             <path d="m20 20-4-4"></path>
                         </svg>
+
                     </button>
 
                 </form>
@@ -82,19 +78,18 @@
                     type="button"
                     aria-label="Abrir menú"
                     aria-expanded="false"
-                    aria-controls="menu-principal"
-                >
+                    aria-controls="menu-principal">
+
                     <span></span>
                     <span></span>
                     <span></span>
+
                 </button>
 
                 <!-- NAVEGACIÓN PRINCIPAL -->
-                <nav
-                    class="navegacion"
-                    id="menu-principal"
-                    aria-label="Navegación principal"
-                >
+                <nav class="navegacion"
+                     id="menu-principal"
+                     aria-label="Navegación principal">
 
                     <ul class="menu">
 
@@ -117,10 +112,8 @@
                         </li>
 
                         <li>
-                            <a
-                                href="visita.html"
-                                aria-current="page"
-                            >
+                            <a href="visita.html"
+                               aria-current="page">
                                 Visítanos
                             </a>
                         </li>
@@ -140,16 +133,13 @@
         </header>
 
         <!-- PORTADA FOTOGRÁFICA -->
-        <section
-            class="hero"
-            aria-labelledby="titulo-visita"
-        >
+        <section class="hero"
+                 aria-labelledby="titulo-visita">
 
             <img
                 src="assets/imagenes/portada-visitanos.jpg"
                 alt="Actividad al aire libre en el Parque Cultural de Valparaíso"
-                class="hero-imagen"
-            >
+                class="hero-imagen">
 
             <div class="hero-contenido">
                 <h1 id="titulo-visita">Visítanos</h1>
@@ -167,10 +157,8 @@
     <main class="pagina-visita">
 
         <!-- NAVEGACIÓN SECUNDARIA -->
-        <nav
-            class="submenu-paginas"
-            aria-label="Secciones de Visítanos"
-        >
+        <nav class="submenu-paginas"
+             aria-label="Secciones de Visítanos">
 
             <a href="#informacion-general">
                 Información general
@@ -184,6 +172,10 @@
                 Visitas guiadas
             </a>
 
+            <a href="espacios.html">
+                Espacios
+            </a>
+
         </nav>
 
 
@@ -193,11 +185,9 @@
                  3. INFORMACIÓN GENERAL
                  ===================================== -->
 
-            <section
-                class="visita-seccion"
-                id="informacion-general"
-                aria-labelledby="titulo-informacion"
-            >
+            <section class="visita-seccion"
+                     id="informacion-general"
+                     aria-labelledby="titulo-informacion">
 
                 <h2 id="titulo-informacion">
                     Información general
@@ -257,17 +247,18 @@
                             title="Ubicación del Parque Cultural de Valparaíso en Google Maps"
                             loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"
-                            allowfullscreen
-                        ></iframe>
+                            allowfullscreen>
+                        </iframe>
 
                         <a
                             href="https://www.google.com/maps/search/?api=1&amp;query=Parque+Cultural+de+Valparaiso"
                             class="visita-boton visita-boton-mapa"
                             target="_blank"
-                            rel="noopener noreferrer"
-                        >
+                            rel="noopener noreferrer">
+
                             Cómo llegar en Google Maps
                             <span aria-hidden="true">↗</span>
+
                         </a>
 
                     </div>
@@ -281,11 +272,9 @@
                  4. MAPA INTERNO
                  ===================================== -->
 
-            <section
-                class="visita-seccion"
-                id="mapa-interno"
-                aria-labelledby="titulo-mapa-interno"
-            >
+            <section class="visita-seccion"
+                     id="mapa-interno"
+                     aria-labelledby="titulo-mapa-interno">
 
                 <h2 id="titulo-mapa-interno">
                     Mapa interno
@@ -296,33 +285,25 @@
                     del Parque Cultural de Valparaíso.
                     En el siguiente plano podrás identificar
                     sus edificios, salas y espacios exteriores.
+                    Selecciona la imagen para ampliarla.
                 </p>
 
-                <!-- MAPA ORIGINAL COMPLETO -->
-                <a
-                    href="assets/imagenes/mapa-interno.png"
-                    class="visita-mapa-plano"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Abrir el mapa interno completo para ampliarlo"
-                >
+                <!-- MAPA VISIBLE EN LA PÁGINA -->
+                <button
+                    type="button"
+                    class="visita-mapa-abrir"
+                    id="abrir-mapa"
+                    aria-haspopup="dialog"
+                    aria-controls="modal-mapa"
+                    aria-label="Ampliar el mapa interno del Parque Cultural">
 
                     <img
                         src="assets/imagenes/mapa-interno.png"
                         alt="Plano de orientación de los edificios y espacios del Parque Cultural de Valparaíso"
                         loading="lazy"
-                    >
+                        decoding="async">
 
-                </a>
-
-                <a
-                    href="assets/imagenes/mapa-interno.png"
-                    class="visita-enlace-ampliar"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Ampliar mapa interno ↗
-                </a>
+                </button>
 
             </section>
 
@@ -331,11 +312,9 @@
                  5. VISITAS GUIADAS
                  ===================================== -->
 
-            <section
-                class="visita-seccion"
-                id="visitas-guiadas"
-                aria-labelledby="titulo-guiadas"
-            >
+            <section class="visita-seccion"
+                     id="visitas-guiadas"
+                     aria-labelledby="titulo-guiadas">
 
                 <h2 id="titulo-guiadas">
                     Visitas guiadas
@@ -348,7 +327,7 @@
                         src="assets/imagenes/visitanos-agenda-visita.jpg"
                         alt="Estudiantes participando en una visita guiada dentro del Parque Cultural"
                         loading="lazy"
-                    >
+                        decoding="async">
 
                     <!-- TEXTO SOBRE LA FOTOGRAFÍA -->
                     <div class="visita-guiada-contenido">
@@ -364,12 +343,12 @@
                             a través de una visita guiada.
                         </p>
 
-                        <!-- ENLACE DE CONTACTO -->
                         <a
-                            href="mailto:contacto@pcdv.cl?subject=Consulta%20sobre%20visita%20guiada"
-                            class="visita-boton visita-boton-claro"
-                        >
-                            Consultar por correo
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSckbN3tgv7VBdzY6OorFCTSGdptn5BcYa2u8EZwLsnwP2wteg/viewform?pli=1"
+                            class="visita-boton visita-boton-claro">
+
+                            Formulario
+
                         </a>
 
                     </div>
@@ -378,9 +357,9 @@
 
                 <p class="visita-nota">
                     Para coordinar una visita guiada,
-                    consulta directamente con el parque.
-                    El botón abre una consulta por correo,
-                    no una reserva automática.
+                    rellena nuestro formulario.
+                    El botón formulario redirige al formulario de Google,
+                    no a una reserva automática.
                 </p>
 
             </section>
@@ -391,16 +370,59 @@
 
 
     <!-- =====================================
-         6. FOOTER INSTITUCIONAL
+         6. VENTANA EMERGENTE DEL MAPA
+         ===================================== -->
+
+    <dialog
+        class="visita-mapa-modal"
+        id="modal-mapa"
+        aria-labelledby="modal-mapa-titulo">
+
+        <!-- CABECERA -->
+        <div class="visita-modal-cabecera">
+
+            <h2 id="modal-mapa-titulo">
+                Mapa interno
+            </h2>
+
+            <!-- BOTÓN PARA CERRAR -->
+            <button
+                type="button"
+                class="visita-modal-cerrar"
+                id="cerrar-mapa"
+                aria-label="Cerrar mapa">
+                &times;
+            </button>
+
+        </div>
+
+        <!-- MAPA AMPLIADO -->
+        <div class="visita-modal-contenido">
+
+            <img
+                src="assets/imagenes/mapa-interno.png"
+                alt="Mapa interno ampliado del Parque Cultural de Valparaíso"
+                class="visita-modal-imagen">
+
+        </div>
+
+        <p class="visita-modal-ayuda">
+            Desplázate por la imagen para consultar
+            los detalles del plano.
+        </p>
+
+    </dialog>
+
+
+    <!-- =====================================
+         7. FOOTER INSTITUCIONAL
          ===================================== -->
 
     <footer class="footer">
 
         <!-- FRANJA SUPERIOR -->
-        <div
-            class="footer-franja"
-            aria-hidden="true"
-        ></div>
+        <div class="footer-franja"
+             aria-hidden="true"></div>
 
         <div class="footer-contenedor">
 
@@ -409,17 +431,14 @@
                 <!-- LOGOTIPO -->
                 <div class="footer-marca">
 
-                    <a
-                        href="index.html"
-                        aria-label="Volver al inicio"
-                    >
+                    <a href="index.html"
+                       aria-label="Volver al inicio">
 
                         <img
                             src="assets/imagenes/logo-parque-cultural.png"
                             alt="Parque Cultural de Valparaíso"
                             width="190"
-                            height="80"
-                        >
+                            height="80">
 
                     </a>
 
@@ -435,8 +454,7 @@
                             alt=""
                             class="footer-icono-img"
                             width="18"
-                            height="18"
-                        >
+                            height="18">
 
                         <span>
                             Martes a domingo
@@ -452,8 +470,7 @@
                             alt=""
                             class="footer-icono-img"
                             width="18"
-                            height="18"
-                        >
+                            height="18">
 
                         <a href="mailto:contacto@pcdv.cl">
                             contacto@pcdv.cl
@@ -468,8 +485,7 @@
                             alt=""
                             class="footer-icono-img"
                             width="18"
-                            height="18"
-                        >
+                            height="18">
 
                         <span>
                             Calle Cumming 580,
@@ -486,14 +502,12 @@
                     <img
                         src="assets/imagenes/logo-ministerio.png"
                         alt="Ministerio de las Culturas, las Artes y el Patrimonio"
-                        class="logo-ministerio"
-                    >
+                        class="logo-ministerio">
 
                     <img
                         src="assets/imagenes/logo-chile.png"
                         alt="Chile"
-                        class="logo-chile"
-                    >
+                        class="logo-chile">
 
                 </div>
 
@@ -503,61 +517,59 @@
             <hr class="footer-separador">
 
             <!-- REDES SOCIALES -->
-            <nav
-                class="footer-redes"
-                aria-label="Redes sociales"
-            >
+            <nav class="footer-redes"
+                 aria-label="Redes sociales">
 
                 <a
                     href="https://www.instagram.com/parqueculturaldevalparaiso/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Instagram del Parque Cultural"
-                >
+                    aria-label="Instagram del Parque Cultural">
+
                     <img
                         src="assets/imagenes/icono-instagram.webp"
                         alt=""
-                        class="footer-red-icono"
-                    >
+                        class="footer-red-icono">
+
                 </a>
 
                 <a
                     href="https://www.facebook.com/parqueculturaldevalparaiso/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Facebook del Parque Cultural"
-                >
+                    aria-label="Facebook del Parque Cultural">
+
                     <img
                         src="assets/imagenes/icono-facebook.png"
                         alt=""
-                        class="footer-red-icono"
-                    >
+                        class="footer-red-icono">
+
                 </a>
 
                 <a
                     href="https://x.com/parquecultural"
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="X del Parque Cultural"
-                >
+                    aria-label="X del Parque Cultural">
+
                     <img
                         src="assets/imagenes/icono-x.png"
                         alt=""
-                        class="footer-red-icono"
-                    >
+                        class="footer-red-icono">
+
                 </a>
 
                 <a
                     href="https://www.youtube.com/user/comunicacionesPCdV"
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="YouTube del Parque Cultural"
-                >
+                    aria-label="YouTube del Parque Cultural">
+
                     <img
                         src="assets/imagenes/icono-youtube.png"
                         alt=""
-                        class="footer-red-icono"
-                    >
+                        class="footer-red-icono">
+
                 </a>
 
             </nav>
@@ -565,6 +577,62 @@
         </div>
 
     </footer>
+
+
+    <!-- =====================================
+         8. JAVASCRIPT DEL MAPA INTERNO
+         Solo funciona en esta página
+         ===================================== -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const abrirMapa = document.getElementById("abrir-mapa");
+            const cerrarMapa = document.getElementById("cerrar-mapa");
+            const modalMapa = document.getElementById("modal-mapa");
+
+            if (!abrirMapa || !cerrarMapa || !modalMapa) {
+                return;
+            }
+
+            // Abrir el mapa dentro de la misma página
+            abrirMapa.addEventListener("click", function () {
+                if (!modalMapa.open) {
+                    modalMapa.showModal();
+                }
+            });
+
+            // Cerrar con la X
+            cerrarMapa.addEventListener("click", function () {
+                modalMapa.close();
+            });
+
+            // Cerrar al hacer clic fuera de la ventana
+            modalMapa.addEventListener("click", function (event) {
+
+                if (event.target !== modalMapa) {
+                    return;
+                }
+
+                const rect = modalMapa.getBoundingClientRect();
+
+                const fuera =
+                    event.clientX < rect.left ||
+                    event.clientX > rect.right ||
+                    event.clientY < rect.top ||
+                    event.clientY > rect.bottom;
+
+                if (fuera) {
+                    modalMapa.close();
+                }
+
+            });
+
+            // La tecla Esc funciona automáticamente
+            // gracias al elemento HTML <dialog>.
+
+        });
+    </script>
 
 </body>
 </html>
