@@ -4810,3 +4810,104 @@ a {
   }
 }
 
+/* ==========================================================================
+   SECCIÓN: BANNER GALERÍA DE FOTOS (HOME)
+   ========================================================================== */
+
+.home-galeria-seccion {
+  padding-block: 20px 60px;
+}
+
+.titulo-galeria-home {
+  font-size: clamp(26px, 3.5vw, 36px);
+  font-weight: 800;
+  color: #111111;
+  margin-bottom: 25px;
+}
+
+/* Tarjeta contenedora con enlace */
+.galeria-banner-link {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 380px;
+  border-radius: 4px;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor de imagen e Imagen base */
+.galeria-banner-imagen {
+  width: 100%;
+  height: 100%;
+}
+
+.galeria-banner-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  /* Animación de zoom suave */
+  transition: transform 0.5s ease;
+}
+
+/* Capa oscura superpuesta (Overlay) */
+.galeria-banner-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  padding: 40px;
+  /* Capa oscura progresiva para resaltar el texto blanco */
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.35) 50%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
+  transition: background 0.3s ease;
+}
+
+/* Texto sobre la foto */
+.galeria-banner-texto {
+  color: #ffffff;
+  font-size: clamp(26px, 4vw, 42px);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0;
+  max-width: 600px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   ANIMACIÓN HOVER (AL PASAR EL MOUSE)
+   ========================================================================== */
+
+/* 1. Zoom suave a la fotografía */
+.galeria-banner-link:hover .galeria-banner-imagen img {
+  transform: scale(1.05);
+}
+
+/* 2. Ajuste sutil de brillo en la capa oscura */
+.galeria-banner-link:hover .galeria-banner-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.45) 50%,
+    rgba(0, 0, 0, 0.20) 100%
+  );
+}
+
+/* Responsividad para pantallas móviles */
+@media (max-width: 768px) {
+  .galeria-banner-link {
+    height: 280px;
+  }
+
+  .galeria-banner-overlay {
+    padding: 20px;
+  }
+}
