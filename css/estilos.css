@@ -3193,3 +3193,15 @@ a {
     padding: 25px 20px;
   }
 }
+.enlace-ver-programacion {
+  color: #8c78e8 !important; /* Fuerza el color morado corporativo */
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.enlace-ver-programacion:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
