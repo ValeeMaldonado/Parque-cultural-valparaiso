@@ -5895,3 +5895,22 @@ a {
         height: 300px;
     }
 }
+/* ENLACE AL PIE DE ESPACIOS */
+.espacios-pie {
+    margin-top: 25px;
+    text-align: left;
+}
+
+.enlace-ver-espacios {
+    color: #726db8; /* Mismo color morado/lavanda institucional */
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.enlace-ver-espacios:hover {
+    color: #534e9a;
+    transform: translateX(4px); /* Pequeño desplazamiento hacia la derecha al pasar el mouse */
+}
