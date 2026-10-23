@@ -3205,3 +3205,204 @@ a {
   opacity: 0.8;
   text-decoration: underline;
 }
+
+
+/* =========================================
+   PÁGINA: GALERÍA
+   ========================================= */
+
+
+/* 1. CONTENEDOR GENERAL */
+
+.pagina-galeria {
+    width: 100%;
+    background-color: #ffffff;
+    color: #222222;
+}
+
+
+/* 2. SECCIÓN GALERÍA */
+
+.galeria-seccion {
+    width: 100%;
+}
+
+.galeria-seccion > h1 {
+    margin: 0 0 35px;
+
+    font-size: clamp(26px, 3vw, 36px);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+
+/* =========================================
+   3. CUADRÍCULA DE FOTOGRAFÍAS
+   ========================================= */
+
+.galeria-grid {
+    display: grid;
+
+    /* Dos columnas de igual ancho */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    /* Separación horizontal y vertical */
+    column-gap: 45px;
+    row-gap: 55px;
+
+    width: 100%;
+    max-width: 1100px;
+    margin-inline: auto;
+}
+
+
+/* =========================================
+   4. TARJETAS DE GALERÍA
+   ========================================= */
+
+.galeria-tarjeta {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    min-width: 0;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+    background-color: #111111;
+}
+
+
+/* 5. FRANJA NEGRA DEL TÍTULO */
+
+.galeria-tarjeta h2 {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-height: 55px;
+
+    margin: 0;
+    padding: 15px 20px;
+
+    background-color: #111111;
+    color: #ffffff;
+
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+
+/* =========================================
+   6. IMÁGENES
+   ========================================= */
+
+.galeria-tarjeta img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    /* Mantiene las tarjetas proporcionadas */
+    aspect-ratio: 3 / 2;
+
+    /* Ocupa todo el espacio disponible */
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* =========================================
+   7. RESPONSIVIDAD TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .galeria-grid {
+        column-gap: 25px;
+        row-gap: 35px;
+    }
+
+    .galeria-tarjeta h2 {
+        min-height: 50px;
+        padding: 12px 15px;
+        font-size: 15px;
+    }
+}
+
+
+/* =========================================
+   8. RESPONSIVIDAD MÓVIL
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .galeria-seccion > h1 {
+        margin-bottom: 25px;
+        font-size: 26px;
+    }
+
+    /* Una sola columna */
+
+    .galeria-grid {
+        grid-template-columns: minmax(0, 1fr);
+
+        column-gap: 0;
+        row-gap: 30px;
+    }
+
+    .galeria-tarjeta {
+        width: 100%;
+    }
+
+    .galeria-tarjeta h2 {
+        min-height: 50px;
+        padding: 13px 16px;
+        font-size: 16px;
+    }
+
+    .galeria-tarjeta img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
+    }
+}
+
+/* =========================================
+   EFECTO HOVER: TARJETAS DE GALERÍA
+   ========================================= */
+
+/* Estado normal */
+
+.galeria-tarjeta {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    will-change: transform;
+}
+
+/* Al pasar el mouse */
+
+@media (hover: hover) {
+
+    .galeria-tarjeta:hover {
+        transform: translateY(-8px);
+
+        box-shadow:
+            0 12px 25px rgba(0, 0, 0, 0.20);
+    }
+}
+
+/* Personas que prefieren menos animación */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .galeria-tarjeta {
+        transition: none;
+    }
+}
