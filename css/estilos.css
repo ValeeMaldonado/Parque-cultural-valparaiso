@@ -5758,3 +5758,139 @@ a {
     }
 }
 
+/* =====================================
+   SECCIÓN: ESPACIOS DEL PARQUE
+   ===================================== */
+.home-espacios {
+	padding: 60px 0;
+	background-color: #fdfbf7; /* Fondo beige claro como la imagen */
+}
+
+/* ENCABEZADO */
+.espacios-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	margin-bottom: 30px;
+}
+
+.espacios-subtitulo {
+	font-size: 0.85rem;
+	font-weight: 600;
+	letter-spacing: 1.5px;
+	color: #6b63b5; /* Tono morado/lavanda */
+	text-transform: uppercase;
+	display: block;
+	margin-bottom: 5px;
+}
+
+.espacios-titulo {
+	font-size: 2.2rem;
+	font-weight: 800;
+	color: #1a1a1a;
+	margin: 0;
+}
+
+.espacios-enlace-contacto {
+	font-size: 0.9rem;
+	font-weight: 700;
+	color: #6b63b5;
+	text-decoration: none;
+	letter-spacing: 1px;
+	border-bottom: 2px solid #6b63b5;
+	padding-bottom: 2px;
+	transition: opacity 0.3s ease;
+}
+
+.espacios-enlace-contacto:hover {
+	opacity: 0.75;
+}
+
+/* CONTENEDOR DE LA GALERÍA (ACORDEÓN FLEXBOX) */
+.espacios-galeria {
+	display: flex;
+	gap: 15px;
+	height: 480px;
+	width: 100%;
+}
+
+/* TARJETAS INDIVIDUALES */
+.espacio-card {
+	position: relative;
+	flex: 1; /* Todas las tarjetas inician estrechas */
+	border-radius: 16px;
+	overflow: hidden;
+	cursor: pointer;
+	transition: flex 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* Transición fluida */
+}
+
+/* Imagen dentro de la tarjeta */
+.espacio-card img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	transition: transform 0.5s ease;
+}
+
+/* Sombra/Gradiente para leer mejor el texto arriba */
+.espacio-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 30%);
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.espacio-nombre {
+	color: #ffffff;
+	font-size: 0.95rem;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	margin: 0;
+	white-space: nowrap; /* Evita que el título se deforme al comprimirse */
+}
+
+/* =====================================
+   EFECTOS HOVER Y EXPANSIÓN
+   ===================================== */
+
+/* La tarjeta con hover se expande */
+.espacio-galeria:hover .espacio-card {
+	flex: 1; /* Si hay hover en el contenedor, las no hovered se reducen */
+}
+
+.espacio-card:hover {
+	flex: 4 !important; /* La tarjeta en hover toma mucho más espacio horizontal */
+}
+
+/* Por defecto (sin hover general), la primera tarjeta está expandida */
+.espacio-galeria:not(:hover) .espacio-card.activa {
+	flex: 4;
+}
+
+/* Sutil zoom a la imagen al hacer hover */
+.espacio-card:hover img {
+	transform: scale(1.03);
+}
+
+/* RESPONSIVE: En pantallas móviles las apila verticalmente */
+@media (max-width: 768px) {
+	.espacios-galeria {
+    	flex-direction: column;
+    	height: auto;
+	}
+
+	.espacio-card {
+    	height: 200px;
+    	flex: none !important;
+	}
+
+	.espacio-card:hover {
+    	height: 320px;
+	}
+}
