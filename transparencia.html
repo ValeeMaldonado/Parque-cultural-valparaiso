@@ -1,1 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+    <!-- CONFIGURACIÓN GENERAL -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Revisa la transparencia activa, memorias y convenios del Parque Cultural de Valparaíso.">
+
+    <title>Transparencia | Parque Cultural de Valparaíso</title>
+
+    <!-- CSS COMPARTIDO -->
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <!-- JAVASCRIPT COMPARTIDO -->
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+
+    <!-- =====================================
+         1. HEADER Y PORTADA INSTITUCIONAL
+         ===================================== -->
+
+    <div class="portada">
+
+        <header class="header">
+
+            <div class="header-contenido">
+
+                <!-- LOGOTIPO -->
+                <a href="index.html"
+                   class="logo"
+                   aria-label="Ir al inicio del Parque Cultural">
+
+                    <img
+                        src="assets/imagenes/logo-parque-cultural.png"
+                        alt="Parque Cultural de Valparaíso"
+                        width="145"
+                        height="61"
+                    >
+                </a>
+
+                <!-- BUSCADOR DEL HEADER -->
+                <form class="buscador" role="search">
+
+                    <label for="buscar" class="visualmente-oculto">
+                        Buscar en el sitio
+                    </label>
+
+                    <input
+                        type="search"
+                        id="buscar"
+                        name="q"
+                        placeholder="Buscar..."
+                    >
+
+                    <button type="submit" aria-label="Buscar">
+                        <svg
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            aria-hidden="true"
+                        >
+                            <circle cx="11" cy="11" r="7"></circle>
+                            <path d="m20 20-4-4"></path>
+                        </svg>
+                    </button>
+
+                </form>
+
+                <!-- BOTÓN MENÚ MÓVIL -->
+                <button
+                    class="menu-toggle"
+                    type="button"
+                    aria-label="Abrir menú"
+                    aria-expanded="false"
+                    aria-controls="menu-principal"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- NAVEGACIÓN PRINCIPAL -->
+                <nav
+                    class="navegacion"
+                    id="menu-principal"
+                    aria-label="Navegación principal"
+                >
+
+                    <ul class="menu">
+
+                        <li>
+                            <a href="cartelera.html">
+                                Programación
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="comunidad.html">
+                                Comunidad
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="nosotros.html"
+                               aria-current="page">
+                                Nosotros
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="visita.html">
+                                Visítanos
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="contacto.html">
+                                Contacto
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+
+        </header>
+
+        <!-- FOTOGRAFÍA DE PORTADA -->
+        <section class="hero" aria-labelledby="titulo-nosotros">
+
+            <img
+                src="assets/imagenes/portada-nosotros.jpg"
+                alt="Instalaciones del Parque Cultural de Valparaíso"
+                class="hero-imagen"
+                width="1600"
+                height="900"
+            >
+
+            <div class="hero-contenido">
+
+                <h1 id="titulo-nosotros">
+                    Nosotros
+                </h1>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- =====================================
+         2. CONTENIDO PRINCIPAL: TRANSPARENCIA
+         ===================================== -->
+
+    <main class="pagina-nosotros">
+
+        <div class="contenedor">
+
+            <!-- PESTAÑAS DE SUBNAVEGACIÓN -->
+            <nav class="subseccion-tabs" aria-label="Secciones de Nosotros">
+                <a href="nosotros.html" class="tab-item">Quiénes somos</a>
+                <a href="transparencia.html" class="tab-item activa" aria-current="page">Transparencia</a>
+            </nav>
+
+            <!-- SECCIÓN: TRANSPARENCIA -->
+            <section id="transparencia" class="page-section">
+                
+                <div class="transparency-header">
+                    <h2>Transparencia activa</h2>
+                    <p>Repositorio de documentos y actos administrativos de la Asociación Parque Cultural de Valparaíso.</p>
+                </div>
+
+                <div class="accordion-group">
+
+                    <!-- DESPLEGABLE 1 -->
+                    <details class="accordion-item" open>
+                        <summary class="accordion-header">Planilla de Remuneraciones</summary>
+                        <div class="accordion-content">
+                            <div class="downloads-grid">
+                                <a href="#" class="download-card">
+                                    <span class="icon">&#10515;</span>
+                                    <span class="label">CONVENIO 2025</span>
+                                </a>
+                                <a href="#" class="download-card">
+                                    <span class="icon">&#10515;</span>
+                                    <span class="label">CONVENIO 2024</span>
+                                </a>
+                                <a href="#" class="download-card">
+                                    <span class="icon">&#10515;</span>
+                                    <span class="label">CONVENIO 2023</span>
+                                </a>
+                                <a href="#" class="download-card">
+                                    <span class="icon">&#10515;</span>
+                                    <span class="label">CONVENIO 2022</span>
+                                </a>
+                                <a href="#" class="download-card">
+                                    <span class="icon">&#10515;</span>
+                                    <span class="label">CONVENIO 2021</span>
+                                </a>
+                                <a href="#" class="download-card">
+                                    <span class="icon">&#10515;</span>
+                                    <span class="label">CONVENIO 2020</span>
+                                </a>
+                                <a href="#" class="download-card">
+                                    <span class="icon">&#10515;</span>
+                                    <span class="label">CONVENIO 2019</span>
+                                </a>
+                                <a href="#" class="download-card">
+                                    <span class="icon">&#10515;</span>
+                                    <span class="label">CONVENIO 2018</span>
+                                </a>
+                                <a href="#" class="download-card">
+                                    <span class="icon">&#10515;</span>
+                                    <span class="label">CONVENIOS 2017</span>
+                                </a>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- DESPLEGABLE 2 -->
+                    <details class="accordion-item">
+                        <summary class="accordion-header">CONVENIOS MINCAP</summary>
+                        <div class="accordion-content">
+                            <p>Documentos de convenios suscritos con el Ministerio de las Culturas, las Artes y el Patrimonio.</p>
+                        </div>
+                    </details>
+
+                    <!-- DESPLEGABLE 3 -->
+                    <details class="accordion-item">
+                        <summary class="accordion-header">Otros aportes financieros</summary>
+                        <div class="accordion-content">
+                            <p>Registro de otros aportes financieros recibidos por la institución.</p>
+                        </div>
+                    </details>
+
+                    <!-- DESPLEGABLE 4 -->
+                    <details class="accordion-item">
+                        <summary class="accordion-header">Estados Financieros</summary>
+                        <div class="accordion-content">
+                            <p>Auditorías y balances de los estados financieros.</p>
+                        </div>
+                    </details>
+
+                    <!-- DESPLEGABLE 5 -->
+                    <details class="accordion-item">
+                        <summary class="accordion-header">Memoria anual</summary>
+                        <div class="accordion-content">
+                            <p>Memorias de gestión anual disponibles para consulta.</p>
+                        </div>
+                    </details>
+
+                    <!-- DESPLEGABLE 6 -->
+                    <details class="accordion-item">
+                        <summary class="accordion-header">Licitaciones</summary>
+                        <div class="accordion-content">
+                            <p>Procesos de licitación pública y contrataciones realizadas.</p>
+                        </div>
+                    </details>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================
+         3. FOOTER INSTITUCIONAL
+         ===================================== -->
+
+    <footer class="footer">
+
+        <!-- FRANJA DECORATIVA -->
+        <div class="footer-franja" aria-hidden="true"></div>
+
+        <div class="footer-contenedor">
+
+            <div class="footer-principal">
+
+                <!-- LOGOTIPO PRINCIPAL -->
+                <div class="footer-marca">
+
+                    <a href="index.html" aria-label="Volver al inicio">
+
+                        <img
+                            src="assets/imagenes/logo-parque-cultural.png"
+                            alt="Parque Cultural de Valparaíso"
+                            width="190"
+                            height="80"
+                        >
+
+                    </a>
+
+                </div>
+
+                <!-- DATOS DE CONTACTO -->
+                <div class="footer-informacion">
+
+                    <!-- HORARIO -->
+                    <div class="footer-dato">
+
+                        <img
+                            src="assets/imagenes/icono-horario.png"
+                            alt=""
+                            class="footer-icono-img"
+                            width="18"
+                            height="18"
+                        >
+
+                        <span>
+                            Martes a domingo de 10:00 a 20:00 hrs
+                        </span>
+
+                    </div>
+
+                    <!-- CORREO -->
+                    <div class="footer-dato">
+
+                        <img
+                            src="assets/imagenes/icono-correo.png"
+                            alt=""
+                            class="footer-icono-img"
+                            width="18"
+                            height="18"
+                        >
+
+                        <a href="mailto:contacto@pcdv.cl">
+                            contacto@pcdv.cl
+                        </a>
+
+                    </div>
+
+                    <!-- UBICACIÓN -->
+                    <div class="footer-dato">
+
+                        <img
+                            src="assets/imagenes/icono-ubicacion.webp"
+                            alt=""
+                            class="footer-icono-img"
+                            width="18"
+                            height="18"
+                        >
+
+                        <span>
+                            Calle Cumming 580, ex Cárcel, Valparaíso
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <!-- LOGOTIPOS INSTITUCIONALES -->
+                <div class="footer-instituciones">
+
+                    <img
+                        src="assets/imagenes/logo-ministerio.png"
+                        alt="Ministerio de las Culturas, las Artes y el Patrimonio"
+                        class="logo-ministerio"
+                    >
+
+                    <img
+                        src="assets/imagenes/logo-chile.png"
+                        alt="Chile"
+                        class="logo-chile"
+                    >
+
+                </div>
+
+            </div>
+
+            <!-- LÍNEA DIVISORIA -->
+            <hr class="footer-separador">
+
+            <!-- REDES SOCIALES -->
+            <nav class="footer-redes" aria-label="Redes sociales">
+
+                <a href="https://www.instagram.com/" aria-label="Instagram del Parque Cultural">
+                    <img src="assets/imagenes/icono-instagram.webp" alt="" class="footer-red-icono">
+                </a>
+
+                <a href="https://www.facebook.com/" aria-label="Facebook del Parque Cultural">
+                    <img src="assets/imagenes/icono-facebook.png" alt="" class="footer-red-icono">
+                </a>
+
+                <a href="https://x.com/" aria-label="X del Parque Cultural">
+                    <img src="assets/imagenes/icono-x.png" alt="" class="footer-red-icono">
+                </a>
+
+                <a href="https://www.youtube.com/" aria-label="YouTube del Parque Cultural">
+                    <img src="assets/imagenes/icono-youtube.png" alt="" class="footer-red-icono">
+                </a>
+
+            </nav>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
