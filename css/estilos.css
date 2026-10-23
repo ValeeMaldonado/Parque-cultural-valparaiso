@@ -4840,3 +4840,763 @@ a {
 }
 
 
+/* =========================================
+   PÁGINA: ESPACIOS
+   PARQUE CULTURAL DE VALPARAÍSO
+   ========================================= */
+
+
+/* =========================================
+   1. CONFIGURACIÓN GENERAL
+   ========================================= */
+
+.pagina-espacios {
+    width: 100%;
+    background-color: #ffffff;
+    color: #222222;
+}
+
+.pagina-espacios > .contenedor {
+    padding-top: 45px;
+    padding-bottom: 70px;
+}
+
+
+/* =========================================
+   2. INTRODUCCIÓN
+   ========================================= */
+
+.espacios-introduccion {
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 40px;
+}
+
+.espacios-introduccion h2 {
+    margin: 0 0 20px;
+
+    color: #222222;
+    font-size: clamp(27px, 3vw, 38px);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.espacios-introduccion p {
+    max-width: 850px;
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   3. NAVEGACIÓN INTERNA POR CATEGORÍAS
+   ========================================= */
+
+.espacios-indice {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 65px;
+}
+
+.espacios-indice a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 42px;
+    padding: 10px 18px;
+
+    color: #222222;
+    background-color: #f5f5f5;
+
+    border: 1px solid #dedede;
+    border-radius: 25px;
+
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-align: center;
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.espacios-indice a:hover {
+    background-color: #ede8ff;
+    border-color: #8c78e8;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   4. GRUPOS DE ESPACIOS
+   ========================================= */
+
+.espacios-grupo {
+    width: 100%;
+    margin-bottom: 80px;
+
+    scroll-margin-top: 30px;
+}
+
+.espacios-grupo > h2 {
+    margin: 0 0 30px;
+
+    color: #222222;
+    font-size: clamp(24px, 2.5vw, 32px);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.espacios-lista {
+    display: flex;
+    flex-direction: column;
+
+    gap: 35px;
+    width: 100%;
+}
+
+
+/* =========================================
+   5. FICHAS GENERALES
+   ========================================= */
+
+.espacio-ficha {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    align-items: stretch;
+
+    width: 100%;
+    min-height: 310px;
+
+    margin: 0;
+    padding: 0;
+
+    background-color: #111111;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   6. FOTOGRAFÍAS
+   ========================================= */
+
+.espacio-foto {
+    position: relative;
+
+    width: 100%;
+    min-width: 0;
+    min-height: 310px;
+
+    overflow: hidden;
+
+    background-color: #343434;
+}
+
+.espacio-foto img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    min-height: 310px;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.4s ease;
+}
+
+
+/* =========================================
+   7. INFORMACIÓN DE CADA ESPACIO
+   ========================================= */
+
+.espacio-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    width: 100%;
+    min-width: 0;
+
+    padding: clamp(24px, 4vw, 55px);
+
+    color: #ffffff;
+    background-color: #111111;
+}
+
+.espacio-info h3 {
+    margin: 0 0 18px;
+
+    color: #ffffff;
+
+    font-size: clamp(20px, 2.3vw, 27px);
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.espacio-info > p {
+    width: 100%;
+    max-width: 480px;
+
+    margin: 0 0 25px;
+
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.65;
+}
+
+
+/* =========================================
+   8. ALTERNANCIA DE FOTOGRAFÍAS Y TEXTO
+   ========================================= */
+
+/* Tarjetas impares:
+   fotografía izquierda, texto derecha */
+
+/* Tarjetas pares:
+   texto izquierda, fotografía derecha */
+
+.espacio-ficha:nth-child(even) .espacio-foto {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.espacio-ficha:nth-child(even) .espacio-info {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+
+/* =========================================
+   9. BOTÓN DESPLEGABLE CONOCER MÁS
+   ========================================= */
+
+.espacio-detalle {
+    width: 100%;
+    max-width: 480px;
+}
+
+.espacio-detalle summary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    min-width: 135px;
+    min-height: 40px;
+
+    padding: 10px 23px;
+
+    color: #222222;
+    background-color: #b6d747;
+
+    border: none;
+    border-radius: 25px;
+
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+
+    cursor: pointer;
+    list-style: none;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+/* Oculta el marcador predeterminado */
+
+.espacio-detalle summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Efecto hover */
+
+.espacio-detalle summary:hover {
+    background-color: #9fbe35;
+    transform: translateY(-2px);
+}
+
+/* Botón cuando el desplegable está abierto */
+
+.espacio-detalle[open] summary {
+    background-color: #9fbe35;
+}
+
+
+/* =========================================
+   10. CONTENIDO DESPLEGABLE
+   ========================================= */
+
+.espacio-detalle-contenido {
+    width: 100%;
+
+    margin-top: 18px;
+    padding: 18px;
+
+    color: #ffffff;
+    background-color: #292929;
+
+    border-left: 3px solid #b6d747;
+}
+
+.espacio-detalle-contenido h4 {
+    margin: 0 0 12px;
+
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.espacio-detalle-contenido p {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.espacio-detalle-contenido a {
+    display: inline-block;
+
+    margin-top: 12px;
+
+    color: #b6d747;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.espacio-detalle-contenido a:hover {
+    color: #d5ef77;
+}
+
+
+/* =========================================
+   11. EFECTO SOBRE FOTOGRAFÍAS
+   ========================================= */
+
+@media (hover: hover) {
+
+    .espacio-ficha:hover .espacio-foto img {
+        transform: scale(1.035);
+    }
+}
+
+
+/* =========================================
+   12. FICHA SIN FOTOGRAFÍA
+   PUNTO DE RECICLAJE
+   ========================================= */
+
+.pagina-espacios .espacio-foto-pendiente {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+    min-height: 310px;
+
+    padding: 30px;
+
+    color: #333333;
+    background-color: #e9e9e9;
+
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+}
+
+.pagina-espacios .espacio-foto-pendiente span {
+    display: block;
+    max-width: 350px;
+}
+
+
+/* =========================================
+   13. ARRIENDO DE ESPACIOS
+   ========================================= */
+
+.espacios-arriendo {
+    width: 100%;
+    margin: 0 0 40px;
+
+    color: #ffffff;
+    background-color: #2d2d2f;
+
+    scroll-margin-top: 30px;
+}
+
+.espacios-arriendo-contenido {
+    width: 100%;
+    padding: clamp(30px, 5vw, 65px);
+}
+
+.espacios-arriendo h2 {
+    margin: 0 0 18px;
+
+    color: #ffffff;
+
+    font-size: clamp(25px, 3vw, 35px);
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.espacios-arriendo p {
+    max-width: 700px;
+
+    margin: 0 0 25px;
+
+    color: #ffffff;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   14. BOTÓN DE ARRIENDO
+   ========================================= */
+
+.espacios-boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    min-height: 44px;
+
+    padding: 12px 25px;
+
+    color: #222222;
+    background-color: #b6d747;
+
+    border: none;
+    border-radius: 25px;
+
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.espacios-boton:hover {
+    background-color: #9fbe35;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   15. ENLACE AL MAPA INTERNO
+   ========================================= */
+
+.espacios-enlace-mapa {
+    width: 100%;
+    padding: 15px 0 0;
+}
+
+.espacios-enlace-mapa p {
+    margin: 0 0 12px;
+
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.espacios-enlace-mapa a {
+    display: inline-block;
+
+    color: #6550c2;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.espacios-enlace-mapa a:hover {
+    color: #47339e;
+}
+
+
+/* =========================================
+   16. ACCESIBILIDAD
+   ========================================= */
+
+.espacios-indice a:focus-visible,
+.espacio-detalle summary:focus-visible,
+.espacios-boton:focus-visible,
+.espacios-enlace-mapa a:focus-visible,
+.espacio-detalle-contenido a:focus-visible {
+    outline: 3px solid #8c78e8;
+    outline-offset: 4px;
+}
+
+
+/* =========================================
+   17. RESPONSIVIDAD TABLET
+   Hasta 900px
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    /* Separación entre fichas */
+
+    .espacios-lista {
+        gap: 25px;
+    }
+
+    /* Fichas */
+
+    .espacio-ficha {
+        min-height: 280px;
+    }
+
+    /* Fotografías */
+
+    .espacio-foto,
+    .espacio-foto img {
+        min-height: 280px;
+    }
+
+    /* Texto */
+
+    .espacio-info {
+        padding: 25px;
+    }
+
+    .espacio-info h3 {
+        font-size: 23px;
+    }
+
+    .espacio-info > p {
+        font-size: 14px;
+    }
+
+    /* Separación entre grupos */
+
+    .espacios-grupo {
+        margin-bottom: 60px;
+    }
+
+    /* Punto de reciclaje */
+
+    .pagina-espacios .espacio-foto-pendiente {
+        min-height: 280px;
+    }
+}
+
+
+/* =========================================
+   18. RESPONSIVIDAD MÓVIL
+   Hasta 600px
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    /* CONTENEDOR */
+
+    .pagina-espacios > .contenedor {
+        padding-top: 30px;
+        padding-bottom: 45px;
+    }
+
+    /* INTRODUCCIÓN */
+
+    .espacios-introduccion {
+        margin-bottom: 28px;
+    }
+
+    .espacios-introduccion h2 {
+        margin-bottom: 16px;
+        font-size: 27px;
+    }
+
+    .espacios-introduccion p {
+        font-size: 14px;
+    }
+
+    /* NAVEGACIÓN POR CATEGORÍAS */
+
+    .espacios-indice {
+        gap: 9px;
+        margin-bottom: 45px;
+    }
+
+    .espacios-indice a {
+        min-height: 40px;
+        padding: 9px 13px;
+
+        font-size: 12px;
+    }
+
+    /* TÍTULOS DE LOS GRUPOS */
+
+    .espacios-grupo {
+        margin-bottom: 55px;
+    }
+
+    .espacios-grupo > h2 {
+        margin-bottom: 22px;
+        font-size: 24px;
+    }
+
+    /* SEPARACIÓN ENTRE FICHAS */
+
+    .espacios-lista {
+        gap: 25px;
+    }
+
+    /* FICHAS EN UNA COLUMNA */
+
+    .espacio-ficha {
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+        min-height: 0;
+    }
+
+    /* FOTOGRAFÍAS PRIMERO */
+
+    .espacio-foto,
+    .espacio-ficha:nth-child(even) .espacio-foto {
+        order: 1;
+
+        width: 100%;
+        height: 240px;
+        min-height: 0;
+    }
+
+    .espacio-foto img {
+        display: block;
+
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* TEXTO DESPUÉS */
+
+    .espacio-info,
+    .espacio-ficha:nth-child(even) .espacio-info {
+        order: 2;
+
+        width: 100%;
+        min-height: 0;
+
+        padding: 28px 22px;
+    }
+
+    .espacio-info h3 {
+        margin-bottom: 14px;
+        font-size: 22px;
+    }
+
+    .espacio-info > p {
+        margin-bottom: 22px;
+        font-size: 14px;
+    }
+
+    /* DESPLEGABLES */
+
+    .espacio-detalle summary {
+        min-height: 44px;
+    }
+
+    .espacio-detalle-contenido {
+        padding: 15px;
+    }
+
+    /* PUNTO DE RECICLAJE */
+
+    .pagina-espacios .espacio-foto-pendiente {
+        width: 100%;
+        height: 240px;
+        min-height: 240px;
+
+        padding: 20px;
+
+        font-size: 21px;
+    }
+
+    /* ARRIENDO */
+
+    .espacios-arriendo {
+        margin-bottom: 35px;
+    }
+
+    .espacios-arriendo-contenido {
+        padding: 32px 22px;
+    }
+
+    .espacios-arriendo h2 {
+        font-size: 25px;
+    }
+
+    .espacios-arriendo p {
+        font-size: 14px;
+    }
+
+    .espacios-boton {
+        width: 100%;
+    }
+
+    /* MAPA INTERNO */
+
+    .espacios-enlace-mapa p,
+    .espacios-enlace-mapa a {
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================
+   19. MOVIMIENTO REDUCIDO
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .espacio-foto img,
+    .espacio-detalle summary,
+    .espacios-boton,
+    .espacios-indice a {
+        transition: none;
+    }
+}
+
+
