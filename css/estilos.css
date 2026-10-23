@@ -4675,3 +4675,138 @@ a {
         transition: none;
     }
 }
+
+/* ==========================================================================
+   SECCIÓN: NOTICIAS (HOME - MAQUETA)
+   ========================================================================== */
+
+.home-noticias {
+  padding-block: 20px 60px;
+}
+
+.titulo-noticias {
+  font-size: clamp(28px, 4vw, 38px);
+  font-weight: 800;
+  font-style: italic;
+  color: #111111;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+}
+
+/* Grilla de 4 columnas */
+.noticias-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.noticia-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+/* Contenedor e Imagen Cuadrada */
+.noticia-imagen {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background-color: #e0e0e0;
+}
+
+.noticia-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.noticia-cuerpo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-top: 14px;
+}
+
+.noticia-titulo {
+  font-size: 13px;
+  font-weight: 700;
+  color: #111111;
+  line-height: 1.35;
+  margin: 0 0 8px 0;
+  /* Controla la altura para que los botones queden alineados abajo */
+  min-height: 52px;
+}
+
+.noticia-fecha {
+  font-size: 12px;
+  font-weight: 800;
+  color: #111111;
+  margin-bottom: 16px;
+}
+
+/* Botón Verde "VER MÁS" */
+.btn-ver-mas-noticia {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 38px;
+  background-color: #b6d747;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  border-radius: 30px;
+  margin-top: auto;
+  transition: background-color 0.2s ease;
+}
+
+.btn-ver-mas-noticia:hover {
+  background-color: #9fbe35;
+}
+
+/* Botón Morado Centrado "VER TODO" */
+.noticias-pie {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-ver-todo-noticias {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 45px;
+  background-color: #8c78e8;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-ver-todo-noticias:hover {
+  background-color: #7261cc;
+}
+
+/* Adaptación Responsiva para Celulares y Tablets */
+@media (max-width: 1000px) {
+  .noticias-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+@media (max-width: 550px) {
+  .noticias-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .noticia-titulo {
+    min-height: auto;
+  }
+}
+
