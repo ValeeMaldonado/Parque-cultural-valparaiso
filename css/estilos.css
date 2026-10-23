@@ -4911,3 +4911,30 @@ a {
     padding: 20px;
   }
 }
+
+/* ==========================================================================
+   AJUSTE DE ESPACIADOS ENTRE SECCIONES (HOME)
+   ========================================================================== */
+
+/* Reducir espacio inferior de Cartelera */
+.home-cartelera-destacada {
+  margin-bottom: 30px !important;
+}
+
+/* Reducir espacios superior e inferior de Galería de fotos */
+.home-galeria-seccion {
+  padding-block: 10px 30px !important;
+}
+
+.titulo-galeria-home {
+  margin-bottom: 15px !important;
+}
+
+/* Reducir espacio superior de Noticias */
+.home-noticias {
+  padding-block: 10px 40px !important;
+}
+
+.titulo-noticias {
+  margin-bottom: 20px !important;
+}
