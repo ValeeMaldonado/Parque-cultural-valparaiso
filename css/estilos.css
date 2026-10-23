@@ -4217,3 +4217,461 @@ a {
     }
 
 }
+
+
+/* =========================================
+   PÁGINA: VISÍTANOS
+   ========================================= */
+
+/* 1. CONFIGURACIÓN GENERAL */
+
+.pagina-visita {
+    width: 100%;
+    background-color: #ffffff;
+    color: #222222;
+}
+
+.pagina-visita .visita-contenedor {
+    padding-top: 45px;
+    padding-bottom: 70px;
+}
+
+/* 2. SECCIONES */
+
+.visita-seccion {
+    margin-bottom: 75px;
+    scroll-margin-top: 30px;
+}
+
+.visita-seccion:last-child {
+    margin-bottom: 0;
+}
+
+.visita-seccion h2 {
+    margin: 0 0 28px;
+
+    font-size: clamp(26px, 3vw, 36px);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* =========================================
+   3. INFORMACIÓN GENERAL
+   ========================================= */
+
+.visita-informacion-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    align-items: start;
+    gap: 50px;
+
+    width: 100%;
+}
+
+/* COLUMNA DE TEXTO */
+
+.visita-datos {
+    min-width: 0;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.visita-datos > p {
+    margin: 0 0 25px;
+}
+
+/* DATOS DE UBICACIÓN, HORARIO Y ACCESO */
+
+.visita-datos-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+.visita-datos-lista p {
+    margin: 0;
+}
+
+.visita-datos-lista strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #111111;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+/* =========================================
+   4. GOOGLE MAPS
+   ========================================= */
+
+.visita-mapa-ubicacion {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 18px;
+
+    width: 100%;
+    min-width: 0;
+}
+
+.visita-mapa-ubicacion iframe {
+    display: block;
+
+    width: 100%;
+    height: 330px;
+
+    border: 0;
+    border-radius: 3px;
+}
+
+/* =========================================
+   5. BOTONES DE VISÍTANOS
+   ========================================= */
+
+.visita-boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    min-height: 44px;
+    width: fit-content;
+
+    padding: 11px 24px;
+
+    color: #222222;
+    background-color: #b6d747;
+
+    border: none;
+    border-radius: 30px;
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-align: center;
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.visita-boton:hover {
+    background-color: #9fbe35;
+    transform: translateY(-2px);
+}
+
+.visita-boton:focus-visible {
+    outline: 3px solid #8c78e8;
+    outline-offset: 4px;
+}
+
+/* BOTÓN GOOGLE MAPS */
+
+.visita-boton-mapa {
+    background-color: #b6d747;
+}
+
+/* =========================================
+   6. MAPA INTERNO
+   ========================================= */
+
+.visita-descripcion {
+    max-width: 850px;
+
+    margin: 0 0 25px;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* CONTENEDOR DEL PLANO */
+
+.visita-mapa-plano {
+    display: block;
+
+    width: 100%;
+    padding: 0;
+
+    overflow: hidden;
+
+    background-color: #ffffff;
+    text-decoration: none;
+}
+
+/* MOSTRAR PLANO COMPLETO SIN RECORTAR */
+
+.visita-mapa-plano img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    transition: transform 0.3s ease;
+}
+
+/* EFECTO SUAVE AL PASAR EL MOUSE */
+
+@media (hover: hover) {
+
+    .visita-mapa-plano:hover img {
+        transform: scale(1.015);
+    }
+}
+
+/* ENLACE PARA AMPLIAR */
+
+.visita-enlace-ampliar {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    color: #6550c2;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.visita-enlace-ampliar:hover {
+    color: #47339e;
+}
+
+.visita-mapa-plano:focus-visible,
+.visita-enlace-ampliar:focus-visible {
+    outline: 3px solid #8c78e8;
+    outline-offset: 4px;
+}
+
+/* =========================================
+   7. VISITAS GUIADAS
+   ========================================= */
+
+.visita-guiada-banner {
+    position: relative;
+    isolation: isolate;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-height: 390px;
+
+    overflow: hidden;
+
+    background-color: #222222;
+}
+
+/* FOTOGRAFÍA DE FONDO */
+
+.visita-guiada-banner > img {
+    position: absolute;
+    inset: 0;
+
+    z-index: -2;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+/* OSCURECIMIENTO PARA LEER EL TEXTO */
+
+.visita-guiada-banner::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: -1;
+
+    background-color: rgba(0, 0, 0, 0.48);
+}
+
+/* CONTENIDO CENTRAL DEL BANNER */
+
+.visita-guiada-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+
+    width: 100%;
+    max-width: 700px;
+
+    padding: 45px 30px;
+
+    color: #ffffff;
+    text-align: center;
+}
+
+.visita-guiada-contenido h3 {
+    margin: 0;
+
+    font-size: clamp(23px, 3vw, 34px);
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.visita-guiada-contenido p {
+    max-width: 520px;
+
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* BOTÓN BLANCO */
+
+.visita-boton-claro {
+    margin-top: 8px;
+
+    background-color: #ffffff;
+    color: #222222;
+}
+
+.visita-boton-claro:hover {
+    background-color: #ebebeb;
+}
+
+/* NOTA BAJO EL BANNER */
+
+.visita-nota {
+    margin: 16px 0 0;
+
+    color: #555555;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* =========================================
+   8. RESPONSIVIDAD TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .visita-informacion-grid {
+        gap: 30px;
+    }
+
+    .visita-mapa-ubicacion iframe {
+        height: 300px;
+    }
+
+    .visita-guiada-banner {
+        min-height: 340px;
+    }
+}
+
+/* =========================================
+   9. RESPONSIVIDAD MÓVIL
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .pagina-visita .visita-contenedor {
+        padding-top: 35px;
+        padding-bottom: 45px;
+    }
+
+    .visita-seccion {
+        margin-bottom: 55px;
+    }
+
+    .visita-seccion h2 {
+        margin-bottom: 20px;
+        font-size: 26px;
+    }
+
+    /* INFORMACIÓN Y MAPA EN UNA COLUMNA */
+
+    .visita-informacion-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
+    }
+
+    .visita-datos {
+        font-size: 14px;
+    }
+
+    .visita-datos > p {
+        margin-bottom: 20px;
+    }
+
+    .visita-datos-lista {
+        gap: 15px;
+    }
+
+    /* GOOGLE MAPS */
+
+    .visita-mapa-ubicacion iframe {
+        height: 270px;
+    }
+
+    .visita-boton-mapa {
+        width: 100%;
+    }
+
+    /* PLANO INTERNO */
+
+    .visita-descripcion {
+        font-size: 14px;
+    }
+
+    .visita-enlace-ampliar {
+        font-size: 14px;
+    }
+
+    /* VISITAS GUIADAS */
+
+    .visita-guiada-banner {
+        min-height: 320px;
+    }
+
+    .visita-guiada-contenido {
+        gap: 15px;
+        padding: 35px 20px;
+    }
+
+    .visita-guiada-contenido h3 {
+        font-size: 24px;
+    }
+
+    .visita-guiada-contenido p {
+        font-size: 14px;
+    }
+}
+
+/* =========================================
+   10. ACCESIBILIDAD
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .visita-boton,
+    .visita-mapa-plano img {
+        transition: none;
+    }
+}
