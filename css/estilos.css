@@ -1515,60 +1515,91 @@ a {
 }
 
 /* =========================================
+
    COMUNIDAD: TARJETAS EN MÓVIL
+
    Orden: imagen, título, texto y botón
+
    ========================================= */
 
 @media (max-width: 600px) {
 
     .pagina-comunidad .comunidad-proyecto {
+
         display: grid;
+
         grid-template-columns: minmax(0, 1fr);
+
         gap: 0;
+
     }
 
     .pagina-comunidad .comunidad-proyecto-texto {
+
         display: contents;
+
     }
 
     /* 1. Fotografía primero */
 
     .pagina-comunidad .comunidad-proyecto-imagen {
+
         order: 1;
+
         width: 100%;
+
         max-width: none;
+
         margin: 0;
+
     }
 
     .pagina-comunidad .comunidad-proyecto-imagen img {
+
         width: 100%;
+
         height: auto;
+
         aspect-ratio: 1 / 1;
+
         object-fit: contain;
+
     }
 
     /* 2. Título debajo de la imagen */
 
     .pagina-comunidad .comunidad-proyecto h3 {
+
         order: 2;
+
         margin: 0;
+
     }
 
     /* 3. Descripción */
 
     .pagina-comunidad .comunidad-proyecto-texto > p {
+
         order: 3;
+
         margin: 0;
+
         padding: 16px 16px 0;
+
     }
 
     /* 4. Botón al final */
 
     .pagina-comunidad .proyecto-detalle {
+
         order: 4;
+
         margin: 0;
+
         padding: 20px 16px 24px;
+
     }
+
 }
 
 /* 10. MOVIMIENTO REDUCIDO */
@@ -1608,50 +1639,83 @@ a {
 }
 
 /* =========================================
+
    NAVEGACIÓN SECUNDARIA COMPARTIDA
+
    ========================================= */
 
 .submenu-paginas {
+
     display: flex;
+
     align-items: center;
+
     flex-wrap: wrap;
+
     gap: 30px;
+
     width: min(100% - 40px, 1200px);
+
     margin-inline: auto;
+
     padding-top: 30px;
+
 }
 
 .submenu-paginas a {
+
     display: inline-block;
+
     padding: 8px 0 12px;
+
     color: #444444;
+
     font-size: 14px;
+
     text-decoration: none;
+
     border-bottom: 2px solid transparent;
+
     transition: border-color 0.2s ease;
+
 }
 
 .submenu-paginas a:hover,
+
 .submenu-paginas a[aria-current="page"] {
+
     border-bottom-color: #8c78e8;
+
 }
 
 .submenu-paginas a:focus-visible {
+
     outline: 3px solid #8c78e8;
+
     outline-offset: 4px;
+
 }
 
 @media (max-width: 600px) {
+
     .submenu-paginas {
+
         width: calc(100% - 30px);
+
         gap: 18px;
+
         padding-top: 20px;
+
     }
 
     .submenu-paginas a {
+
         font-size: 13px;
+
         padding-bottom: 10px;
+
     }
+
 }
 
 /* =========================================
@@ -2171,7 +2235,9 @@ a {
 }
 
 /* =========================================
+
    12. MOVIMIENTO REDUCIDO
+
    ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -2181,807 +2247,1327 @@ a {
         transition: none;
 
     }
-   
 
 }
 
 /* ==========================================================================
+
    PÁGINA: NOSOTROS (HISTORIA, MISIÓN, VALORES Y TRANSPARENCIA)
+
    ========================================================================== */
 
 /* 1. SECCIÓN: QUIÉNES SOMOS */
+
 .pagina-nosotros .history-grid {
+
   display: grid;
+
   grid-template-columns: 1fr 340px;
+
   gap: 40px;
+
   margin-bottom: 50px;
+
 }
 
 .pagina-nosotros .history-text h2 {
+
   font-size: clamp(24px, 2.5vw, 32px);
+
   font-weight: 800;
+
   margin-bottom: 16px;
+
   color: #222222;
+
 }
 
 .pagina-nosotros .history-text p {
+
   font-size: 0.95rem;
+
   margin-bottom: 14px;
+
   line-height: 1.6;
+
   color: #222222;
+
 }
 
 .pagina-nosotros .history-image img {
+
   width: 100%;
+
   height: auto;
+
   object-fit: cover;
+
   border-radius: 4px;
+
 }
 
 /* 2. MISIÓN Y VISIÓN */
+
 .pagina-nosotros .mission-vision-grid {
+
   display: grid;
+
   grid-template-columns: 1fr 1fr;
+
   gap: 40px;
+
   margin-bottom: 50px;
+
 }
 
 .pagina-nosotros .mv-block h2 {
+
   font-size: 1.6rem;
+
   font-weight: 800;
+
   padding-bottom: 8px;
+
   border-bottom: 3px solid #8c78e8; /* Color corporativo */
+
   margin-bottom: 16px;
+
   color: #222222;
+
 }
 
 .pagina-nosotros .mv-block p {
+
   font-size: 0.95rem;
+
   line-height: 1.6;
+
 }
 
 /* 3. NUESTROS VALORES */
+
 .pagina-nosotros .values-section {
+
   margin-bottom: 50px;
+
 }
 
 .pagina-nosotros .values-section h2 {
+
   font-size: 1.6rem;
+
   font-weight: 800;
+
   margin-bottom: 20px;
+
   color: #222222;
+
 }
 
 .pagina-nosotros .values-grid {
+
   display: grid;
+
   grid-template-columns: 1fr 1fr;
+
   gap: 30px;
+
 }
 
 .pagina-nosotros .values-grid ul {
+
   list-style-type: disc;
+
   padding-left: 20px;
+
 }
 
 .pagina-nosotros .values-grid li {
+
   font-size: 0.9rem;
+
   margin-bottom: 12px;
+
   line-height: 1.5;
+
 }
 
 /* 4. COMPONENTE: DESPLEGABLES / ACORDEONES */
+
 .pagina-nosotros .accordion-group {
+
   display: flex;
+
   flex-direction: column;
+
   gap: 15px;
+
   margin-top: 20px;
+
   margin-bottom: 50px;
+
 }
 
 .pagina-nosotros .accordion-item {
+
   background-color: #f3f3f3;
+
   border-radius: 8px;
+
   overflow: hidden;
+
   border: 1px solid #e0e0e0;
+
 }
 
 .pagina-nosotros .accordion-header {
+
   padding: 16px 20px;
+
   font-weight: 700;
+
   font-size: 1rem;
+
   cursor: pointer;
+
   list-style: none;
+
   display: flex;
+
   align-items: center;
+
   user-select: none;
+
   background-color: #f8f8f8;
+
   color: #222222;
+
   transition: background-color 0.2s ease;
+
 }
 
 .pagina-nosotros .accordion-header:hover {
+
   background-color: #ececec;
+
 }
 
 .pagina-nosotros .accordion-header::-webkit-details-marker {
+
   display: none;
+
 }
 
 .pagina-nosotros .accordion-header::before {
+
   content: "▼";
+
   font-size: 0.8rem;
+
   margin-right: 15px;
+
   color: #8c78e8;
+
   transition: transform 0.2s ease;
+
 }
 
 .pagina-nosotros .accordion-item[open] .accordion-header::before {
+
   transform: rotate(180deg);
+
 }
 
 .pagina-nosotros .accordion-content {
+
   padding: 20px;
+
   background-color: #ffffff;
+
   border-top: 1px solid #e0e0e0;
+
 }
 
 /* 5. SECCIÓN: TRANSPARENCIA Y TARJETAS DE DESCARGA */
+
 .pagina-nosotros .transparency-header {
+
   margin-bottom: 30px;
+
 }
 
 .pagina-nosotros .transparency-header h2 {
+
   font-size: 1.8rem;
+
   font-weight: 800;
+
   margin-bottom: 6px;
+
   color: #222222;
+
 }
 
 .pagina-nosotros .transparency-header p {
+
   font-size: 0.95rem;
+
   color: #555555;
+
 }
 
 /* Grid de Botones/Tarjetas de Descarga (Púrpura Corporativo) */
+
 .pagina-nosotros .downloads-grid {
+
   display: grid;
+
   grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+
   gap: 15px;
+
   padding: 10px 0;
+
 }
 
 .pagina-nosotros .download-card {
+
   background-color: #8c78e8;
+
   color: #ffffff;
+
   text-decoration: none;
+
   aspect-ratio: 1 / 1;
+
   border-radius: 10px;
+
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
   justify-content: center;
+
   padding: 10px;
+
   text-align: center;
+
   transition: background-color 0.2s ease, transform 0.1s ease;
+
 }
 
 .pagina-nosotros .download-card:hover {
+
   background-color: #7261cc;
+
   transform: translateY(-3px);
+
 }
 
 .pagina-nosotros .download-card .icon {
+
   font-size: 1.8rem;
+
   font-weight: bold;
+
   margin-bottom: 4px;
+
 }
 
 .pagina-nosotros .download-card .label {
+
   font-size: 0.72rem;
+
   font-weight: 700;
+
   letter-spacing: 0.5px;
+
 }
 
 /* 6. RESPONSIVIDAD PARA MÓVILES Y TABLETS */
+
 @media (max-width: 900px) {
+
   .pagina-nosotros .history-grid {
+
     grid-template-columns: 1fr;
+
   }
 
   .pagina-nosotros .history-image {
+
     order: -1; /* Muestra la foto primero en teléfonos */
+
   }
 
   .pagina-nosotros .mission-vision-grid,
+
   .pagina-nosotros .values-grid {
+
     grid-template-columns: 1fr;
+
   }
 
   .pagina-nosotros .downloads-grid {
+
     grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
+
   }
+
 }
 
 /* ==========================================================================
-   PÁGINA: PROGRAMACIÓN / CARTELERA 
+
+   PÁGINA: PROGRAMACIÓN / CARTELERA
+
    ========================================================================== */
 
 .pagina-programacion {
+
   background-color: #ffffff;
+
   padding-bottom: 60px;
+
 }
 
 .programacion-encabezado {
+
   margin-bottom: 30px;
+
 }
 
 .programacion-encabezado h2 {
+
   font-size: clamp(28px, 3.5vw, 42px);
+
   font-weight: 800;
+
   margin-bottom: 25px;
+
   color: #222222;
+
 }
 
 /* 1. Barra de Herramientas y Buscador */
+
 .agenda-barra-herramientas {
+
   display: flex;
+
   flex-direction: column;
+
   gap: 20px;
+
   margin-bottom: 40px;
+
 }
 
 .buscador-agenda {
+
   display: flex;
+
   gap: 15px;
+
   max-width: 750px;
+
   width: 100%;
+
 }
 
 .buscador-agenda input {
+
   flex: 1;
+
   padding: 12px 20px;
+
   border: 1px solid #cccccc;
+
   border-radius: 30px;
+
   font-size: 14px;
+
   outline: none;
+
 }
 
 .buscador-agenda input:focus {
+
   border-color: #8c78e8;
+
 }
 
 .btn-buscar-agenda {
+
   padding: 12px 24px;
+
   background-color: #008069; /* Verde estilo Baburizza / PCDV */
+
   color: #ffffff;
+
   border: none;
+
   border-radius: 30px;
+
   font-size: 12px;
+
   font-weight: 700;
+
   letter-spacing: 0.5px;
+
   cursor: pointer;
+
   transition: background-color 0.2s ease;
+
 }
 
 .btn-buscar-agenda:hover {
+
   background-color: #00604f;
+
 }
 
 /* 2. Navegación de Fechas y Botón Próximos */
+
 .agenda-navegacion-fechas {
+
   display: flex;
+
   align-items: center;
+
   gap: 12px;
+
   position: relative;
+
 }
 
 .btn-flecha-fecha {
+
   width: 32px;
+
   height: 32px;
+
   border-radius: 50%;
+
   border: 1px solid #e0e0e0;
+
   background-color: #f5f5f5;
+
   color: #333333;
+
   font-size: 14px;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
   cursor: pointer;
+
 }
 
 .btn-flecha-fecha:hover {
+
   background-color: #008069;
+
   color: #ffffff;
+
   border-color: #008069;
+
 }
 
 .btn-hoy {
+
   background: transparent;
+
   border: none;
+
   font-size: 14px;
+
   color: #666666;
+
   cursor: pointer;
+
   padding: 0 8px;
+
 }
 
 .btn-hoy:hover {
+
   color: #000000;
+
   text-decoration: underline;
+
 }
 
 /* Selector Flotante (Desplegable) */
+
 .selector-calendario-wrapper {
+
   position: relative;
+
 }
 
 .btn-proximos {
+
   font-size: 22px;
+
   font-weight: 700;
+
   color: #111111;
+
   cursor: pointer;
+
   list-style: none;
+
   display: flex;
+
   align-items: center;
+
   gap: 6px;
+
 }
 
 .btn-proximos::-webkit-details-marker {
+
   display: none;
+
 }
 
 /* Popover del Calendario (Ventana Negra Flotante) */
+
 .calendario-popover {
+
   position: absolute;
+
   top: 110%;
+
   left: 0;
+
   z-index: 100;
+
   width: 280px;
+
   padding: 16px;
+
   background-color: #1a1a1a;
+
   color: #ffffff;
+
   border-radius: 6px;
+
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+
 }
 
 .cal-cabecera {
+
   display: flex;
+
   justify-content: space-between;
+
   align-items: center;
+
   font-size: 14px;
+
   font-weight: 600;
+
   margin-bottom: 15px;
+
 }
 
 .cal-nav {
+
   background: transparent;
+
   border: none;
+
   color: #ffffff;
+
   font-size: 16px;
+
   cursor: pointer;
+
 }
 
 .cal-dias-semana, .cal-matriz-dias {
+
   display: grid;
+
   grid-template-columns: repeat(7, 1fr);
+
   text-align: center;
+
   gap: 6px;
+
   font-size: 12px;
+
 }
 
 .cal-dias-semana {
+
   font-weight: bold;
+
   color: #888888;
+
   margin-bottom: 8px;
+
 }
 
 .cal-matriz-dias span {
+
   padding: 6px 0;
+
   cursor: pointer;
+
   border-radius: 4px;
+
 }
 
 .cal-matriz-dias span:hover {
+
   background-color: #333333;
+
 }
 
 .cal-matriz-dias span.fuera {
+
   color: #444444;
+
 }
 
 .cal-matriz-dias span.dia-actual {
+
   background-color: #3b82f6; /* Azul destacado del día seleccionado */
+
   color: #ffffff;
+
   font-weight: bold;
+
 }
 
 /* 3. Estructura de Tarjetas de Eventos */
+
 .mes-titulo {
+
   font-size: 16px;
+
   font-weight: 600;
+
   color: #666666;
+
   margin-bottom: 25px;
+
   border-bottom: 1px solid #e0e0e0;
+
   padding-bottom: 8px;
+
 }
 
 .lista-eventos {
+
   display: flex;
+
   flex-direction: column;
+
   gap: 40px;
+
   margin-bottom: 50px;
+
 }
 
 .tarjeta-evento {
+
   display: grid;
+
   grid-template-columns: 80px 1fr;
+
   gap: 20px;
+
 }
 
 .evento-fecha {
+
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
   justify-content: flex-start;
+
   padding-top: 10px;
+
 }
 
 .dia-nombre {
+
   font-size: 14px;
+
   font-weight: 600;
+
   color: #444444;
+
 }
 
 .dia-numero {
+
   font-size: 38px;
+
   font-weight: 800;
+
   line-height: 1;
+
   color: #111111;
+
 }
 
 .evento-cuerpo {
+
   display: flex;
+
   flex-direction: column;
+
 }
 
 .evento-horario-rango {
+
   font-size: 13px;
+
   font-weight: 600;
+
   color: #8c78e8;
+
   margin-bottom: 6px;
+
 }
 
 .evento-banner-titulo {
+
   background-color: #1a1a1a;
+
   color: #ffffff;
+
   padding: 12px 20px;
+
   margin-bottom: 20px;
+
 }
 
 .evento-categoria {
+
   display: block;
+
   font-size: 11px;
+
   font-weight: 700;
+
   letter-spacing: 1px;
+
   color: #cccccc;
+
   margin-bottom: 2px;
+
 }
 
 .evento-titulo {
+
   font-size: 20px;
+
   font-weight: 700;
+
   margin: 0;
+
   font-style: italic;
+
 }
 
 .evento-detalles-grid {
+
   display: grid;
+
   grid-template-columns: 1fr 280px;
+
   gap: 30px;
+
 }
 
 .evento-descripcion p {
+
   font-size: 14px;
+
   line-height: 1.6;
+
   color: #333333;
+
   margin-bottom: 15px;
+
 }
 
 /* Botón Ver Más Verde */
+
 .boton-ver-mas {
+
   display: inline-block;
+
   padding: 8px 24px;
+
   background-color: #b6d747;
+
   color: #222222;
+
   font-size: 12px;
+
   font-weight: 700;
+
   border-radius: 30px;
+
   cursor: pointer;
+
   list-style: none;
+
   margin-top: 10px;
+
 }
 
 .boton-ver-mas::-webkit-details-marker {
+
   display: none;
+
 }
 
 .evento-desplegable[open] .boton-ver-mas {
+
   background-color: #9fbe35;
+
 }
 
 .desplegable-contenido {
+
   margin-top: 15px;
+
   padding: 12px;
+
   background-color: #f9f9f9;
+
   border-left: 3px solid #b6d747;
+
 }
 
 .evento-lateral {
+
   display: flex;
+
   flex-direction: column;
+
   gap: 15px;
+
 }
 
 .evento-imagen {
+
   width: 100%;
+
   aspect-ratio: 1 / 1;
+
   object-fit: cover;
+
   object-position: center;
+
   border-radius: 4px;
+
 }
 
 .evento-ubicacion {
+
   font-size: 12px;
+
   line-height: 1.4;
+
   color: #444444;
+
 }
 
 .evento-ubicacion strong {
+
   color: #111111;
+
 }
 
 /* Paginación Inferior */
+
 .eventos-paginacion {
+
   display: flex;
+
   justify-content: space-between;
+
   padding-top: 20px;
+
   border-top: 2px solid #8c78e8;
+
 }
 
 .paginacion-enlace {
+
   font-size: 15px;
+
   font-weight: 700;
+
   color: #111111;
+
   text-decoration: none;
+
 }
 
 .paginacion-enlace:hover {
+
   text-decoration: underline;
+
   color: #8c78e8;
+
 }
 
 /* Responsividad para móviles */
+
 @media (max-width: 768px) {
+
   .tarjeta-evento {
+
     grid-template-columns: 1fr;
+
   }
 
   .evento-fecha {
+
     flex-direction: row;
+
     gap: 10px;
+
     align-items: baseline;
+
   }
 
   .evento-detalles-grid {
+
     grid-template-columns: 1fr;
+
   }
 
   .buscador-agenda {
+
     flex-direction: column;
+
   }
+
 }
 
-
 /* =========================================
+
    PÁGINA: CONTACTO
+
    ========================================= */
 
 .pagina-contacto {
+
     background-color: #ffffff;
+
     color: #222222;
+
 }
 
 .contacto-seccion {
+
     margin-bottom: 75px;
+
     scroll-margin-top: 25px;
+
 }
 
 .contacto-seccion h2 {
+
     margin: 0 0 15px;
+
     font-size: clamp(24px, 3vw, 32px);
+
 }
 
 .contacto-seccion > p {
+
     margin: 0 0 30px;
+
     font-size: 14px;
+
     line-height: 1.6;
+
 }
 
-
 /* =========================================
+
    1. TARJETAS DE REDES SOCIALES
+
    ========================================= */
 
 .contacto-redes-grid {
+
     display: grid;
+
     grid-template-columns: repeat(4, minmax(0, 1fr));
+
     gap: 20px;
+
 }
 
 .contacto-red-card {
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     gap: 14px;
 
     min-width: 0;
+
     padding: 22px 15px;
 
     background-color: #ffffff;
+
     border: 1px solid #dddddd;
+
     border-radius: 5px;
+
 }
 
 .contacto-red-icono {
+
     display: block;
+
     width: 28px;
+
     height: 28px;
 
     object-fit: contain;
+
     filter: brightness(0);
+
 }
 
 .contacto-red-card h3 {
+
     margin: 0;
+
     font-size: 14px;
+
     font-weight: 600;
+
 }
 
 .contacto-red-card a {
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     width: 100%;
+
     min-height: 38px;
+
     margin-top: auto;
+
     padding: 9px 12px;
 
     color: #ffffff;
+
     background-color: #8c78e8;
 
     border-radius: 4px;
 
     font-size: 13px;
+
     font-weight: 500;
+
     text-align: center;
+
     text-decoration: none;
+
 }
 
 .contacto-red-card a:hover {
+
     background-color: #705bc7;
+
 }
 
 .contacto-red-card a:focus-visible {
+
     outline: 3px solid #222222;
+
     outline-offset: 3px;
+
 }
 
-
 /* =========================================
+
    2. INFORMACIÓN DE CONTACTO
+
    ========================================= */
 
 .contacto-correo {
+
     display: inline-block;
+
     margin-bottom: 18px;
 
     font-size: 15px;
+
     font-weight: 600;
+
     color: #222222;
+
 }
 
-
 /* =========================================
+
    3. FORMULARIO
+
    ========================================= */
 
 .contacto-formulario {
+
     display: flex;
+
     flex-direction: column;
 
     width: 100%;
+
     max-width: 650px;
+
     margin-top: 30px;
+
 }
 
 .contacto-campo {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 8px;
 
     width: 100%;
+
     margin-bottom: 20px;
+
 }
 
 .contacto-campo label {
+
     font-size: 14px;
+
     font-weight: 500;
+
 }
 
 .contacto-campo input,
+
 .contacto-campo textarea {
+
     display: block;
 
     width: 100%;
+
     padding: 13px 15px;
 
     color: #222222;
+
     background-color: #f1f1f1;
 
     border: 1px solid #dddddd;
+
     border-radius: 4px;
 
     font-size: 14px;
+
 }
 
 .contacto-campo textarea {
+
     min-height: 160px;
+
     resize: vertical;
+
 }
 
 .contacto-campo input:focus,
+
 .contacto-campo textarea:focus {
+
     outline: 2px solid #8c78e8;
+
     outline-offset: 2px;
+
 }
 
-
 /* =========================================
+
    4. BOTÓN ENVIAR
+
    ========================================= */
 
 .contacto-enviar {
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     width: 100%;
+
     min-height: 46px;
+
     padding: 12px 25px;
 
     color: #222222;
+
     background-color: #b6d747;
 
     border: none;
+
     border-radius: 30px;
 
     font-size: 14px;
+
     font-weight: 600;
+
     cursor: pointer;
+
 }
 
 .contacto-enviar:hover {
+
     background-color: #9fbe35;
+
 }
 
 .contacto-enviar:focus-visible {
+
     outline: 3px solid #222222;
+
     outline-offset: 3px;
+
 }
 
-
 /* =========================================
+
    5. RESPONSIVIDAD
+
    ========================================= */
 
 /* Tablet */
@@ -2989,8 +3575,11 @@ a {
 @media (max-width: 900px) {
 
     .contacto-redes-grid {
+
         grid-template-columns: repeat(2, minmax(0, 1fr));
+
     }
+
 }
 
 /* Móvil */
@@ -2998,392 +3587,607 @@ a {
 @media (max-width: 600px) {
 
     .contacto-seccion {
+
         margin-bottom: 55px;
+
     }
 
     .contacto-redes-grid {
+
         gap: 12px;
+
     }
 
     .contacto-red-card {
+
         padding: 18px 10px;
+
     }
 
     .contacto-red-icono {
+
         width: 25px;
+
         height: 25px;
+
     }
 
     .contacto-formulario {
+
         max-width: 100%;
+
     }
 
     .contacto-campo input,
+
     .contacto-campo textarea {
+
         font-size: 16px;
+
     }
+
 }
 
 /* ==========================================================================
+
    CARRUSEL CARTELERA DESTACADA (HOME)
+
    ========================================================================== */
 
 .home-cartelera-destacada {
+
   margin-bottom: 60px;
+
 }
 
 .home-cartelera-destacada h2 {
+
   font-size: clamp(26px, 3.5vw, 36px);
+
   font-weight: 800;
+
   color: #111111;
+
   margin-bottom: 25px;
+
 }
 
 /* Oculta las tarjetas por defecto */
+
 .cartelera-banner {
+
   display: none;
+
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+
   background-color: #fcfbf7;
+
   border-radius: 2px;
+
   overflow: hidden;
+
 }
 
 /* Muestra únicamente la tarjeta activa */
+
 .cartelera-banner.activa {
+
   display: grid;
+
 }
 
 .cartelera-banner-imagen {
+
   width: 100%;
+
   aspect-ratio: 1 / 1;
+
 }
 
 .cartelera-banner-imagen img {
+
   width: 100%;
+
   height: 100%;
+
   object-fit: cover;
+
   object-position: center;
+
   display: block;
+
 }
 
 .cartelera-banner-info {
+
   display: flex;
+
   flex-direction: column;
+
   justify-content: space-between;
+
   padding: 35px 30px;
+
 }
 
 .cartelera-fechas {
+
   display: flex;
+
   justify-content: flex-end;
+
   gap: 20px;
+
 }
 
 .cartelera-fechas .fecha-bloque {
+
   text-align: center;
+
   line-height: 1.15;
+
 }
 
 .cartelera-fechas .fecha-etiqueta {
+
   font-size: 10px;
+
   font-weight: 700;
+
   color: #222222;
+
   letter-spacing: 0.5px;
+
 }
 
 .cartelera-fechas .fecha-mes {
+
   font-size: 11px;
+
   font-weight: 800;
+
   color: #111111;
+
   margin-top: 2px;
+
 }
 
 .cartelera-fechas .fecha-numero {
+
   font-size: 28px;
+
   font-weight: 900;
+
   color: #111111;
+
 }
 
 .cartelera-organizacion {
+
   display: block;
+
   font-size: 12px;
+
   font-weight: 700;
+
   color: #8c78e8;
+
   letter-spacing: 0.5px;
+
   text-transform: uppercase;
+
   margin-bottom: 12px;
+
 }
 
 .cartelera-titulo {
+
   font-size: clamp(22px, 2.5vw, 32px);
+
   font-weight: 800;
+
   color: #111111;
+
   line-height: 1.2;
+
   margin: 0;
+
 }
 
 .cartelera-datos-extra {
+
   display: flex;
+
   flex-direction: column;
+
   gap: 8px;
+
   padding-top: 20px;
+
 }
 
 .cartelera-horario {
+
   font-size: 14px;
+
   font-weight: 800;
+
   color: #111111;
+
 }
 
 .cartelera-ubicacion {
+
   font-size: 13px;
+
   line-height: 1.4;
+
   color: #444444;
+
   margin: 0;
+
 }
 
 /* Indicadores de puntos */
+
 .carrusel-indicadores {
+
   display: flex;
+
   gap: 8px;
+
   margin-top: 20px;
+
   margin-bottom: 25px;
+
 }
 
 .carrusel-indicadores .punto {
+
   width: 10px;
+
   height: 10px;
+
   border-radius: 50%;
+
   background-color: #d1cbe8;
+
   border: none;
+
   cursor: pointer;
+
   padding: 0;
+
   transition: background-color 0.2s ease;
+
 }
 
 .carrusel-indicadores .punto.activo {
+
   background-color: #8c78e8;
+
 }
 
 .cartelera-pie {
+
   padding-top: 5px;
+
 }
 
 @media (max-width: 850px) {
+
   .cartelera-banner {
+
     grid-template-columns: 1fr;
+
   }
 
 .cartelera-banner-imagen {
+
   width: 100%;
+
   height: 380px; /* Le da una altura fija controlada */
+
   overflow: hidden;
+
 }
 
 .cartelera-banner-imagen img {
+
   width: 100%;
+
   height: 100%;
+
   object-fit: cover;
+
   object-position: center;
+
   display: block;
+
 }
 
   .cartelera-banner-info {
+
     gap: 25px;
+
     padding: 25px 20px;
+
   }
+
 }
+
 .enlace-ver-programacion {
+
   color: #8c78e8 !important; /* Fuerza el color morado corporativo */
+
   font-size: 16px;
+
   font-weight: 700;
+
   text-decoration: none;
+
   transition: opacity 0.2s ease;
+
 }
 
 .enlace-ver-programacion:hover {
+
   opacity: 0.8;
+
   text-decoration: underline;
+
 }
 
-
 /* =========================================
-   PÁGINA: GALERÍA
-   ========================================= */
 
+   PÁGINA: GALERÍA
+
+   ========================================= */
 
 /* 1. CONTENEDOR GENERAL */
 
 .pagina-galeria {
-    width: 100%;
-    background-color: #ffffff;
-    color: #222222;
-}
 
+    width: 100%;
+
+    background-color: #ffffff;
+
+    color: #222222;
+
+}
 
 /* 2. SECCIÓN GALERÍA */
 
 .galeria-seccion {
+
     width: 100%;
+
 }
 
 .galeria-seccion > h1 {
+
     margin: 0 0 35px;
 
     font-size: clamp(26px, 3vw, 36px);
+
     font-weight: 700;
+
     line-height: 1.2;
+
 }
 
-
 /* =========================================
+
    3. CUADRÍCULA DE FOTOGRAFÍAS
+
    ========================================= */
 
 .galeria-grid {
+
     display: grid;
 
     /* Dos columnas de igual ancho */
+
     grid-template-columns: repeat(2, minmax(0, 1fr));
 
     /* Separación horizontal y vertical */
+
     column-gap: 45px;
+
     row-gap: 55px;
 
     width: 100%;
+
     max-width: 1100px;
+
     margin-inline: auto;
+
 }
 
-
 /* =========================================
+
    4. TARJETAS DE GALERÍA
+
    ========================================= */
 
 .galeria-tarjeta {
+
     display: flex;
+
     flex-direction: column;
 
     width: 100%;
+
     min-width: 0;
 
     margin: 0;
+
     padding: 0;
 
     overflow: hidden;
-    background-color: #111111;
-}
 
+    background-color: #111111;
+
+}
 
 /* 5. FRANJA NEGRA DEL TÍTULO */
 
 .galeria-tarjeta h2 {
+
     display: flex;
+
     align-items: center;
 
     width: 100%;
+
     min-height: 55px;
 
     margin: 0;
+
     padding: 15px 20px;
 
     background-color: #111111;
+
     color: #ffffff;
 
     font-size: 17px;
+
     font-weight: 600;
+
     line-height: 1.3;
+
 }
 
-
 /* =========================================
+
    6. IMÁGENES
+
    ========================================= */
 
 .galeria-tarjeta img {
+
     display: block;
 
     width: 100%;
+
     height: auto;
 
     /* Mantiene las tarjetas proporcionadas */
+
     aspect-ratio: 3 / 2;
 
     /* Ocupa todo el espacio disponible */
+
     object-fit: cover;
+
     object-position: center;
+
 }
 
-
 /* =========================================
+
    7. RESPONSIVIDAD TABLET
+
    ========================================= */
 
 @media (max-width: 900px) {
 
     .galeria-grid {
+
         column-gap: 25px;
+
         row-gap: 35px;
+
     }
 
     .galeria-tarjeta h2 {
+
         min-height: 50px;
+
         padding: 12px 15px;
+
         font-size: 15px;
+
     }
+
 }
 
-
 /* =========================================
+
    8. RESPONSIVIDAD MÓVIL
+
    ========================================= */
 
 @media (max-width: 600px) {
 
     .galeria-seccion > h1 {
+
         margin-bottom: 25px;
+
         font-size: 26px;
+
     }
 
     /* Una sola columna */
 
     .galeria-grid {
+
         grid-template-columns: minmax(0, 1fr);
 
         column-gap: 0;
+
         row-gap: 30px;
+
     }
 
     .galeria-tarjeta {
+
         width: 100%;
+
     }
 
     .galeria-tarjeta h2 {
+
         min-height: 50px;
+
         padding: 13px 16px;
+
         font-size: 16px;
+
     }
 
     .galeria-tarjeta img {
+
         width: 100%;
+
         height: auto;
+
         aspect-ratio: 3 / 2;
+
         object-fit: cover;
+
     }
+
 }
 
 /* =========================================
+
    EFECTO HOVER: TARJETAS DE GALERÍA
+
    ========================================= */
 
 /* Estado normal */
 
 .galeria-tarjeta {
+
     transition:
+
         transform 0.3s ease,
+
         box-shadow 0.3s ease;
 
     will-change: transform;
+
 }
 
 /* Al pasar el mouse */
@@ -3391,11 +4195,15 @@ a {
 @media (hover: hover) {
 
     .galeria-tarjeta:hover {
+
         transform: translateY(-8px);
 
         box-shadow:
+
             0 12px 25px rgba(0, 0, 0, 0.20);
+
     }
+
 }
 
 /* Personas que prefieren menos animación */
@@ -3403,6 +4211,9 @@ a {
 @media (prefers-reduced-motion: reduce) {
 
     .galeria-tarjeta {
+
         transition: none;
+
     }
+
 }
