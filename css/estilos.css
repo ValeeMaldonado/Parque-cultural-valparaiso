@@ -3174,10 +3174,19 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .cartelera-banner-imagen {
-    aspect-ratio: auto;
-    height: 300px;
-  }
+.cartelera-banner-imagen {
+  width: 100%;
+  height: 380px; /* Le da una altura fija controlada */
+  overflow: hidden;
+}
+
+.cartelera-banner-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
 
   .cartelera-banner-info {
     gap: 25px;
