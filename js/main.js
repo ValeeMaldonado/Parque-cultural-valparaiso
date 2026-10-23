@@ -80,3 +80,26 @@ if (buscador) {
     });
 
 }
+
+// ==========================================================================
+// FUNCIONALIDAD CAMBIO DE DIAPOSITIVA (CARRUSEL)
+// ==========================================================================
+document.addEventListener('DOMContentLoaded', () => {
+    const tarjetas = document.querySelectorAll('.cartelera-banner');
+    const puntos = document.querySelectorAll('.carrusel-indicadores .punto');
+
+    if (tarjetas.length > 0 && puntos.length > 0) {
+        puntos.forEach((punto, i) => {
+            punto.addEventListener('click', () => {
+                // Oculta todas las tarjetas y apaga los puntos
+                tarjetas.forEach(t => t.classList.remove('activa'));
+                puntos.forEach(p => p.classList.remove('activo'));
+
+                // Muestra la tarjeta seleccionada y enciende su punto
+                tarjetas[i].classList.add('activa');
+                punto.classList.add('activo');
+            });
+        });
+    }
+});
+
