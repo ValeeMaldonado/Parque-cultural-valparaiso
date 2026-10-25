@@ -2084,26 +2084,45 @@ a {
     margin: 0;
 }
 
+/* INDICADORES DEL CARRUSEL: áreas táctiles accesibles */
 .carrusel-indicadores {
     display: flex;
-    gap: 8px;
+    align-items: center;
+    gap: 0;
     margin-top: 20px;
     margin-bottom: 25px;
 }
 
 .carrusel-indicadores .punto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.carrusel-indicadores .punto::after {
+    content: "";
+    display: block;
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #d1cbe8;
-    border: none;
-    cursor: pointer;
-    padding: 0;
+    background-color: #bcb3df;
     transition: background-color 0.2s ease;
 }
 
-.carrusel-indicadores .punto.activo {
-    background-color: #8c78e8;
+.carrusel-indicadores .punto.activo::after {
+    background-color: #6143a6;
+}
+
+.carrusel-indicadores .punto:focus-visible {
+    outline: 3px solid #6143a6;
+    outline-offset: 2px;
 }
 
 .cartelera-pie {
