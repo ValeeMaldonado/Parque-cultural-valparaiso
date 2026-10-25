@@ -1,4099 +1,2285 @@
-/* =========================================
-
-   A. CONFIGURACIÓN GENERAL
-
-   ========================================= */
-
+/* CONFIGURACIÓN GENERAL */
 *,
-
 *::before,
-
 *::after {
-
     box-sizing: border-box;
-
 }
 
 html {
-
     scroll-behavior: smooth;
-
 }
 
 body {
-
     margin: 0;
-
     min-height: 100vh;
-
     display: flex;
-
     flex-direction: column;
-
     font-family: Arial, Helvetica, sans-serif;
-
     font-size: 16px;
-
     line-height: 1.5;
-
     color: #222222;
-
     background-color: #ffffff;
-
 }
 
 main {
-
     flex: 1;
-
 }
 
 img {
-
     display: block;
-
     max-width: 100%;
-
     height: auto;
-
 }
 
 button,
-
 input,
-
 textarea {
-
     font: inherit;
-
 }
 
 button {
-
     cursor: pointer;
-
 }
 
 a {
-
     color: inherit;
-
 }
-
-/* Contenedor general de páginas */
 
 .contenedor {
-
     width: min(100% - 40px, 1200px);
-
     margin-inline: auto;
-
     padding-block: 60px;
-
 }
-
-/* Elementos accesibles para lectores */
 
 .visualmente-oculto {
-
     position: absolute;
-
     width: 1px;
-
     height: 1px;
-
     padding: 0;
-
     margin: -1px;
-
     overflow: hidden;
-
     clip: rect(0, 0, 0, 0);
-
     white-space: nowrap;
-
     border: 0;
-
 }
 
-/* =========================================
-
-   B. HEADER Y PORTADA
-
-   ========================================= */
-
-/* 1. Contenedor de portada */
-
+/* HEADER Y PORTADA */
 .portada {
-
     position: relative;
-
     width: 100%;
-
     background-color: #292929;
-
 }
-
-/* Fotografía de portada */
 
 .hero {
-
     position: relative;
-
     width: 100%;
-
     height: 500px;
-
     overflow: hidden;
-
     background-color: #292929;
-
 }
 
 .hero-imagen {
-
     position: absolute;
-
     inset: 0;
-
     width: 100%;
-
     height: 100%;
-
     object-fit: cover;
-
     object-position: center;
-
     filter: grayscale(100%);
-
 }
-
-/* Capa oscura sobre la fotografía */
 
 .hero::after {
-
     content: "";
-
     position: absolute;
-
     inset: 0;
-
     background: linear-gradient(
-
-        to bottom,
-
-        rgba(0, 0, 0, 0.15),
-
-        rgba(0, 0, 0, 0.30)
-
+    to bottom,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.30)
     );
-
     pointer-events: none;
-
 }
 
-/* Textos de portada */
-
 .hero-contenido {
-
     position: absolute;
-
     z-index: 2;
-
     bottom: 50px;
-
     left: max(20px, calc((100% - 1200px) / 2));
-
     max-width: 700px;
-
     padding-right: 20px;
-
     color: #ffffff;
-
 }
 
 .hero-etiqueta {
-
     margin: 0 0 8px;
-
     font-size: 16px;
-
 }
 
 .hero h1 {
-
     margin: 0;
-
     font-size: clamp(28px, 4vw, 52px);
-
     line-height: 1.15;
-
     font-weight: 700;
-
 }
 
-/* 2. Header translúcido */
-
 .header {
-
     position: absolute;
-
     top: 16px;
-
     left: 0;
-
     z-index: 100;
-
     width: 100%;
-
     color: #ffffff;
-
 }
 
 .header-contenido {
-
     display: flex;
-
     align-items: stretch;
-
     width: min(100% - 40px, 1440px);
-
     min-height: 70px;
-
     margin-inline: auto;
-
     background-color: rgba(35, 35, 35, 0.48);
-
     border: 1px solid rgba(255, 255, 255, 0.16);
-
 }
 
-/* 3. Logotipo del header */
-
 .logo {
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     flex-shrink: 0;
-
     width: 180px;
-
     padding: 10px 14px;
-
     text-decoration: none;
-
 }
 
 .logo img {
-
     width: 115px;
-
     height: auto;
-
 }
 
-/* 4. Buscador */
-
 .buscador {
-
     display: flex;
-
     align-items: center;
-
     align-self: center;
-
     width: 100%;
-
     max-width: 245px;
-
     min-width: 130px;
-
     height: 35px;
-
     margin-left: auto;
-
     margin-right: 24px;
-
     background-color: #ffffff;
-
     border-radius: 30px;
-
 }
 
 .buscador input {
-
     flex: 1;
-
     min-width: 0;
-
     width: 100%;
-
     padding: 8px 12px;
-
     font-size: 13px;
-
     color: #222222;
-
     background: transparent;
-
     border: none;
-
     outline: none;
-
 }
 
 .buscador input::placeholder {
-
     color: #777777;
-
 }
 
 .buscador button {
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     padding: 8px 12px;
-
     color: #333333;
-
     background: transparent;
-
     border: none;
-
     border-radius: 50%;
-
 }
 
 .buscador:focus-within {
-
     outline: 2px solid #d4ee56;
-
     outline-offset: 2px;
-
 }
 
-/* 5. Navegación principal */
-
 .navegacion {
-
     display: flex;
-
     align-self: stretch;
-
 }
 
 .menu {
-
     display: flex;
-
     align-items: stretch;
-
     height: 100%;
-
     margin: 0;
-
     padding: 0;
-
     list-style: none;
-
 }
 
 .menu li {
-
     display: flex;
-
     align-items: stretch;
-
 }
-
-/* Recuadros semitransparentes */
 
 .menu a {
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     min-width: 112px;
-
     height: 100%;
-
     padding: 16px 15px;
-
     color: #ffffff;
-
     font-size: 13px;
-
     font-weight: 500;
-
     text-align: center;
-
     text-decoration: none;
-
     white-space: nowrap;
-
     background-color: rgba(65, 65, 65, 0.30);
-
     border-left: 1px solid rgba(255, 255, 255, 0.20);
-
     transition: background-color 0.2s ease;
-
 }
-
-/* Cuando pasamos el mouse */
 
 .menu a:hover {
-
     background-color: rgba(25, 25, 25, 0.88);
-
 }
-
-/* Categoría activa */
 
 .menu a[aria-current="page"],
-
 .menu a[aria-current="location"] {
-
     background-color: rgba(25, 25, 25, 0.90);
-
 }
 
-/* 6. Botón de menú móvil */
-
 .menu-toggle {
-
     display: none;
-
     flex-direction: column;
-
     align-items: center;
-
     justify-content: center;
-
     gap: 5px;
-
     width: 55px;
-
     padding: 12px;
-
     color: #ffffff;
-
     background: rgba(40, 40, 40, 0.60);
-
     border: none;
-
 }
 
 .menu-toggle span {
-
     display: block;
-
     width: 24px;
-
     height: 2px;
-
     background-color: #ffffff;
-
     border-radius: 2px;
-
 }
 
-/* =========================================
-
-   C. FOOTER INSTITUCIONAL
-
-   ========================================= */
-
-/* 1. Fondo del footer */
-
+/* FOOTER INSTITUCIONAL */
 .footer {
-
     width: 100%;
-
     padding: 0;
-
     background-color: #2d2d2f;
-
     color: #ffffff;
-
 }
-
-/* 2. Franja superior de colores */
 
 .footer-franja {
-
     width: 100%;
-
     height: 12px;
-
     background: linear-gradient(
-
-        to right,
-
-        #b6d747 0%,
-
-        #b6d747 6%,
-
-        #8c78e8 6%,
-
-        #8c78e8 94%,
-
-        #b6d747 94%,
-
-        #b6d747 100%
-
+    to right,
+    #b6d747 0%,
+    #b6d747 6%,
+    #8c78e8 6%,
+    #8c78e8 94%,
+    #b6d747 94%,
+    #b6d747 100%
     );
-
 }
-
-/* 3. Contenedor principal del footer */
 
 .footer-contenedor {
-
     width: min(100% - 80px, 1250px);
-
     margin-inline: auto;
-
     padding: 35px 0 25px;
-
 }
-
-/* 4. Distribución en tres columnas */
 
 .footer-principal {
-
     display: grid;
-
     grid-template-columns:
-
-        220px minmax(0, 1fr) auto;
-
+    220px minmax(0, 1fr) auto;
     align-items: center;
-
     column-gap: 45px;
-
 }
-
-/* 5. Logotipo Parque Cultural */
 
 .footer-marca img {
-
     width: 190px;
-
     max-width: 100%;
-
     height: auto;
-
 }
 
-/* 6. Información institucional */
-
 .footer-informacion {
-
     display: flex;
-
     flex-direction: column;
-
     gap: 9px;
-
 }
 
 .footer-dato {
-
     display: flex;
-
     align-items: flex-start;
-
     gap: 12px;
-
     font-size: 14px;
-
     line-height: 1.45;
-
 }
 
-/* Íconos de horario, correo y ubicación */
-
 .footer-icono-img {
-
     display: block;
-
     width: 18px;
-
     height: 18px;
-
     object-fit: contain;
-
     flex-shrink: 0;
-
     margin-top: 2px;
-
 }
 
 .footer-dato a {
-
     color: #ffffff;
-
     text-decoration: none;
-
 }
 
 .footer-dato a:hover {
-
     text-decoration: underline;
-
 }
-
-/* 7. Logotipos institucionales */
 
 .footer-instituciones {
-
     display: flex;
-
     align-items: center;
-
     justify-content: flex-end;
-
     gap: 20px;
-
 }
-
-/* Logotipos proporcionados */
 
 .footer-instituciones img {
-
     display: block;
-
     width: auto;
-
     height: 88px;
-
     max-width: 100%;
-
     object-fit: contain;
-
 }
-
-/* 8. Línea de separación */
 
 .footer-separador {
-
     width: 100%;
-
     height: 1px;
-
     margin: 25px 0 15px;
-
     background-color: #5d5d60;
-
     border: none;
-
 }
 
-/* 9. Redes sociales */
-
 .footer-redes {
-
     display: flex;
-
     align-items: center;
-
     flex-wrap: wrap;
-
     gap: 18px;
-
 }
 
 .footer-redes a {
-
     display: inline-flex;
-
     align-items: center;
-
     justify-content: center;
-
     width: 30px;
-
     height: 30px;
-
     text-decoration: none;
-
     transition: opacity 0.2s ease;
-
 }
 
 .footer-redes a:hover {
-
     opacity: 0.65;
-
 }
-
-/* Íconos de redes */
 
 .footer-red-icono {
-
     display: block;
-
     width: 23px;
-
     height: 23px;
-
     object-fit: contain;
-
 }
-
-/* Ajuste específico del ícono Facebook */
 
 .footer-redes a:nth-child(2) img {
-
     width: 13px;
-
     height: 23px;
-
 }
-
-/* 10. Navegación accesible */
 
 .footer a:focus-visible,
-
 .menu a:focus-visible,
-
 .logo:focus-visible,
-
 .menu-toggle:focus-visible,
-
 .buscador button:focus-visible {
-
     outline: 3px solid #b6d747;
-
     outline-offset: 3px;
-
 }
 
-/* =========================================
-
-   D. RESPONSIVIDAD
-
-   ========================================= */
-
-/* -----------------------------------------
-
-   1. TABLET Y PANTALLAS MEDIANAS
-
-   Hasta 1150px
-
-   ----------------------------------------- */
-
+/* RESPONSIVIDAD */
 @media (max-width: 1150px) {
-
-    /* HEADER */
-
     .header-contenido {
-
         min-height: 68px;
-
     }
 
     .logo {
-
         width: 145px;
-
     }
 
     .logo img {
-
         width: 105px;
-
     }
 
     .buscador {
-
         flex: 1;
-
         max-width: 300px;
-
         margin-left: auto;
-
         margin-right: 15px;
-
     }
 
     .menu-toggle {
-
         display: flex;
-
     }
 
-    /* Menú desplegable */
-
     .navegacion {
-
         display: none;
-
         position: absolute;
-
         top: 100%;
-
         left: 20px;
-
         right: 20px;
-
         background-color: rgba(35, 35, 35, 0.97);
-
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-
     }
 
     .navegacion.abierta {
-
         display: block;
-
     }
 
     .menu {
-
         flex-direction: column;
-
         height: auto;
-
     }
 
     .menu li {
-
         display: block;
-
     }
 
     .menu a {
-
         justify-content: flex-start;
-
         width: 100%;
-
         min-width: 0;
-
         height: auto;
-
         padding: 16px 20px;
-
         font-size: 16px;
-
         text-align: left;
-
         border-left: none;
-
         border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-
     }
 
-    /* PORTADA */
-
     .hero {
-
         height: 420px;
-
     }
 
     .hero-contenido {
-
         left: 30px;
-
         bottom: 40px;
-
     }
 
     .contenedor {
-
         padding-block: 45px;
-
     }
 
 }
 
-/* -----------------------------------------
-
-   2. FOOTER EN TABLET
-
-   Hasta 1000px
-
-   ----------------------------------------- */
-
 @media (max-width: 1000px) {
-
     .footer-contenedor {
-
         width: calc(100% - 50px);
-
     }
 
     .footer-principal {
-
         grid-template-columns: 180px minmax(0, 1fr);
-
         gap: 30px;
-
     }
 
     .footer-marca img {
-
         width: 165px;
-
     }
 
     .footer-instituciones {
-
         grid-column: 1 / -1;
-
         justify-content: flex-start;
-
     }
 
     .footer-instituciones img {
-
         height: 80px;
-
     }
 
 }
 
-/* -----------------------------------------
-
-   3. MÓVILES
-
-   Hasta 600px
-
-   ----------------------------------------- */
-
 @media (max-width: 600px) {
-
-    /* HEADER */
-
     .header {
-
         top: 10px;
-
     }
 
     .header-contenido {
-
         width: calc(100% - 20px);
-
         min-height: 60px;
-
     }
 
     .logo {
-
         width: 105px;
-
         padding: 8px;
-
     }
 
     .logo img {
-
         width: 90px;
-
     }
 
     .buscador {
-
         min-width: 0;
-
         height: 33px;
-
         margin-right: 8px;
-
     }
 
     .buscador input {
-
         padding: 7px;
-
         font-size: 12px;
-
     }
 
     .buscador button {
-
         padding: 7px;
-
     }
 
     .menu-toggle {
-
         width: 45px;
-
         padding: 10px;
-
     }
 
     .menu-toggle span {
-
         width: 22px;
-
     }
 
     .navegacion {
-
         left: 10px;
-
         right: 10px;
-
     }
 
-    /* PORTADA */
-
     .hero {
-
         height: 360px;
-
     }
 
     .hero-contenido {
-
         left: 20px;
-
         right: 20px;
-
         bottom: 30px;
-
         padding: 0;
-
     }
 
     .hero-etiqueta {
-
         font-size: 14px;
-
     }
 
     .hero h1 {
-
         font-size: clamp(25px, 7vw, 36px);
-
     }
 
     .contenedor {
-
         width: calc(100% - 30px);
-
         padding-block: 35px;
-
     }
 
-    /* FOOTER */
-
     .footer-franja {
-
         height: 8px;
-
     }
 
     .footer-contenedor {
-
         width: calc(100% - 40px);
-
         padding: 30px 0 25px;
-
     }
 
     .footer-principal {
-
         display: flex;
-
         flex-direction: column;
-
         align-items: flex-start;
-
         gap: 28px;
-
     }
 
     .footer-marca img {
-
         width: 170px;
-
     }
 
     .footer-informacion {
-
         gap: 12px;
-
     }
 
     .footer-dato {
-
         font-size: 13px;
-
     }
 
     .footer-icono-img {
-
         width: 17px;
-
         height: 17px;
-
     }
 
     .footer-instituciones {
-
         gap: 18px;
-
     }
 
     .footer-instituciones img {
-
         height: 73px;
-
     }
 
     .footer-separador {
-
         margin: 25px 0 20px;
-
     }
 
     .footer-redes {
-
         gap: 16px;
-
     }
 
     .footer-red-icono {
-
         width: 22px;
-
         height: 22px;
-
     }
 
 }
 
-/* =========================================
-
-   PÁGINA: COMUNIDAD - NUESTRO HACER
-
-   ========================================= */
-
-/* 1. CONTENEDOR GENERAL */
-
+/* PÁGINA: COMUNIDAD */
 .pagina-comunidad {
-
     background-color: #ffffff;
-
     color: #222222;
-
 }
 
-/* 2. INTRODUCCIÓN */
-
 .comunidad-introduccion {
-
     margin-bottom: 50px;
-
 }
 
 .ruta-pagina {
-
     margin: 0 0 25px;
-
     font-size: 13px;
-
     color: #666666;
-
 }
 
 .comunidad-introduccion h2 {
-
     margin: 0 0 15px;
-
     font-size: clamp(26px, 3vw, 36px);
-
     font-weight: 700;
-
     line-height: 1.2;
-
 }
 
 .comunidad-introduccion > p:last-child {
-
     max-width: 650px;
-
     margin: 0;
-
     font-size: 15px;
-
     line-height: 1.6;
-
 }
-
-/* =========================================
-
-   3. TARJETAS DE PROYECTOS
-
-   ========================================= */
 
 .comunidad-proyecto {
-
     display: grid;
-
-    /* Texto más ancho que imagen */
-
     grid-template-columns:
-
-        minmax(0, 2fr)
-
-        minmax(0, 1fr);
-
+    minmax(0, 2fr)
+    minmax(0, 1fr);
     gap: 0;
-
     align-items: stretch;
-
     width: 100%;
-
     max-width: 1050px;
-
     min-height: 290px;
-
     margin: 0 auto 60px;
-
 }
-
-/* 4. COLUMNA DE TEXTO */
 
 .comunidad-proyecto-texto {
-
     display: flex;
-
     flex-direction: column;
-
     align-items: stretch;
-
     min-width: 0;
-
     background-color: #ffffff;
-
 }
-
-/* Franja negra del título */
 
 .comunidad-proyecto h3 {
-
     display: flex;
-
     align-items: center;
-
     width: 100%;
-
     min-height: 58px;
-
     margin: 0;
-
     padding: 14px 20px;
-
     color: #ffffff;
-
     background-color: #080808;
-
     font-size: 19px;
-
     font-weight: 600;
-
     line-height: 1.3;
-
 }
-
-/* Descripción de cada iniciativa */
 
 .comunidad-proyecto-texto > p {
-
     margin: 0;
-
     padding: 18px 20px 10px;
-
     font-size: 14px;
-
     line-height: 1.5;
-
 }
 
-/* =========================================
-
-   5. IMÁGENES DE LAS TARJETAS
-
-   ========================================= */
-
 .comunidad-proyecto-imagen {
-
     width: 100%;
-
     min-width: 0;
-
     display: flex;
-
     align-items: stretch;
-
     justify-content: center;
-
     background-color: #ffffff;
-
     overflow: hidden;
-
 }
 
 .comunidad-proyecto-imagen img {
-
     display: block;
-
     width: 100%;
-
     height: 100%;
-
     object-fit: contain;
-
     object-position: center;
-
 }
 
-/* =========================================
-
-   6. BOTÓN VER MÁS
-
-   ========================================= */
-
 .proyecto-detalle {
-
     width: 100%;
-
-    /* Empuja el botón al fondo */
-
     margin-top: auto;
-
     padding: 12px 20px 18px;
-
 }
 
 .proyecto-detalle summary {
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     width: fit-content;
-
     min-width: 130px;
-
     min-height: 36px;
-
     margin-inline: auto;
-
     padding: 8px 22px;
-
-    color: #ffffff;
-
+    color: #222222;
     background-color: #b6d747;
-
     border-radius: 30px;
-
     font-size: 12px;
-
     font-weight: 600;
-
     text-align: center;
-
     cursor: pointer;
-
     list-style: none;
-
     transition: background-color 0.2s ease;
-
 }
-
-/* Ocultar marcador predeterminado */
 
 .proyecto-detalle summary::-webkit-details-marker {
-
     display: none;
-
 }
-
-/* Efecto al pasar el mouse */
 
 .proyecto-detalle summary:hover {
-
     background-color: #9fbe35;
-
 }
-
-/* Navegación con teclado */
 
 .proyecto-detalle summary:focus-visible {
-
     outline: 3px solid #222222;
-
     outline-offset: 3px;
-
 }
-
-/* 7. CONTENIDO DESPLEGABLE */
 
 .proyecto-detalle[open] p {
-
     margin: 15px 0 0;
-
     padding: 15px;
-
     background-color: #f3f3f3;
-
     border-left: 3px solid #b6d747;
-
     font-size: 14px;
-
     line-height: 1.6;
-
 }
 
-/* =========================================
-
-   RESPONSIVIDAD: COMUNIDAD
-
-   ========================================= */
-
-/* 8. TABLET */
-
 @media (max-width: 900px) {
-
     .comunidad-proyecto {
-
         grid-template-columns:
-
-            minmax(0, 1.5fr)
-
-            minmax(0, 1fr);
-
+        minmax(0, 1.5fr)
+        minmax(0, 1fr);
         min-height: 260px;
-
         margin-bottom: 45px;
-
     }
 
     .comunidad-proyecto h3 {
-
         min-height: 54px;
-
         font-size: 17px;
-
     }
 
     .comunidad-proyecto-texto > p {
-
         padding: 15px 16px 8px;
-
         font-size: 13px;
-
     }
 
     .proyecto-detalle {
-
         padding: 12px 16px 18px;
-
     }
 
 }
 
-/* =========================================
-
-   COMUNIDAD: TARJETAS EN MÓVIL
-
-   Orden: imagen, título, texto y botón
-
-   ========================================= */
-
 @media (max-width: 600px) {
-
     .pagina-comunidad .comunidad-proyecto {
-
         display: grid;
-
         grid-template-columns: minmax(0, 1fr);
-
         gap: 0;
-
     }
 
     .pagina-comunidad .comunidad-proyecto-texto {
-
         display: contents;
-
     }
 
-    /* 1. Fotografía primero */
-
     .pagina-comunidad .comunidad-proyecto-imagen {
-
         order: 1;
-
         width: 100%;
-
         max-width: none;
-
         margin: 0;
-
     }
 
     .pagina-comunidad .comunidad-proyecto-imagen img {
-
         width: 100%;
-
         height: auto;
-
         aspect-ratio: 1 / 1;
-
         object-fit: contain;
-
     }
-
-    /* 2. Título debajo de la imagen */
 
     .pagina-comunidad .comunidad-proyecto h3 {
-
         order: 2;
-
         margin: 0;
-
     }
-
-    /* 3. Descripción */
 
     .pagina-comunidad .comunidad-proyecto-texto > p {
-
         order: 3;
-
         margin: 0;
-
         padding: 16px 16px 0;
-
     }
-
-    /* 4. Botón al final */
 
     .pagina-comunidad .proyecto-detalle {
-
         order: 4;
-
         margin: 0;
-
         padding: 20px 16px 24px;
-
     }
 
 }
 
-/* 10. MOVIMIENTO REDUCIDO */
-
 @media (prefers-reduced-motion: reduce) {
-
     .proyecto-detalle summary {
-
         transition: none;
-
     }
 
 }
 
-/* =========================================
-
-   E. ACCESIBILIDAD Y MOVIMIENTO
-
-   ========================================= */
-
 @media (prefers-reduced-motion: reduce) {
-
     html {
-
         scroll-behavior: auto;
-
     }
 
     .menu a,
-
     .footer-redes a {
-
         transition: none;
-
     }
 
 }
 
-/* =========================================
-
-   NAVEGACIÓN SECUNDARIA COMPARTIDA
-
-   ========================================= */
-
+/* NAVEGACIÓN SECUNDARIA COMPARTIDA */
 .submenu-paginas {
-
     display: flex;
-
     align-items: center;
-
     flex-wrap: wrap;
-
     gap: 30px;
-
     width: min(100% - 40px, 1200px);
-
     margin-inline: auto;
-
     padding-top: 30px;
-
 }
 
 .submenu-paginas a {
-
     display: inline-block;
-
     padding: 8px 0 12px;
-
     color: #444444;
-
     font-size: 14px;
-
     text-decoration: none;
-
     border-bottom: 2px solid transparent;
-
     transition: border-color 0.2s ease;
-
 }
 
 .submenu-paginas a:hover,
-
 .submenu-paginas a[aria-current="page"] {
-
     border-bottom-color: #8c78e8;
-
 }
 
 .submenu-paginas a:focus-visible {
-
     outline: 3px solid #8c78e8;
-
     outline-offset: 4px;
-
 }
 
 @media (max-width: 600px) {
-
     .submenu-paginas {
-
         width: calc(100% - 30px);
-
         gap: 18px;
-
         padding-top: 20px;
-
     }
 
     .submenu-paginas a {
-
         font-size: 13px;
-
         padding-bottom: 10px;
-
     }
 
 }
 
-/* =========================================
-
-   PÁGINA: PATRIMONIO
-
-   ========================================= */
-
-/* 1. CONFIGURACIÓN GENERAL */
-
+/* PÁGINA: PATRIMONIO */
 .pagina-patrimonio {
-
     width: 100%;
-
     background-color: #ffffff;
-
     color: #222222;
-
 }
 
-/* 2. NAVEGACIÓN INTERNA */
-
 .patrimonio-submenu {
-
     display: flex;
-
     align-items: center;
-
     flex-wrap: wrap;
-
     gap: 30px;
-
     width: min(100% - 40px, 1200px);
-
     margin-inline: auto;
-
     padding-top: 30px;
-
 }
 
 .patrimonio-submenu a {
-
     padding: 8px 0;
-
     color: #444444;
-
     font-size: 14px;
-
     text-decoration: none;
-
     border-bottom: 2px solid transparent;
-
 }
 
 .patrimonio-submenu a:hover,
-
 .patrimonio-submenu-activo {
-
     border-bottom-color: #8c78e8 !important;
-
 }
 
 .patrimonio-submenu a:focus-visible {
-
     outline: 3px solid #8c78e8;
-
     outline-offset: 4px;
-
 }
 
-/* 3. INTRODUCCIÓN */
-
 .patrimonio-introduccion {
-
     padding-top: 45px;
-
     padding-bottom: 65px;
-
 }
 
 .patrimonio-introduccion h1 {
-
     margin: 0 0 25px;
-
     font-size: clamp(28px, 3vw, 38px);
-
     line-height: 1.2;
-
 }
 
 .patrimonio-introduccion p {
-
     max-width: 850px;
-
     margin: 0 0 18px;
-
     font-size: 15px;
-
     line-height: 1.7;
-
 }
 
-/* 4. SECCIONES PATRIMONIALES */
-
 .patrimonio-seccion {
-
     margin-bottom: 80px;
-
     scroll-margin-top: 25px;
-
 }
 
 .patrimonio-seccion > .contenedor {
-
     padding-top: 20px;
-
     padding-bottom: 25px;
-
 }
 
 .patrimonio-seccion h2 {
-
     margin: 0;
-
     font-size: clamp(24px, 2.5vw, 32px);
-
     line-height: 1.25;
-
 }
-
-/* =========================================
-
-   5. TARJETAS HORIZONTALES
-
-   ========================================= */
 
 .patrimonio-tarjeta {
-
     display: grid;
-
     grid-template-columns:
-
-        minmax(0, 1fr)
-
-        minmax(0, 1fr);
-
+    minmax(0, 1fr)
+    minmax(0, 1fr);
     gap: 0;
-
     align-items: stretch;
-
     width: 100%;
-
     min-height: 350px;
-
 }
 
-/* 6. COLUMNA DE IMAGEN */
-
 .patrimonio-tarjeta-imagen {
-
     min-width: 0;
-
     min-height: 350px;
-
     overflow: hidden;
-
 }
 
 .patrimonio-tarjeta-imagen img {
-
     display: block;
-
     width: 100%;
-
     height: 100%;
-
     min-height: 350px;
-
     object-fit: cover;
-
     object-position: center;
-
 }
 
-/* 7. COLUMNA DE TEXTO */
-
 .patrimonio-tarjeta-texto {
-
     display: flex;
-
     flex-direction: column;
-
     align-items: flex-start;
-
     justify-content: center;
-
     min-width: 0;
-
     padding: clamp(25px, 4vw, 65px);
-
     color: #ffffff;
-
     background-color: #111111;
-
 }
 
 .patrimonio-tarjeta-texto h3 {
-
     margin: 0 0 20px;
-
     font-size: clamp(20px, 2vw, 26px);
-
     font-weight: 600;
-
     line-height: 1.3;
-
 }
 
 .patrimonio-tarjeta-texto > p {
-
     max-width: 500px;
-
     margin: 0 0 25px;
-
     font-size: 15px;
-
     line-height: 1.65;
-
 }
 
-/* =========================================
-
-   8. TARJETA INVERTIDA
-
-   ========================================= */
-
-/* Ex Cárcel: texto izquierda, imagen derecha */
-
 .patrimonio-invertida
-
 .patrimonio-tarjeta-texto {
-
     grid-column: 1;
-
     grid-row: 1;
-
 }
 
 .patrimonio-invertida
-
 .patrimonio-tarjeta-imagen {
-
     grid-column: 2;
-
     grid-row: 1;
-
 }
-
-/* =========================================
-
-   9. BOTÓN CONOCE SU HISTORIA
-
-   ========================================= */
 
 .patrimonio-detalle {
-
     width: 100%;
-
     max-width: 500px;
-
 }
 
 .patrimonio-detalle summary {
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     width: fit-content;
-
     min-width: 145px;
-
     min-height: 38px;
-
     padding: 9px 22px;
-
     color: #222222;
-
     background-color: #b6d747;
-
     border-radius: 30px;
-
     font-size: 13px;
-
     font-weight: 600;
-
     text-align: center;
-
     cursor: pointer;
-
     list-style: none;
-
     transition: background-color 0.2s ease;
-
 }
 
 .patrimonio-detalle summary::-webkit-details-marker {
-
     display: none;
-
 }
 
 .patrimonio-detalle summary:hover {
-
     background-color: #9fbe35;
-
 }
 
 .patrimonio-detalle summary:focus-visible {
-
     outline: 3px solid #ffffff;
-
     outline-offset: 4px;
-
 }
 
 .patrimonio-detalle[open] p {
-
     margin: 20px 0 0;
-
     padding: 15px;
-
     color: #ffffff;
-
     background-color: #292929;
-
     border-left: 3px solid #b6d747;
-
     font-size: 14px;
-
     line-height: 1.6;
-
 }
 
-/* =========================================
-
-   10. RESPONSIVIDAD TABLET
-
-   ========================================= */
-
 @media (max-width: 900px) {
-
     .patrimonio-tarjeta {
-
         min-height: 300px;
-
     }
 
     .patrimonio-tarjeta-imagen,
-
     .patrimonio-tarjeta-imagen img {
-
         min-height: 300px;
-
     }
 
     .patrimonio-tarjeta-texto {
-
         padding: 25px;
-
     }
 
     .patrimonio-tarjeta-texto > p {
-
         font-size: 14px;
-
     }
 
     .patrimonio-seccion {
-
         margin-bottom: 55px;
-
     }
 
 }
 
-/* =========================================
-
-   11. RESPONSIVIDAD MÓVIL
-
-   ========================================= */
-
 @media (max-width: 600px) {
-
-    /* Navegación secundaria */
-
     .patrimonio-submenu {
-
         width: calc(100% - 30px);
-
         gap: 14px;
-
         padding-top: 20px;
-
     }
 
     .patrimonio-submenu a {
-
         font-size: 12px;
-
     }
 
-    /* Introducción */
-
     .patrimonio-introduccion {
-
         padding-top: 35px;
-
         padding-bottom: 45px;
-
     }
 
     .patrimonio-introduccion p {
-
         font-size: 14px;
-
     }
 
-    /* Secciones */
-
     .patrimonio-seccion {
-
         margin-bottom: 45px;
-
     }
 
     .patrimonio-seccion > .contenedor {
-
         padding-top: 15px;
-
         padding-bottom: 20px;
-
     }
-
-    /* Tarjetas verticales */
 
     .patrimonio-tarjeta {
-
         display: flex;
-
         flex-direction: column;
-
         min-height: 0;
-
     }
 
-    /* Fotografía primero */
-
     .patrimonio-tarjeta-imagen {
-
         width: 100%;
-
         min-height: 0;
-
         height: 240px;
-
         order: 1;
-
     }
 
     .patrimonio-tarjeta-imagen img {
-
         width: 100%;
-
         height: 100%;
-
         min-height: 0;
-
         object-fit: cover;
-
     }
 
-    /* Texto después */
-
     .patrimonio-tarjeta-texto {
-
         width: 100%;
-
         min-height: 260px;
-
         padding: 30px 22px;
-
         order: 2;
-
     }
 
     .patrimonio-tarjeta-texto h3 {
-
         font-size: 21px;
-
     }
 
     .patrimonio-tarjeta-texto > p {
-
         font-size: 14px;
-
     }
 
     .patrimonio-detalle summary {
-
         min-height: 44px;
-
     }
 
 }
-
-/* =========================================
-
-   12. MOVIMIENTO REDUCIDO
-
-   ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
-
     .patrimonio-detalle summary {
-
         transition: none;
-
     }
 
 }
 
-/* ==========================================================================
-   PÁGINA: NOSOTROS (HISTORIA, MISIÓN, VALORES Y TRANSPARENCIA)
-   ========================================================================== */
-
-/* 1. SECCIÓN: HISTORIA / QUIÉNES SOMOS */
-
+/* PÁGINA: NOSOTROS */
 .pagina-nosotros .history-grid {
-  display: grid;
-  grid-template-columns: 1fr 480px; /* Columna amplia para la fotografía */
-  gap: 40px;
-  align-items: stretch; /* Estira la foto para alinearse con la altura del texto */
-  margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: 1fr 480px;
+    gap: 40px;
+    align-items: stretch;
+    margin-bottom: 50px;
 }
 
 .pagina-nosotros .history-text h2 {
-  font-size: clamp(26px, 2.5vw, 34px);
-  font-weight: 800;
-  margin-bottom: 18px;
-  color: #111111;
+    font-size: clamp(26px, 2.5vw, 34px);
+    font-weight: 800;
+    margin-bottom: 18px;
+    color: #111111;
 }
 
 .pagina-nosotros .history-text p {
-  font-size: 0.95rem;
-  margin-bottom: 16px;
-  line-height: 1.6;
-  color: #222222;
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+    line-height: 1.6;
+    color: #222222;
 }
 
 .pagina-nosotros .history-image {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .pagina-nosotros .history-image img {
-  width: 100% !important;
-  height: 100% !important; /* Llena verticalmente todo el bloque junto al texto */
-  min-height: 400px; /* Garantiza buen tamaño visual */
-  object-fit: cover !important;
-  object-position: center !important;
-  border-radius: 4px;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 400px;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 4px;
 }
 
-/* 2. MISIÓN Y VISIÓN */
-
 .pagina-nosotros .mission-vision-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
 }
 
 .pagina-nosotros .mv-block h2 {
-  font-size: 1.6rem;
-  font-weight: 800;
-  padding-bottom: 8px;
-  border-bottom: 3px solid #8c78e8;
-  margin-bottom: 16px;
-  color: #222222;
+    font-size: 1.6rem;
+    font-weight: 800;
+    padding-bottom: 8px;
+    border-bottom: 3px solid #8c78e8;
+    margin-bottom: 16px;
+    color: #222222;
 }
 
 .pagina-nosotros .mv-block p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #333333;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #333333;
 }
 
-/* 3. NUESTROS VALORES */
-
 .pagina-nosotros .values-section {
-  margin-bottom: 50px;
+    margin-bottom: 50px;
 }
 
 .pagina-nosotros .values-section h2 {
-  font-size: 1.6rem;
-  font-weight: 800;
-  margin-bottom: 20px;
-  color: #222222;
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #222222;
 }
 
 .pagina-nosotros .values-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
 }
 
 .pagina-nosotros .values-grid ul {
-  list-style-type: disc;
-  padding-left: 20px;
+    list-style-type: disc;
+    padding-left: 20px;
 }
 
 .pagina-nosotros .values-grid li {
-  font-size: 0.9rem;
-  margin-bottom: 12px;
-  line-height: 1.5;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    line-height: 1.5;
 }
 
-/* 4. COMPONENTE: DESPLEGABLES / ACORDEONES */
-
 .pagina-nosotros .accordion-group {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 20px;
-  margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
 
 .pagina-nosotros .accordion-item {
-  background-color: #f3f3f3;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid #e0e0e0;
+    background-color: #f3f3f3;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
 }
 
 .pagina-nosotros .accordion-header {
-  padding: 16px 20px;
-  font-weight: 700;
-  font-size: 1rem;
-  cursor: pointer;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  user-select: none;
-  background-color: #f8f8f8;
-  color: #222222;
-  transition: background-color 0.2s ease;
+    padding: 16px 20px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    background-color: #f8f8f8;
+    color: #222222;
+    transition: background-color 0.2s ease;
 }
 
 .pagina-nosotros .accordion-header:hover {
-  background-color: #ececec;
+    background-color: #ececec;
 }
 
 .pagina-nosotros .accordion-header::-webkit-details-marker {
-  display: none;
+    display: none;
 }
 
 .pagina-nosotros .accordion-header::before {
-  content: "▼";
-  font-size: 0.8rem;
-  margin-right: 15px;
-  color: #8c78e8;
-  transition: transform 0.2s ease;
+    content: "▼";
+    font-size: 0.8rem;
+    margin-right: 15px;
+    color: #8c78e8;
+    transition: transform 0.2s ease;
 }
 
 .pagina-nosotros .accordion-item[open] .accordion-header::before {
-  transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 
 .pagina-nosotros .accordion-content {
-  padding: 20px;
-  background-color: #ffffff;
-  border-top: 1px solid #e0e0e0;
+    padding: 20px;
+    background-color: #ffffff;
+    border-top: 1px solid #e0e0e0;
 }
 
-/* 5. SECCIÓN: TRANSPARENCIA Y TARJETAS DE DESCARGA */
-
 .pagina-nosotros .transparency-header {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 .pagina-nosotros .transparency-header h2 {
-  font-size: 1.8rem;
-  font-weight: 800;
-  margin-bottom: 6px;
-  color: #222222;
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+    color: #222222;
 }
 
 .pagina-nosotros .transparency-header p {
-  font-size: 0.95rem;
-  color: #555555;
+    font-size: 0.95rem;
+    color: #555555;
 }
 
 .pagina-nosotros .downloads-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-  gap: 15px;
-  padding: 10px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 15px;
+    padding: 10px 0;
 }
 
 .pagina-nosotros .download-card {
-  background-color: #8c78e8;
-  color: #ffffff;
-  text-decoration: none;
-  aspect-ratio: 1 / 1;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  text-align: center;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+    background-color: #6143a6;
+    color: #ffffff;
+    text-decoration: none;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .pagina-nosotros .download-card:hover {
-  background-color: #7261cc;
-  transform: translateY(-3px);
+    background-color: #4e3589;
+    transform: translateY(-3px);
 }
 
 .pagina-nosotros .download-card .icon {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 4px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 4px;
 }
 
 .pagina-nosotros .download-card .label {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
-
-/* 6. RESPONSIVIDAD PARA MÓVILES Y TABLETS */
 
 @media (max-width: 900px) {
-  .pagina-nosotros .history-grid {
-    grid-template-columns: 1fr;
-  }
+    .pagina-nosotros .history-grid {
+        grid-template-columns: 1fr;
+    }
 
-  .pagina-nosotros .history-image {
-    order: -1;
-    height: auto;
-  }
+    .pagina-nosotros .history-image {
+        order: -1;
+        height: auto;
+    }
 
-  .pagina-nosotros .history-image img {
-    height: 280px !important;
-    min-height: auto;
-  }
+    .pagina-nosotros .history-image img {
+        height: 280px !important;
+        min-height: auto;
+    }
 
-  .pagina-nosotros .mission-vision-grid,
-  .pagina-nosotros .values-grid {
-    grid-template-columns: 1fr;
-  }
+    .pagina-nosotros .mission-vision-grid,
+    .pagina-nosotros .values-grid {
+        grid-template-columns: 1fr;
+    }
 
-  .pagina-nosotros .downloads-grid {
-    grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
-  }
+    .pagina-nosotros .downloads-grid {
+        grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
+    }
+
 }
 
-/* ==========================================================================
-
-   PÁGINA: PROGRAMACIÓN / CARTELERA
-
-   ========================================================================== */
-
+/* PÁGINA: PROGRAMACIÓN */
 .pagina-programacion {
-
-  background-color: #ffffff;
-
-  padding-bottom: 60px;
-
+    background-color: #ffffff;
+    padding-bottom: 60px;
 }
 
 .programacion-encabezado {
-
-  margin-bottom: 30px;
-
+    margin-bottom: 30px;
 }
 
 .programacion-encabezado h2 {
-
-  font-size: clamp(28px, 3.5vw, 42px);
-
-  font-weight: 800;
-
-  margin-bottom: 25px;
-
-  color: #222222;
-
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 800;
+    margin-bottom: 25px;
+    color: #222222;
 }
 
-/* 1. Barra de Herramientas y Buscador */
-
 .agenda-barra-herramientas {
-
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 20px;
-
-  margin-bottom: 40px;
-
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
 }
 
 .buscador-agenda {
-
-  display: flex;
-
-  gap: 15px;
-
-  max-width: 750px;
-
-  width: 100%;
-
+    display: flex;
+    gap: 15px;
+    max-width: 750px;
+    width: 100%;
 }
 
 .buscador-agenda input {
-
-  flex: 1;
-
-  padding: 12px 20px;
-
-  border: 1px solid #cccccc;
-
-  border-radius: 30px;
-
-  font-size: 14px;
-
-  outline: none;
-
+    flex: 1;
+    padding: 12px 20px;
+    border: 1px solid #cccccc;
+    border-radius: 30px;
+    font-size: 14px;
+    outline: none;
 }
 
 .buscador-agenda input:focus {
-
-  border-color: #8c78e8;
-
+    border-color: #8c78e8;
 }
 
 .btn-buscar-agenda {
-
-  padding: 12px 24px;
-
-  background-color: #008069; /* Verde estilo Baburizza / PCDV */
-
-  color: #ffffff;
-
-  border: none;
-
-  border-radius: 30px;
-
-  font-size: 12px;
-
-  font-weight: 700;
-
-  letter-spacing: 0.5px;
-
-  cursor: pointer;
-
-  transition: background-color 0.2s ease;
-
+    padding: 12px 24px;
+    background-color: #008069;
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
 .btn-buscar-agenda:hover {
-
-  background-color: #00604f;
-
+    background-color: #00604f;
 }
 
-/* 2. Navegación de Fechas y Botón Próximos */
-
 .agenda-navegacion-fechas {
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 12px;
-
-  position: relative;
-
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
 }
 
 .btn-flecha-fecha {
-
-  width: 32px;
-
-  height: 32px;
-
-  border-radius: 50%;
-
-  border: 1px solid #e0e0e0;
-
-  background-color: #f5f5f5;
-
-  color: #333333;
-
-  font-size: 14px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  cursor: pointer;
-
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #e0e0e0;
+    background-color: #f5f5f5;
+    color: #333333;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
 .btn-flecha-fecha:hover {
-
-  background-color: #008069;
-
-  color: #ffffff;
-
-  border-color: #008069;
-
+    background-color: #008069;
+    color: #ffffff;
+    border-color: #008069;
 }
 
 .btn-hoy {
-
-  background: transparent;
-
-  border: none;
-
-  font-size: 14px;
-
-  color: #666666;
-
-  cursor: pointer;
-
-  padding: 0 8px;
-
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    color: #666666;
+    cursor: pointer;
+    padding: 0 8px;
 }
 
 .btn-hoy:hover {
-
-  color: #000000;
-
-  text-decoration: underline;
-
+    color: #000000;
+    text-decoration: underline;
 }
 
-/* Selector Flotante (Desplegable) */
-
 .selector-calendario-wrapper {
-
-  position: relative;
-
+    position: relative;
 }
 
 .btn-proximos {
-
-  font-size: 22px;
-
-  font-weight: 700;
-
-  color: #111111;
-
-  cursor: pointer;
-
-  list-style: none;
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 6px;
-
+    font-size: 22px;
+    font-weight: 700;
+    color: #111111;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .btn-proximos::-webkit-details-marker {
-
-  display: none;
-
+    display: none;
 }
 
-/* Popover del Calendario (Ventana Negra Flotante) */
-
 .calendario-popover {
-
-  position: absolute;
-
-  top: 110%;
-
-  left: 0;
-
-  z-index: 100;
-
-  width: 280px;
-
-  padding: 16px;
-
-  background-color: #1a1a1a;
-
-  color: #ffffff;
-
-  border-radius: 6px;
-
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-
+    position: absolute;
+    top: 110%;
+    left: 0;
+    z-index: 100;
+    width: 280px;
+    padding: 16px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
 .cal-cabecera {
-
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
-
-  font-size: 14px;
-
-  font-weight: 600;
-
-  margin-bottom: 15px;
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 15px;
 }
 
 .cal-nav {
-
-  background: transparent;
-
-  border: none;
-
-  color: #ffffff;
-
-  font-size: 16px;
-
-  cursor: pointer;
-
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .cal-dias-semana, .cal-matriz-dias {
-
-  display: grid;
-
-  grid-template-columns: repeat(7, 1fr);
-
-  text-align: center;
-
-  gap: 6px;
-
-  font-size: 12px;
-
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    gap: 6px;
+    font-size: 12px;
 }
 
 .cal-dias-semana {
-
-  font-weight: bold;
-
-  color: #888888;
-
-  margin-bottom: 8px;
-
+    font-weight: bold;
+    color: #bbbbbb;
+    margin-bottom: 8px;
 }
 
 .cal-matriz-dias span {
-
-  padding: 6px 0;
-
-  cursor: pointer;
-
-  border-radius: 4px;
-
+    padding: 6px 0;
+    cursor: pointer;
+    border-radius: 4px;
 }
 
 .cal-matriz-dias span:hover {
-
-  background-color: #333333;
-
+    background-color: #333333;
 }
 
 .cal-matriz-dias span.fuera {
-
-  color: #444444;
-
+    color: #bbbbbb;
 }
 
 .cal-matriz-dias span.dia-actual {
-
-  background-color: #3b82f6; /* Azul destacado del día seleccionado */
-
-  color: #ffffff;
-
-  font-weight: bold;
-
+    background-color: #3b82f6;
+    color: #ffffff;
+    font-weight: bold;
 }
 
-/* 3. Estructura de Tarjetas de Eventos */
-
 .mes-titulo {
-
-  font-size: 16px;
-
-  font-weight: 600;
-
-  color: #666666;
-
-  margin-bottom: 25px;
-
-  border-bottom: 1px solid #e0e0e0;
-
-  padding-bottom: 8px;
-
+    font-size: 16px;
+    font-weight: 600;
+    color: #666666;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 8px;
 }
 
 .lista-eventos {
-
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 40px;
-
-  margin-bottom: 50px;
-
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 50px;
 }
 
 .tarjeta-evento {
-
-  display: grid;
-
-  grid-template-columns: 80px 1fr;
-
-  gap: 20px;
-
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 20px;
 }
 
 .evento-fecha {
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  justify-content: flex-start;
-
-  padding-top: 10px;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 10px;
 }
 
 .dia-nombre {
-
-  font-size: 14px;
-
-  font-weight: 600;
-
-  color: #444444;
-
+    font-size: 14px;
+    font-weight: 600;
+    color: #444444;
 }
 
 .dia-numero {
-
-  font-size: 38px;
-
-  font-weight: 800;
-
-  line-height: 1;
-
-  color: #111111;
-
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1;
+    color: #111111;
 }
 
 .evento-cuerpo {
-
-  display: flex;
-
-  flex-direction: column;
-
+    display: flex;
+    flex-direction: column;
 }
 
 .evento-horario-rango {
-
-  font-size: 13px;
-
-  font-weight: 600;
-
-  color: #8c78e8;
-
-  margin-bottom: 6px;
-
+    font-size: 13px;
+    font-weight: 600;
+    color: #6143a6;
+    margin-bottom: 6px;
 }
 
 .evento-banner-titulo {
-
-  background-color: #1a1a1a;
-
-  color: #ffffff;
-
-  padding: 12px 20px;
-
-  margin-bottom: 20px;
-
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 12px 20px;
+    margin-bottom: 20px;
 }
 
 .evento-categoria {
-
-  display: block;
-
-  font-size: 11px;
-
-  font-weight: 700;
-
-  letter-spacing: 1px;
-
-  color: #cccccc;
-
-  margin-bottom: 2px;
-
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #cccccc;
+    margin-bottom: 2px;
 }
 
 .evento-titulo {
-
-  font-size: 20px;
-
-  font-weight: 700;
-
-  margin: 0;
-
-  font-style: italic;
-
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    font-style: italic;
 }
 
 .evento-detalles-grid {
-
-  display: grid;
-
-  grid-template-columns: 1fr 280px;
-
-  gap: 30px;
-
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 30px;
 }
 
 .evento-descripcion p {
-
-  font-size: 14px;
-
-  line-height: 1.6;
-
-  color: #333333;
-
-  margin-bottom: 15px;
-
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333333;
+    margin-bottom: 15px;
 }
 
-/* Botón Ver Más Verde */
-
 .boton-ver-mas {
-
-  display: inline-block;
-
-  padding: 8px 24px;
-
-  background-color: #b6d747;
-
-  color: #222222;
-
-  font-size: 12px;
-
-  font-weight: 700;
-
-  border-radius: 30px;
-
-  cursor: pointer;
-
-  list-style: none;
-
-  margin-top: 10px;
-
+    display: inline-block;
+    padding: 8px 24px;
+    background-color: #b6d747;
+    color: #222222;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 30px;
+    cursor: pointer;
+    list-style: none;
+    margin-top: 10px;
 }
 
 .boton-ver-mas::-webkit-details-marker {
-
-  display: none;
-
+    display: none;
 }
 
 .evento-desplegable[open] .boton-ver-mas {
-
-  background-color: #9fbe35;
-
+    background-color: #9fbe35;
 }
 
 .desplegable-contenido {
-
-  margin-top: 15px;
-
-  padding: 12px;
-
-  background-color: #f9f9f9;
-
-  border-left: 3px solid #b6d747;
-
+    margin-top: 15px;
+    padding: 12px;
+    background-color: #f9f9f9;
+    border-left: 3px solid #b6d747;
 }
 
 .evento-lateral {
-
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 15px;
-
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .evento-imagen {
-
-  width: 100%;
-
-  aspect-ratio: 1 / 1;
-
-  object-fit: cover;
-
-  object-position: center;
-
-  border-radius: 4px;
-
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 4px;
 }
 
 .evento-ubicacion {
-
-  font-size: 12px;
-
-  line-height: 1.4;
-
-  color: #444444;
-
+    font-size: 12px;
+    line-height: 1.4;
+    color: #444444;
 }
 
 .evento-ubicacion strong {
-
-  color: #111111;
-
+    color: #111111;
 }
 
-/* Paginación Inferior */
-
 .eventos-paginacion {
-
-  display: flex;
-
-  justify-content: space-between;
-
-  padding-top: 20px;
-
-  border-top: 2px solid #8c78e8;
-
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    border-top: 2px solid #8c78e8;
 }
 
 .paginacion-enlace {
-
-  font-size: 15px;
-
-  font-weight: 700;
-
-  color: #111111;
-
-  text-decoration: none;
-
+    font-size: 15px;
+    font-weight: 700;
+    color: #111111;
+    text-decoration: none;
 }
 
 .paginacion-enlace:hover {
-
-  text-decoration: underline;
-
-  color: #8c78e8;
-
+    text-decoration: underline;
+    color: #6143a6;
 }
-
-/* Responsividad para móviles */
 
 @media (max-width: 768px) {
+    .tarjeta-evento {
+        grid-template-columns: 1fr;
+    }
 
-  .tarjeta-evento {
+    .evento-fecha {
+        flex-direction: row;
+        gap: 10px;
+        align-items: baseline;
+    }
 
-    grid-template-columns: 1fr;
+    .evento-detalles-grid {
+        grid-template-columns: 1fr;
+    }
 
-  }
-
-  .evento-fecha {
-
-    flex-direction: row;
-
-    gap: 10px;
-
-    align-items: baseline;
-
-  }
-
-  .evento-detalles-grid {
-
-    grid-template-columns: 1fr;
-
-  }
-
-  .buscador-agenda {
-
-    flex-direction: column;
-
-  }
+    .buscador-agenda {
+        flex-direction: column;
+    }
 
 }
 
-/* =========================================
-
-   PÁGINA: CONTACTO
-
-   ========================================= */
-
+/* PÁGINA: CONTACTO */
 .pagina-contacto {
-
     background-color: #ffffff;
-
     color: #222222;
-
 }
 
 .contacto-seccion {
-
     margin-bottom: 75px;
-
     scroll-margin-top: 25px;
-
 }
 
 .contacto-seccion h2 {
-
     margin: 0 0 15px;
-
     font-size: clamp(24px, 3vw, 32px);
-
 }
 
 .contacto-seccion > p {
-
     margin: 0 0 30px;
-
     font-size: 14px;
-
     line-height: 1.6;
-
 }
 
-/* =========================================
-
-   1. TARJETAS DE REDES SOCIALES
-
-   ========================================= */
-
 .contacto-redes-grid {
-
     display: grid;
-
     grid-template-columns: repeat(4, minmax(0, 1fr));
-
     gap: 20px;
-
 }
 
 .contacto-red-card {
-
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     gap: 14px;
-
     min-width: 0;
-
     padding: 22px 15px;
-
     background-color: #ffffff;
-
     border: 1px solid #dddddd;
-
     border-radius: 5px;
-
 }
 
 .contacto-red-icono {
-
     display: block;
-
     width: 28px;
-
     height: 28px;
-
     object-fit: contain;
-
     filter: brightness(0);
-
 }
 
 .contacto-red-card h3 {
-
     margin: 0;
-
     font-size: 14px;
-
     font-weight: 600;
-
 }
 
 .contacto-red-card a {
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     width: 100%;
-
     min-height: 38px;
-
     margin-top: auto;
-
     padding: 9px 12px;
-
     color: #ffffff;
-
-    background-color: #8c78e8;
-
+    background-color: #6143a6;
     border-radius: 4px;
-
     font-size: 13px;
-
     font-weight: 500;
-
     text-align: center;
-
     text-decoration: none;
-
 }
 
 .contacto-red-card a:hover {
-
-    background-color: #705bc7;
-
+    background-color: #4e3589;
 }
 
 .contacto-red-card a:focus-visible {
-
     outline: 3px solid #222222;
-
     outline-offset: 3px;
-
 }
-
-/* =========================================
-
-   2. INFORMACIÓN DE CONTACTO
-
-   ========================================= */
 
 .contacto-correo {
-
     display: inline-block;
-
     margin-bottom: 18px;
-
     font-size: 15px;
-
     font-weight: 600;
-
     color: #222222;
-
 }
 
-/* =========================================
-
-   3. FORMULARIO
-
-   ========================================= */
-
 .contacto-formulario {
-
     display: flex;
-
     flex-direction: column;
-
     width: 100%;
-
     max-width: 650px;
-
     margin-top: 30px;
-
 }
 
 .contacto-campo {
-
     display: flex;
-
     flex-direction: column;
-
     gap: 8px;
-
     width: 100%;
-
     margin-bottom: 20px;
-
 }
 
 .contacto-campo label {
-
     font-size: 14px;
-
     font-weight: 500;
-
 }
 
 .contacto-campo input,
-
 .contacto-campo textarea {
-
     display: block;
-
     width: 100%;
-
     padding: 13px 15px;
-
     color: #222222;
-
     background-color: #f1f1f1;
-
     border: 1px solid #dddddd;
-
     border-radius: 4px;
-
     font-size: 14px;
-
 }
 
 .contacto-campo textarea {
-
     min-height: 160px;
-
     resize: vertical;
-
 }
 
 .contacto-campo input:focus,
-
 .contacto-campo textarea:focus {
-
     outline: 2px solid #8c78e8;
-
     outline-offset: 2px;
-
 }
 
-/* =========================================
-
-   4. BOTÓN ENVIAR
-
-   ========================================= */
-
 .contacto-enviar {
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     width: 100%;
-
     min-height: 46px;
-
     padding: 12px 25px;
-
     color: #222222;
-
     background-color: #b6d747;
-
     border: none;
-
     border-radius: 30px;
-
     font-size: 14px;
-
     font-weight: 600;
-
     cursor: pointer;
-
 }
 
 .contacto-enviar:hover {
-
     background-color: #9fbe35;
-
 }
 
 .contacto-enviar:focus-visible {
-
     outline: 3px solid #222222;
-
     outline-offset: 3px;
-
 }
-
-/* =========================================
-
-   5. RESPONSIVIDAD
-
-   ========================================= */
-
-/* Tablet */
 
 @media (max-width: 900px) {
-
     .contacto-redes-grid {
-
         grid-template-columns: repeat(2, minmax(0, 1fr));
-
     }
 
 }
 
-/* Móvil */
-
 @media (max-width: 600px) {
-
     .contacto-seccion {
-
         margin-bottom: 55px;
-
     }
 
     .contacto-redes-grid {
-
         gap: 12px;
-
     }
 
     .contacto-red-card {
-
         padding: 18px 10px;
-
     }
 
     .contacto-red-icono {
-
         width: 25px;
-
         height: 25px;
-
     }
 
     .contacto-formulario {
-
         max-width: 100%;
-
     }
 
     .contacto-campo input,
-
     .contacto-campo textarea {
-
         font-size: 16px;
-
     }
 
 }
 
-/* ==========================================================================
-
-   CARRUSEL CARTELERA DESTACADA (HOME)
-
-   ========================================================================== */
-
+/* CARRUSEL CARTELERA */
 .home-cartelera-destacada {
-
-  margin-bottom: 60px;
-
+    margin-bottom: 60px;
 }
 
 .home-cartelera-destacada h2 {
-
-  font-size: clamp(26px, 3.5vw, 36px);
-
-  font-weight: 800;
-
-  color: #111111;
-
-  margin-bottom: 25px;
-
+    font-size: clamp(26px, 3.5vw, 36px);
+    font-weight: 800;
+    color: #111111;
+    margin-bottom: 25px;
 }
-
-/* Oculta las tarjetas por defecto */
 
 .cartelera-banner {
-
-  display: none;
-
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-
-  background-color: #fcfbf7;
-
-  border-radius: 2px;
-
-  overflow: hidden;
-
+    display: none;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    background-color: #fcfbf7;
+    border-radius: 2px;
+    overflow: hidden;
 }
 
-/* Muestra únicamente la tarjeta activa */
-
 .cartelera-banner.activa {
-
-  display: grid;
-
+    display: grid;
 }
 
 .cartelera-banner-imagen {
-
-  width: 100%;
-
-  aspect-ratio: 1 / 1;
-
+    width: 100%;
+    aspect-ratio: 1 / 1;
 }
 
 .cartelera-banner-imagen img {
-
-  width: 100%;
-
-  height: 100%;
-
-  object-fit: cover;
-
-  object-position: center;
-
-  display: block;
-
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
 .cartelera-banner-info {
-
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: space-between;
-
-  padding: 35px 30px;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 35px 30px;
 }
 
 .cartelera-fechas {
-
-  display: flex;
-
-  justify-content: flex-end;
-
-  gap: 20px;
-
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
 }
 
 .cartelera-fechas .fecha-bloque {
-
-  text-align: center;
-
-  line-height: 1.15;
-
+    text-align: center;
+    line-height: 1.15;
 }
 
 .cartelera-fechas .fecha-etiqueta {
-
-  font-size: 10px;
-
-  font-weight: 700;
-
-  color: #222222;
-
-  letter-spacing: 0.5px;
-
+    font-size: 10px;
+    font-weight: 700;
+    color: #222222;
+    letter-spacing: 0.5px;
 }
 
 .cartelera-fechas .fecha-mes {
-
-  font-size: 11px;
-
-  font-weight: 800;
-
-  color: #111111;
-
-  margin-top: 2px;
-
+    font-size: 11px;
+    font-weight: 800;
+    color: #111111;
+    margin-top: 2px;
 }
 
 .cartelera-fechas .fecha-numero {
-
-  font-size: 28px;
-
-  font-weight: 900;
-
-  color: #111111;
-
+    font-size: 28px;
+    font-weight: 900;
+    color: #111111;
 }
 
 .cartelera-organizacion {
-
-  display: block;
-
-  font-size: 12px;
-
-  font-weight: 700;
-
-  color: #8c78e8;
-
-  letter-spacing: 0.5px;
-
-  text-transform: uppercase;
-
-  margin-bottom: 12px;
-
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #6143a6;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
 }
 
 .cartelera-titulo {
-
-  font-size: clamp(22px, 2.5vw, 32px);
-
-  font-weight: 800;
-
-  color: #111111;
-
-  line-height: 1.2;
-
-  margin: 0;
-
+    font-size: clamp(22px, 2.5vw, 32px);
+    font-weight: 800;
+    color: #111111;
+    line-height: 1.2;
+    margin: 0;
 }
 
 .cartelera-datos-extra {
-
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 8px;
-
-  padding-top: 20px;
-
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 20px;
 }
 
 .cartelera-horario {
-
-  font-size: 14px;
-
-  font-weight: 800;
-
-  color: #111111;
-
+    font-size: 14px;
+    font-weight: 800;
+    color: #111111;
 }
 
 .cartelera-ubicacion {
-
-  font-size: 13px;
-
-  line-height: 1.4;
-
-  color: #444444;
-
-  margin: 0;
-
+    font-size: 13px;
+    line-height: 1.4;
+    color: #444444;
+    margin: 0;
 }
 
-/* Indicadores de puntos */
-
 .carrusel-indicadores {
-
-  display: flex;
-
-  gap: 8px;
-
-  margin-top: 20px;
-
-  margin-bottom: 25px;
-
+    display: flex;
+    gap: 8px;
+    margin-top: 20px;
+    margin-bottom: 25px;
 }
 
 .carrusel-indicadores .punto {
-
-  width: 10px;
-
-  height: 10px;
-
-  border-radius: 50%;
-
-  background-color: #d1cbe8;
-
-  border: none;
-
-  cursor: pointer;
-
-  padding: 0;
-
-  transition: background-color 0.2s ease;
-
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #d1cbe8;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.2s ease;
 }
 
 .carrusel-indicadores .punto.activo {
-
-  background-color: #8c78e8;
-
+    background-color: #8c78e8;
 }
 
 .cartelera-pie {
-
-  padding-top: 5px;
-
+    padding-top: 5px;
 }
 
 @media (max-width: 850px) {
+    .cartelera-banner {
+        grid-template-columns: 1fr;
+    }
 
-  .cartelera-banner {
+    .cartelera-banner-imagen {
+        width: 100%;
+        height: 380px;
+        overflow: hidden;
+    }
 
-    grid-template-columns: 1fr;
+    .cartelera-banner-imagen img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+    }
 
-  }
-
-.cartelera-banner-imagen {
-
-  width: 100%;
-
-  height: 380px; /* Le da una altura fija controlada */
-
-  overflow: hidden;
-
-}
-
-.cartelera-banner-imagen img {
-
-  width: 100%;
-
-  height: 100%;
-
-  object-fit: cover;
-
-  object-position: center;
-
-  display: block;
-
-}
-
-  .cartelera-banner-info {
-
-    gap: 25px;
-
-    padding: 25px 20px;
-
-  }
+    .cartelera-banner-info {
+        gap: 25px;
+        padding: 25px 20px;
+    }
 
 }
 
 .enlace-ver-programacion {
-
-  color: #8c78e8 !important; /* Fuerza el color morado corporativo */
-
-  font-size: 16px;
-
-  font-weight: 700;
-
-  text-decoration: none;
-
-  transition: opacity 0.2s ease;
-
+    color: #6143a6 !important;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: underline;
+    transition: opacity 0.2s ease;
 }
 
 .enlace-ver-programacion:hover {
-
-  opacity: 0.8;
-
-  text-decoration: underline;
-
+    opacity: 0.8;
+    text-decoration: underline;
 }
 
-/* =========================================
-
-   PÁGINA: GALERÍA
-
-   ========================================= */
-
-/* 1. CONTENEDOR GENERAL */
-
+/* PÁGINA: GALERÍA */
 .pagina-galeria {
-
     width: 100%;
-
     background-color: #ffffff;
-
     color: #222222;
-
 }
-
-/* 2. SECCIÓN GALERÍA */
 
 .galeria-seccion {
-
     width: 100%;
-
 }
 
 .galeria-seccion > h1 {
-
     margin: 0 0 35px;
-
     font-size: clamp(26px, 3vw, 36px);
-
     font-weight: 700;
-
     line-height: 1.2;
-
 }
-
-/* =========================================
-
-   3. CUADRÍCULA DE FOTOGRAFÍAS
-
-   ========================================= */
 
 .galeria-grid {
-
     display: grid;
-
-    /* Dos columnas de igual ancho */
-
     grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    /* Separación horizontal y vertical */
-
     column-gap: 45px;
-
     row-gap: 55px;
-
     width: 100%;
-
     max-width: 1100px;
-
     margin-inline: auto;
-
 }
-
-/* =========================================
-
-   4. TARJETAS DE GALERÍA
-
-   ========================================= */
 
 .galeria-tarjeta {
-
     display: flex;
-
     flex-direction: column;
-
     width: 100%;
-
     min-width: 0;
-
     margin: 0;
-
     padding: 0;
-
     overflow: hidden;
-
     background-color: #111111;
-
 }
-
-/* 5. FRANJA NEGRA DEL TÍTULO */
 
 .galeria-tarjeta h2 {
-
     display: flex;
-
     align-items: center;
-
     width: 100%;
-
     min-height: 55px;
-
     margin: 0;
-
     padding: 15px 20px;
-
     background-color: #111111;
-
     color: #ffffff;
-
     font-size: 17px;
-
     font-weight: 600;
-
     line-height: 1.3;
-
 }
-
-/* =========================================
-
-   6. IMÁGENES
-
-   ========================================= */
 
 .galeria-tarjeta img {
-
     display: block;
-
     width: 100%;
-
     height: auto;
-
-    /* Mantiene las tarjetas proporcionadas */
-
     aspect-ratio: 3 / 2;
-
-    /* Ocupa todo el espacio disponible */
-
     object-fit: cover;
-
     object-position: center;
-
 }
 
-/* =========================================
-
-   7. RESPONSIVIDAD TABLET
-
-   ========================================= */
-
 @media (max-width: 900px) {
-
     .galeria-grid {
-
         column-gap: 25px;
-
         row-gap: 35px;
-
     }
 
     .galeria-tarjeta h2 {
-
         min-height: 50px;
-
         padding: 12px 15px;
-
         font-size: 15px;
-
     }
 
 }
 
-/* =========================================
-
-   8. RESPONSIVIDAD MÓVIL
-
-   ========================================= */
-
 @media (max-width: 600px) {
-
     .galeria-seccion > h1 {
-
         margin-bottom: 25px;
-
         font-size: 26px;
-
     }
 
-    /* Una sola columna */
-
     .galeria-grid {
-
         grid-template-columns: minmax(0, 1fr);
-
         column-gap: 0;
-
         row-gap: 30px;
-
     }
 
     .galeria-tarjeta {
-
         width: 100%;
-
     }
 
     .galeria-tarjeta h2 {
-
         min-height: 50px;
-
         padding: 13px 16px;
-
         font-size: 16px;
-
     }
 
     .galeria-tarjeta img {
-
         width: 100%;
-
         height: auto;
-
         aspect-ratio: 3 / 2;
-
         object-fit: cover;
-
     }
 
 }
-
-/* =========================================
-
-   EFECTO HOVER: TARJETAS DE GALERÍA
-
-   ========================================= */
-
-/* Estado normal */
 
 .galeria-tarjeta {
-
     transition:
-
-        transform 0.3s ease,
-
-        box-shadow 0.3s ease;
-
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
     will-change: transform;
-
 }
-
-/* Al pasar el mouse */
 
 @media (hover: hover) {
-
     .galeria-tarjeta:hover {
-
         transform: translateY(-8px);
-
         box-shadow:
-
-            0 12px 25px rgba(0, 0, 0, 0.20);
-
+        0 12px 25px rgba(0, 0, 0, 0.20);
     }
 
 }
-
-/* Personas que prefieren menos animación */
 
 @media (prefers-reduced-motion: reduce) {
-
     .galeria-tarjeta {
-
         transition: none;
-
     }
 
 }
 
-
-/* =========================================
-   PÁGINA: VISÍTANOS
-   ========================================= */
-
-/* 1. CONFIGURACIÓN GENERAL */
-
+/* PÁGINA: VISÍTANOS */
 .pagina-visita {
     width: 100%;
     background-color: #ffffff;
@@ -4104,10 +2290,6 @@ a {
     padding-top: 45px;
     padding-bottom: 70px;
 }
-
-/* =========================================
-   2. SECCIONES
-   ========================================= */
 
 .pagina-visita .visita-seccion {
     margin-bottom: 75px;
@@ -4125,21 +2307,15 @@ a {
     line-height: 1.2;
 }
 
-/* =========================================
-   3. INFORMACIÓN GENERAL
-   ========================================= */
-
 .pagina-visita .visita-informacion-grid {
     display: grid;
     grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 1fr);
+    minmax(0, 1fr)
+    minmax(0, 1fr);
     align-items: start;
     gap: 50px;
     width: 100%;
 }
-
-/* COLUMNA DE TEXTO */
 
 .pagina-visita .visita-datos {
     min-width: 0;
@@ -4150,8 +2326,6 @@ a {
 .pagina-visita .visita-datos > p {
     margin: 0 0 25px;
 }
-
-/* DATOS DE UBICACIÓN, HORARIO Y ACCESO */
 
 .pagina-visita .visita-datos-lista {
     display: flex;
@@ -4172,10 +2346,6 @@ a {
     font-weight: 700;
 }
 
-/* =========================================
-   4. GOOGLE MAPS
-   ========================================= */
-
 .pagina-visita .visita-mapa-ubicacion {
     display: flex;
     flex-direction: column;
@@ -4193,34 +2363,26 @@ a {
     border-radius: 3px;
 }
 
-/* =========================================
-   5. BOTONES
-   ========================================= */
-
 .pagina-visita .visita-boton {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-
     min-height: 44px;
     width: fit-content;
     padding: 11px 24px;
-
     color: #222222;
     background-color: #b6d747;
     border: none;
     border-radius: 30px;
-
     font-size: 14px;
     font-weight: 600;
     line-height: 1.3;
     text-align: center;
     text-decoration: none;
-
     transition:
-        background-color 0.2s ease,
-        transform 0.2s ease;
+    background-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .pagina-visita .visita-boton:hover {
@@ -4237,12 +2399,6 @@ a {
     background-color: #b6d747;
 }
 
-/* =========================================
-   6. MAPA INTERNO
-   ========================================= */
-
-/* DESCRIPCIÓN DEL MAPA */
-
 .pagina-visita .visita-descripcion {
     max-width: 850px;
     margin: 0 0 25px;
@@ -4250,18 +2406,13 @@ a {
     line-height: 1.7;
 }
 
-/* IMAGEN DEL MAPA DENTRO DE LA PÁGINA */
-
 .pagina-visita .visita-mapa-abrir {
     display: block;
-
     width: 100%;
     margin: 0;
     padding: 0;
-
     background-color: #ffffff;
     border: none;
-
     text-align: left;
     cursor: zoom-in;
 }
@@ -4271,20 +2422,15 @@ a {
     width: 100%;
     height: auto;
     object-fit: contain;
-
     transition: transform 0.3s ease;
 }
-
-/* INDICACIÓN DE AMPLIAR MAPA */
 
 .pagina-visita .visita-mapa-indicacion {
     display: inline-block;
     margin-top: 15px;
-
     color: #6550c2;
     font-size: 14px;
     font-weight: 600;
-
     text-decoration: underline;
     text-underline-offset: 4px;
 }
@@ -4294,54 +2440,37 @@ a {
     color: #47339e;
 }
 
-/* EFECTO SUAVE EN ESCRITORIO */
-
 @media (hover: hover) {
-
     .pagina-visita .visita-mapa-abrir:hover img {
         transform: scale(1.015);
     }
-}
 
-/* =========================================
-   7. VENTANA EMERGENTE DEL MAPA
-   ========================================= */
+}
 
 .visita-mapa-modal {
     position: fixed;
-
     width: min(95vw, 1250px);
     max-width: 1250px;
     max-height: 92vh;
-
     margin: auto;
     padding: 0;
-
     background-color: #ffffff;
     color: #222222;
-
     border: none;
     border-radius: 5px;
-
     overflow: hidden;
 }
-
-/* OSCURECIMIENTO DETRÁS DE LA VENTANA */
 
 .visita-mapa-modal::backdrop {
     background-color: rgba(0, 0, 0, 0.85);
 }
-
-/* CABECERA NEGRA */
 
 .visita-modal-cabecera {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-
     padding: 18px 25px;
-
     background-color: #111111;
     color: #ffffff;
 }
@@ -4353,32 +2482,24 @@ a {
     font-weight: 700;
 }
 
-/* BOTÓN CERRAR */
-
 .visita-modal-cerrar {
     display: flex;
     align-items: center;
     justify-content: center;
-
     flex-shrink: 0;
-
     width: 42px;
     height: 42px;
     padding: 0;
-
     color: #ffffff;
     background-color: transparent;
-
     border: 1px solid #777777;
     border-radius: 50%;
-
     font-size: 30px;
     line-height: 1;
-
     cursor: pointer;
     transition:
-        background-color 0.2s ease,
-        border-color 0.2s ease;
+    background-color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .visita-modal-cerrar:hover {
@@ -4386,99 +2507,66 @@ a {
     border-color: #8c78e8;
 }
 
-/* ZONA DESPLAZABLE DEL MAPA */
-
 .visita-modal-contenido {
     width: 100%;
     max-height: calc(92vh - 145px);
-
     padding: 20px;
-
     overflow: auto;
-
     background-color: #f5f5f5;
     text-align: center;
-
     overscroll-behavior: contain;
 }
 
-/* IMAGEN AMPLIADA */
-
 .visita-modal-imagen {
     display: block;
-
     width: auto;
     max-width: none;
     height: auto;
     max-height: none;
-
     min-width: 100%;
-
     margin: 0 auto;
-
     object-fit: contain;
 }
-
-/* TEXTO INFORMATIVO */
 
 .visita-modal-ayuda {
     margin: 0;
     padding: 12px 20px;
-
     color: #555555;
     background-color: #ffffff;
-
     font-size: 13px;
     line-height: 1.5;
     text-align: center;
 }
 
-/* =========================================
-   8. VISITAS GUIADAS
-   ========================================= */
-
 .pagina-visita .visita-guiada-banner {
     position: relative;
     isolation: isolate;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 100%;
     min-height: 390px;
-
     overflow: hidden;
     background-color: #222222;
 }
-
-/* FOTOGRAFÍA DE FONDO */
 
 .pagina-visita .visita-guiada-banner > img {
     position: absolute;
     inset: 0;
     z-index: -2;
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
     object-position: center;
 }
 
-/* CAPA OSCURA SOBRE LA FOTOGRAFÍA */
-
 .pagina-visita .visita-guiada-banner::before {
     content: "";
-
     position: absolute;
     inset: 0;
     z-index: -1;
-
     background-color: rgba(0, 0, 0, 0.48);
 }
-
-/* CONTENIDO CENTRAL */
 
 .pagina-visita .visita-guiada-contenido {
     display: flex;
@@ -4486,12 +2574,9 @@ a {
     align-items: center;
     justify-content: center;
     gap: 18px;
-
     width: 100%;
     max-width: 700px;
-
     padding: 45px 30px;
-
     color: #ffffff;
     text-align: center;
 }
@@ -4499,7 +2584,6 @@ a {
 .pagina-visita .visita-guiada-contenido h3 {
     margin: 0;
     color: #ffffff;
-
     font-size: clamp(23px, 3vw, 34px);
     font-weight: 700;
     line-height: 1.25;
@@ -4508,17 +2592,13 @@ a {
 .pagina-visita .visita-guiada-contenido p {
     max-width: 520px;
     margin: 0;
-
     color: #ffffff;
     font-size: 15px;
     line-height: 1.6;
 }
 
-/* BOTÓN BLANCO */
-
 .pagina-visita .visita-boton-claro {
     margin-top: 8px;
-
     background-color: #ffffff;
     color: #222222;
 }
@@ -4527,19 +2607,12 @@ a {
     background-color: #ebebeb;
 }
 
-/* NOTA INFERIOR */
-
 .pagina-visita .visita-nota {
     margin: 16px 0 0;
-
     color: #555555;
     font-size: 13px;
     line-height: 1.6;
 }
-
-/* =========================================
-   9. ACCESIBILIDAD
-   ========================================= */
 
 .pagina-visita .visita-mapa-abrir:focus-visible,
 .visita-modal-cerrar:focus-visible {
@@ -4547,12 +2620,7 @@ a {
     outline-offset: 4px;
 }
 
-/* =========================================
-   10. RESPONSIVIDAD TABLET
-   ========================================= */
-
 @media (max-width: 900px) {
-
     .pagina-visita .visita-informacion-grid {
         gap: 30px;
     }
@@ -4564,22 +2632,14 @@ a {
     .pagina-visita .visita-guiada-banner {
         min-height: 340px;
     }
+
 }
 
-/* =========================================
-   11. RESPONSIVIDAD MÓVIL
-   ========================================= */
-
 @media (max-width: 700px) {
-
-    /* CONTENEDOR */
-
     .pagina-visita .visita-contenedor {
         padding-top: 35px;
         padding-bottom: 45px;
     }
-
-    /* SECCIONES */
 
     .pagina-visita .visita-seccion {
         margin-bottom: 55px;
@@ -4589,8 +2649,6 @@ a {
         margin-bottom: 20px;
         font-size: 26px;
     }
-
-    /* INFORMACIÓN GENERAL */
 
     .pagina-visita .visita-informacion-grid {
         grid-template-columns: minmax(0, 1fr);
@@ -4609,8 +2667,6 @@ a {
         gap: 15px;
     }
 
-    /* GOOGLE MAPS */
-
     .pagina-visita .visita-mapa-ubicacion iframe {
         height: 270px;
     }
@@ -4619,8 +2675,6 @@ a {
         width: 100%;
     }
 
-    /* MAPA INTERNO */
-
     .pagina-visita .visita-descripcion {
         font-size: 14px;
     }
@@ -4628,8 +2682,6 @@ a {
     .pagina-visita .visita-mapa-indicacion {
         font-size: 14px;
     }
-
-    /* VISITAS GUIADAS */
 
     .pagina-visita .visita-guiada-banner {
         min-height: 320px;
@@ -4647,14 +2699,10 @@ a {
     .pagina-visita .visita-guiada-contenido p {
         font-size: 14px;
     }
+
 }
 
-/* =========================================
-   12. MODAL EN CELULARES
-   ========================================= */
-
 @media (max-width: 600px) {
-
     .visita-mapa-modal {
         width: 96vw;
         max-height: 90vh;
@@ -4678,8 +2726,6 @@ a {
         padding: 10px;
     }
 
-    /* Permite desplazamiento horizontal */
-
     .visita-modal-imagen {
         min-width: 850px;
     }
@@ -4687,328 +2733,277 @@ a {
     .visita-modal-ayuda {
         font-size: 12px;
     }
+
 }
 
-/* =========================================
-   13. MOVIMIENTO REDUCIDO
-   ========================================= */
-
 @media (prefers-reduced-motion: reduce) {
-
     .pagina-visita .visita-boton,
     .pagina-visita .visita-mapa-abrir img,
     .visita-modal-cerrar {
         transition: none;
     }
+
 }
 
-
-
-/* ==========================================================================
-   SECCIÓN: NOTICIAS (HOME - MAQUETA)
-   ========================================================================== */
-
+/* SECCIÓN: NOTICIAS */
 .home-noticias {
-  padding-block: 20px 60px;
+    padding-block: 20px 60px;
 }
 
 .titulo-noticias {
-  font-size: clamp(28px, 4vw, 38px);
-  font-weight: 800;
-  font-style: italic;
-  color: #111111;
-  text-transform: uppercase;
-  margin-bottom: 35px;
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 800;
+    font-style: italic;
+    color: #111111;
+    text-transform: uppercase;
+    margin-bottom: 35px;
 }
 
-/* Grilla de 4 columnas */
 .noticias-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 50px;
 }
 
 .noticia-card {
-  display: flex;
-  flex-direction: column;
-  background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
 }
 
-/* Contenedor e Imagen Cuadrada */
 .noticia-imagen {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  background-color: #e0e0e0;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background-color: #e0e0e0;
 }
 
 .noticia-imagen img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
 .noticia-cuerpo {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  padding-top: 14px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding-top: 14px;
 }
 
 .noticia-titulo {
-  font-size: 13px;
-  font-weight: 700;
-  color: #111111;
-  line-height: 1.35;
-  margin: 0 0 8px 0;
-  /* Controla la altura para que los botones queden alineados abajo */
-  min-height: 52px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #111111;
+    line-height: 1.35;
+    margin: 0 0 8px 0;
+    min-height: 52px;
 }
 
 .noticia-fecha {
-  font-size: 12px;
-  font-weight: 800;
-  color: #111111;
-  margin-bottom: 16px;
+    font-size: 12px;
+    font-weight: 800;
+    color: #111111;
+    margin-bottom: 16px;
 }
 
-/* Botón Verde "VER MÁS" */
 .btn-ver-mas-noticia {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 38px;
-  background-color: #b6d747;
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: 800;
-  text-decoration: none;
-  border-radius: 30px;
-  margin-top: auto;
-  transition: background-color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 38px;
+    background-color: #b6d747;
+    color: #222222;
+    font-size: 13px;
+    font-weight: 800;
+    text-decoration: none;
+    border-radius: 30px;
+    margin-top: auto;
+    transition: background-color 0.2s ease;
 }
 
 .btn-ver-mas-noticia:hover {
-  background-color: #9fbe35;
+    background-color: #9fbe35;
 }
 
-/* Botón Morado Centrado "VER TODO" */
 .noticias-pie {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .btn-ver-todo-noticias {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 45px;
-  background-color: #8c78e8;
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 800;
-  text-decoration: none;
-  border-radius: 30px;
-  transition: background-color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 45px;
+    background-color: #6143a6;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.2s ease;
 }
 
 .btn-ver-todo-noticias:hover {
-  background-color: #7261cc;
+    background-color: #4e3589;
 }
 
-/* Adaptación Responsiva para Celulares y Tablets */
 @media (max-width: 1000px) {
-  .noticias-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-  }
+    .noticias-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
 }
 
 @media (max-width: 550px) {
-  .noticias-grid {
-    grid-template-columns: 1fr;
-  }
+    .noticias-grid {
+        grid-template-columns: 1fr;
+    }
 
-  .noticia-titulo {
-    min-height: auto;
-  }
+    .noticia-titulo {
+        min-height: auto;
+    }
+
 }
 
-/* ==========================================================================
-   SECCIÓN: BANNER GALERÍA DE FOTOS (HOME)
-   ========================================================================== */
-
+/* SECCIÓN: BANNER GALERÍA */
 .home-galeria-seccion {
-  padding-block: 20px 60px;
+    padding-block: 20px 60px;
 }
 
 .titulo-galeria-home {
-  font-size: clamp(26px, 3.5vw, 36px);
-  font-weight: 800;
-  color: #111111;
-  margin-bottom: 25px;
+    font-size: clamp(26px, 3.5vw, 36px);
+    font-weight: 800;
+    color: #111111;
+    margin-bottom: 25px;
 }
 
-/* Tarjeta contenedora con enlace */
 .galeria-banner-link {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 380px;
-  border-radius: 4px;
-  overflow: hidden;
-  text-decoration: none;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 380px;
+    border-radius: 4px;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Contenedor de imagen e Imagen base */
 .galeria-banner-imagen {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .galeria-banner-imagen img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  /* Animación de zoom suave */
-  transition: transform 0.5s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.5s ease;
 }
 
-/* Capa oscura superpuesta (Overlay) */
 .galeria-banner-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  display: flex;
-  align-items: flex-end;
-  padding: 40px;
-  /* Capa oscura progresiva para resaltar el texto blanco */
-  background: linear-gradient(
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    padding: 40px;
+    background: linear-gradient(
     to top,
     rgba(0, 0, 0, 0.75) 0%,
     rgba(0, 0, 0, 0.35) 50%,
     rgba(0, 0, 0, 0.15) 100%
-  );
-  transition: background 0.3s ease;
+    );
+    transition: background 0.3s ease;
 }
 
-/* Texto sobre la foto */
 .galeria-banner-texto {
-  color: #ffffff;
-  font-size: clamp(26px, 4vw, 42px);
-  font-weight: 800;
-  line-height: 1.15;
-  margin: 0;
-  max-width: 600px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    font-size: clamp(26px, 4vw, 42px);
+    font-weight: 800;
+    line-height: 1.15;
+    margin: 0;
+    max-width: 600px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* ==========================================================================
-   ANIMACIÓN HOVER (AL PASAR EL MOUSE)
-   ========================================================================== */
-
-/* 1. Zoom suave a la fotografía */
 .galeria-banner-link:hover .galeria-banner-imagen img {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
-/* 2. Ajuste sutil de brillo en la capa oscura */
 .galeria-banner-link:hover .galeria-banner-overlay {
-  background: linear-gradient(
+    background: linear-gradient(
     to top,
     rgba(0, 0, 0, 0.85) 0%,
     rgba(0, 0, 0, 0.45) 50%,
     rgba(0, 0, 0, 0.20) 100%
-  );
+    );
 }
 
-/* Responsividad para pantallas móviles */
 @media (max-width: 768px) {
-  .galeria-banner-link {
-    height: 280px;
-  }
+    .galeria-banner-link {
+        height: 280px;
+    }
 
-  .galeria-banner-overlay {
-    padding: 20px;
-  }
+    .galeria-banner-overlay {
+        padding: 20px;
+    }
+
 }
 
-/* ==========================================================================
-   AJUSTE DE ESPACIADOS ENTRE SECCIONES (HOME)
-   ========================================================================== */
-
-/* Reducir espacio inferior de Cartelera */
 .home-cartelera-destacada {
-  margin-bottom: 30px !important;
+    margin-bottom: 30px !important;
 }
 
-/* Reducir espacios superior e inferior de Galería de fotos */
 .home-galeria-seccion {
-  padding-block: 10px 30px !important;
+    padding-block: 10px 30px !important;
 }
 
 .titulo-galeria-home {
-  margin-bottom: 15px !important;
+    margin-bottom: 15px !important;
 }
 
-/* Reducir espacio superior de Noticias */
 .home-noticias {
-  padding-block: 10px 40px !important;
+    padding-block: 10px 40px !important;
 }
 
 .titulo-noticias {
-  margin-bottom: 20px !important;
+    margin-bottom: 20px !important;
 }
-/* ==========================================================================
-   COMPACTAR ESPACIOS AL MÁXIMO ENTRE SECCIONES
-   ========================================================================== */
 
-/* Quitar márgenes generales de las secciones principales */
 .home-cartelera-destacada,
 .home-galeria-seccion,
 .home-noticias {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
 }
 
-/* Quitar el margen inferior del enlace de programación */
 .cartelera-pie {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
 }
 
-/* Ajustar márgenes de los títulos */
 .titulo-galeria-home,
 .titulo-noticias {
-  margin-top: 5px !important;
-  margin-bottom: 10px !important;
+    margin-top: 5px !important;
+    margin-bottom: 10px !important;
 }
 
-/* Reducir espacio entre el banner de galería y el título de noticias */
 .galeria-banner-link {
-  margin-bottom: 10px !important;
+    margin-bottom: 10px !important;
 }
 
-
-/* =========================================
-   PÁGINA: ESPACIOS
-   PARQUE CULTURAL DE VALPARAÍSO
-   ========================================= */
-
-
-/* =========================================
-   1. CONFIGURACIÓN GENERAL
-   ========================================= */
-
+/* PÁGINA: ESPACIOS */
 .pagina-espacios {
     width: 100%;
     background-color: #ffffff;
@@ -5020,11 +3015,6 @@ a {
     padding-bottom: 70px;
 }
 
-
-/* =========================================
-   2. INTRODUCCIÓN
-   ========================================= */
-
 .espacios-introduccion {
     width: 100%;
     max-width: 900px;
@@ -5033,7 +3023,6 @@ a {
 
 .espacios-introduccion h2 {
     margin: 0 0 20px;
-
     color: #222222;
     font-size: clamp(27px, 3vw, 38px);
     font-weight: 700;
@@ -5043,21 +3032,14 @@ a {
 .espacios-introduccion p {
     max-width: 850px;
     margin: 0;
-
     font-size: 15px;
     line-height: 1.7;
 }
-
-
-/* =========================================
-   3. NAVEGACIÓN INTERNA POR CATEGORÍAS
-   ========================================= */
 
 .espacios-indice {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-
     gap: 12px;
     width: 100%;
     margin-bottom: 65px;
@@ -5067,26 +3049,21 @@ a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     min-height: 42px;
     padding: 10px 18px;
-
     color: #222222;
     background-color: #f5f5f5;
-
     border: 1px solid #dedede;
     border-radius: 25px;
-
     font-size: 13px;
     font-weight: 600;
     line-height: 1.3;
     text-align: center;
     text-decoration: none;
-
     transition:
-        background-color 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .espacios-indice a:hover {
@@ -5095,21 +3072,14 @@ a {
     transform: translateY(-2px);
 }
 
-
-/* =========================================
-   4. GRUPOS DE ESPACIOS
-   ========================================= */
-
 .espacios-grupo {
     width: 100%;
     margin-bottom: 80px;
-
     scroll-margin-top: 30px;
 }
 
 .espacios-grupo > h2 {
     margin: 0 0 30px;
-
     color: #222222;
     font-size: clamp(24px, 2.5vw, 32px);
     font-weight: 700;
@@ -5119,91 +3089,58 @@ a {
 .espacios-lista {
     display: flex;
     flex-direction: column;
-
     gap: 35px;
     width: 100%;
 }
 
-
-/* =========================================
-   5. FICHAS GENERALES
-   ========================================= */
-
 .espacio-ficha {
     display: grid;
-
     grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 1fr);
-
+    minmax(0, 1fr)
+    minmax(0, 1fr);
     align-items: stretch;
-
     width: 100%;
     min-height: 310px;
-
     margin: 0;
     padding: 0;
-
     background-color: #111111;
-
     overflow: hidden;
 }
 
-
-/* =========================================
-   6. FOTOGRAFÍAS
-   ========================================= */
-
 .espacio-foto {
     position: relative;
-
     width: 100%;
     min-width: 0;
     min-height: 310px;
-
     overflow: hidden;
-
     background-color: #343434;
 }
 
 .espacio-foto img {
     display: block;
-
     width: 100%;
     height: 100%;
     min-height: 310px;
-
     object-fit: cover;
     object-position: center;
-
     transition: transform 0.4s ease;
 }
-
-
-/* =========================================
-   7. INFORMACIÓN DE CADA ESPACIO
-   ========================================= */
 
 .espacio-info {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-
     width: 100%;
     min-width: 0;
-
     padding: clamp(24px, 4vw, 55px);
-
     color: #ffffff;
     background-color: #111111;
 }
 
 .espacio-info h3 {
     margin: 0 0 18px;
-
     color: #ffffff;
-
     font-size: clamp(20px, 2.3vw, 27px);
     font-weight: 700;
     line-height: 1.25;
@@ -5212,26 +3149,12 @@ a {
 .espacio-info > p {
     width: 100%;
     max-width: 480px;
-
     margin: 0 0 25px;
-
     color: #ffffff;
-
     font-size: 15px;
     font-weight: 400;
     line-height: 1.65;
 }
-
-
-/* =========================================
-   8. ALTERNANCIA DE FOTOGRAFÍAS Y TEXTO
-   ========================================= */
-
-/* Tarjetas impares:
-   fotografía izquierda, texto derecha */
-
-/* Tarjetas pares:
-   texto izquierda, fotografía derecha */
 
 .espacio-ficha:nth-child(even) .espacio-foto {
     grid-column: 2;
@@ -5243,11 +3166,6 @@ a {
     grid-row: 1;
 }
 
-
-/* =========================================
-   9. BOTÓN DESPLEGABLE CONOCER MÁS
-   ========================================= */
-
 .espacio-detalle {
     width: 100%;
     max-width: 480px;
@@ -5257,96 +3175,67 @@ a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     width: fit-content;
     min-width: 135px;
     min-height: 40px;
-
     padding: 10px 23px;
-
     color: #222222;
     background-color: #b6d747;
-
     border: none;
     border-radius: 25px;
-
     font-size: 13px;
     font-weight: 700;
     line-height: 1.3;
     text-align: center;
-
     cursor: pointer;
     list-style: none;
-
     transition:
-        background-color 0.2s ease,
-        transform 0.2s ease;
+    background-color 0.2s ease,
+    transform 0.2s ease;
 }
-
-/* Oculta el marcador predeterminado */
 
 .espacio-detalle summary::-webkit-details-marker {
     display: none;
 }
-
-/* Efecto hover */
 
 .espacio-detalle summary:hover {
     background-color: #9fbe35;
     transform: translateY(-2px);
 }
 
-/* Botón cuando el desplegable está abierto */
-
 .espacio-detalle[open] summary {
     background-color: #9fbe35;
 }
 
-
-/* =========================================
-   10. CONTENIDO DESPLEGABLE
-   ========================================= */
-
 .espacio-detalle-contenido {
     width: 100%;
-
     margin-top: 18px;
     padding: 18px;
-
     color: #ffffff;
     background-color: #292929;
-
     border-left: 3px solid #b6d747;
 }
 
 .espacio-detalle-contenido h4 {
     margin: 0 0 12px;
-
     color: #ffffff;
-
     font-size: 15px;
     font-weight: 700;
 }
 
 .espacio-detalle-contenido p {
     margin: 0;
-
     color: #ffffff;
-
     font-size: 14px;
     line-height: 1.6;
 }
 
 .espacio-detalle-contenido a {
     display: inline-block;
-
     margin-top: 12px;
-
     color: #b6d747;
-
     font-size: 14px;
     font-weight: 600;
-
     text-decoration: underline;
     text-underline-offset: 3px;
 }
@@ -5355,38 +3244,23 @@ a {
     color: #d5ef77;
 }
 
-
-/* =========================================
-   11. EFECTO SOBRE FOTOGRAFÍAS
-   ========================================= */
-
 @media (hover: hover) {
-
     .espacio-ficha:hover .espacio-foto img {
         transform: scale(1.035);
     }
+
 }
-
-
-/* =========================================
-   12. FICHA SIN FOTOGRAFÍA
-   PUNTO DE RECICLAJE
-   ========================================= */
 
 .pagina-espacios .espacio-foto-pendiente {
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 100%;
     height: 100%;
     min-height: 310px;
-
     padding: 30px;
-
     color: #333333;
     background-color: #e9e9e9;
-
     font-size: 24px;
     font-weight: 700;
     line-height: 1.3;
@@ -5398,18 +3272,11 @@ a {
     max-width: 350px;
 }
 
-
-/* =========================================
-   13. ARRIENDO DE ESPACIOS
-   ========================================= */
-
 .espacios-arriendo {
     width: 100%;
     margin: 0 0 40px;
-
     color: #ffffff;
     background-color: #2d2d2f;
-
     scroll-margin-top: 30px;
 }
 
@@ -5420,9 +3287,7 @@ a {
 
 .espacios-arriendo h2 {
     margin: 0 0 18px;
-
     color: #ffffff;
-
     font-size: clamp(25px, 3vw, 35px);
     font-weight: 700;
     line-height: 1.25;
@@ -5430,55 +3295,36 @@ a {
 
 .espacios-arriendo p {
     max-width: 700px;
-
     margin: 0 0 25px;
-
     color: #ffffff;
-
     font-size: 15px;
     line-height: 1.7;
 }
-
-
-/* =========================================
-   14. BOTÓN DE ARRIENDO
-   ========================================= */
 
 .espacios-boton {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     width: fit-content;
     min-height: 44px;
-
     padding: 12px 25px;
-
     color: #222222;
     background-color: #b6d747;
-
     border: none;
     border-radius: 25px;
-
     font-size: 14px;
     font-weight: 700;
     text-align: center;
     text-decoration: none;
-
     transition:
-        background-color 0.2s ease,
-        transform 0.2s ease;
+    background-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .espacios-boton:hover {
     background-color: #9fbe35;
     transform: translateY(-2px);
 }
-
-
-/* =========================================
-   15. ENLACE AL MAPA INTERNO
-   ========================================= */
 
 .espacios-enlace-mapa {
     width: 100%;
@@ -5487,19 +3333,15 @@ a {
 
 .espacios-enlace-mapa p {
     margin: 0 0 12px;
-
     font-size: 15px;
     line-height: 1.6;
 }
 
 .espacios-enlace-mapa a {
     display: inline-block;
-
     color: #6550c2;
-
     font-size: 15px;
     font-weight: 700;
-
     text-decoration: underline;
     text-underline-offset: 4px;
 }
@@ -5507,11 +3349,6 @@ a {
 .espacios-enlace-mapa a:hover {
     color: #47339e;
 }
-
-
-/* =========================================
-   16. ACCESIBILIDAD
-   ========================================= */
 
 .espacios-indice a:focus-visible,
 .espacio-detalle summary:focus-visible,
@@ -5522,34 +3359,19 @@ a {
     outline-offset: 4px;
 }
 
-
-/* =========================================
-   17. RESPONSIVIDAD TABLET
-   Hasta 900px
-   ========================================= */
-
 @media (max-width: 900px) {
-
-    /* Separación entre fichas */
-
     .espacios-lista {
         gap: 25px;
     }
-
-    /* Fichas */
 
     .espacio-ficha {
         min-height: 280px;
     }
 
-    /* Fotografías */
-
     .espacio-foto,
     .espacio-foto img {
         min-height: 280px;
     }
-
-    /* Texto */
 
     .espacio-info {
         padding: 25px;
@@ -5563,35 +3385,21 @@ a {
         font-size: 14px;
     }
 
-    /* Separación entre grupos */
-
     .espacios-grupo {
         margin-bottom: 60px;
     }
 
-    /* Punto de reciclaje */
-
     .pagina-espacios .espacio-foto-pendiente {
         min-height: 280px;
     }
+
 }
 
-
-/* =========================================
-   18. RESPONSIVIDAD MÓVIL
-   Hasta 600px
-   ========================================= */
-
 @media (max-width: 600px) {
-
-    /* CONTENEDOR */
-
     .pagina-espacios > .contenedor {
         padding-top: 30px;
         padding-bottom: 45px;
     }
-
-    /* INTRODUCCIÓN */
 
     .espacios-introduccion {
         margin-bottom: 28px;
@@ -5606,8 +3414,6 @@ a {
         font-size: 14px;
     }
 
-    /* NAVEGACIÓN POR CATEGORÍAS */
-
     .espacios-indice {
         gap: 9px;
         margin-bottom: 45px;
@@ -5616,11 +3422,8 @@ a {
     .espacios-indice a {
         min-height: 40px;
         padding: 9px 13px;
-
         font-size: 12px;
     }
-
-    /* TÍTULOS DE LOS GRUPOS */
 
     .espacios-grupo {
         margin-bottom: 55px;
@@ -5631,28 +3434,20 @@ a {
         font-size: 24px;
     }
 
-    /* SEPARACIÓN ENTRE FICHAS */
-
     .espacios-lista {
         gap: 25px;
     }
 
-    /* FICHAS EN UNA COLUMNA */
-
     .espacio-ficha {
         display: flex;
         flex-direction: column;
-
         width: 100%;
         min-height: 0;
     }
 
-    /* FOTOGRAFÍAS PRIMERO */
-
     .espacio-foto,
     .espacio-ficha:nth-child(even) .espacio-foto {
         order: 1;
-
         width: 100%;
         height: 240px;
         min-height: 0;
@@ -5660,24 +3455,18 @@ a {
 
     .espacio-foto img {
         display: block;
-
         width: 100%;
         height: 100%;
         min-height: 0;
-
         object-fit: cover;
         object-position: center;
     }
 
-    /* TEXTO DESPUÉS */
-
     .espacio-info,
     .espacio-ficha:nth-child(even) .espacio-info {
         order: 2;
-
         width: 100%;
         min-height: 0;
-
         padding: 28px 22px;
     }
 
@@ -5691,8 +3480,6 @@ a {
         font-size: 14px;
     }
 
-    /* DESPLEGABLES */
-
     .espacio-detalle summary {
         min-height: 44px;
     }
@@ -5701,19 +3488,13 @@ a {
         padding: 15px;
     }
 
-    /* PUNTO DE RECICLAJE */
-
     .pagina-espacios .espacio-foto-pendiente {
         width: 100%;
         height: 240px;
         min-height: 240px;
-
         padding: 20px;
-
         font-size: 21px;
     }
-
-    /* ARRIENDO */
 
     .espacios-arriendo {
         margin-bottom: 35px;
@@ -5735,38 +3516,29 @@ a {
         width: 100%;
     }
 
-    /* MAPA INTERNO */
-
     .espacios-enlace-mapa p,
     .espacios-enlace-mapa a {
         font-size: 14px;
     }
+
 }
 
-
-/* =========================================
-   19. MOVIMIENTO REDUCIDO
-   ========================================= */
-
 @media (prefers-reduced-motion: reduce) {
-
     .espacio-foto img,
     .espacio-detalle summary,
     .espacios-boton,
     .espacios-indice a {
         transition: none;
     }
+
 }
 
-/* =====================================
-   SECCIÓN: ESPACIOS DEL PARQUE
-   ===================================== */
+/* SECCIÓN: ESPACIOS DEL PARQUE */
 .home-espacios {
     padding: 60px 0;
-    background-color: #faf8f5; /* Fondo beige claro idéntico al diseño */
+    background-color: #faf8f5;
 }
 
-/* ENCABEZADO */
 .espacios-header {
     display: flex;
     justify-content: space-between;
@@ -5778,7 +3550,7 @@ a {
     font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 1.5px;
-    color: #726db8;
+    color: #6143a6;
     text-transform: uppercase;
     display: block;
     margin-bottom: 6px;
@@ -5794,7 +3566,7 @@ a {
 .espacios-enlace-contacto {
     font-size: 0.85rem;
     font-weight: 700;
-    color: #726db8;
+    color: #6143a6;
     text-decoration: none;
     letter-spacing: 1px;
     border-bottom: 2px solid #726db8;
@@ -5806,7 +3578,6 @@ a {
     opacity: 0.75;
 }
 
-/* CONTENEDOR DE LA GALERÍA (HORIZONTALES) */
 .espacios-galeria {
     display: flex !important;
     flex-direction: row !important;
@@ -5815,18 +3586,16 @@ a {
     width: 100%;
 }
 
-/* TARJETAS INDIVIDUALES */
 .espacio-card {
     position: relative;
-    flex: 1; /* Ancho reducido igual para todas */
+    flex: 1;
     border-radius: 18px;
     overflow: hidden;
     cursor: pointer;
-    min-width: 0; /* Permite que la imagen se comprima horizontalmente */
+    min-width: 0;
     transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Imagen dentro de la tarjeta */
 .espacio-card img {
     width: 100%;
     height: 100%;
@@ -5835,7 +3604,6 @@ a {
     display: block;
 }
 
-/* Sombras y Texto */
 .espacio-overlay {
     position: absolute;
     top: 0;
@@ -5860,26 +3628,18 @@ a {
     text-overflow: ellipsis;
 }
 
-/* =====================================
-   INTERACCIÓN Y ANIMACIÓN (HOVER)
-   ===================================== */
-
-/* Por defecto, la tarjeta con clase .activa se muestra más ancha */
 .espacios-galeria:not(:hover) .espacio-card.activa {
     flex: 3.5;
 }
 
-/* Cuando el usuario pasa el mouse sobre la galería, las demás se encogen */
 .espacios-galeria:hover .espacio-card {
     flex: 1;
 }
 
-/* La tarjeta que tiene el cursor encima se expande */
 .espacios-galeria .espacio-card:hover {
     flex: 3.5 !important;
 }
 
-/* RESPONSIVE: Solo se apilan en pantallas muy pequeñas */
 @media (max-width: 600px) {
     .espacios-galeria {
         flex-direction: column !important;
@@ -5894,24 +3654,25 @@ a {
     .espacio-card:hover {
         height: 300px;
     }
+
 }
-/* ENLACE AL PIE DE ESPACIOS */
+
 .espacios-pie {
-    margin-top: 35px !important; /* Aumenta el espacio con respecto a las tarjetas */
+    margin-top: 35px !important;
     text-align: left;
     width: 100%;
 }
 
 .espacios-pie .enlace-ver-espacios {
-    color: #8c71cc !important; /* Tono morado idéntico al de Cartelera */
+    color: #6143a6 !important;
     font-size: 0.95rem;
     font-weight: 500;
-    text-decoration: none !important; /* Quita el subrayado por defecto */
+    text-decoration: underline !important;
     display: inline-block;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .espacios-pie .enlace-ver-espacios:hover {
     color: #6d52ad !important;
-    transform: translateX(4px); /* Desplazamiento suave al pasar el cursor */
+    transform: translateX(4px);
 }
